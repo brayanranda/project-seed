@@ -1,0 +1,2 @@
+# Editar un elemento en una lista {"subTitle":"Operación","color":"text-black"}  
+La operación editar un elemento en una lista recorre la lista hasta encontrar la posición del nodo al que se desea modificar la información del elemento y actualiza la información del nodo por el nuevo elemento. El algoritmo, una vez modificada la información del nodo, devuelve la referencia a ese nodo (en caso negativo, devuelve null). Otro planteamiento es que el método devuelva true si se pudo modificar la información del nodo con el elemento, y false si no se pudo realizar la operación.  
