@@ -1,30 +1,32 @@
-import { faRightLong } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faBrain, faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import ImgSlider from '../../assets/images/img_slider.png'
 import DevelopmentTeam from "@/components/ui/DevelopmentTeam";
 import Background from "@/components/ui/Background";
-import { classCircle } from "@/utilities/const";
 
 export default function Home() {
     const data = [
         {
+            icon: faBook,
             url: "/about",
             title: "Documentación",
             style: "cursor-pointer transform hover:scale-105 duration-300 bg-cyan-400 rounded-full py-2 px-4 text-white flex items-center w-fit",
-            icon: "border-white border-2 text-md rounded-full w-3 h-3 p-2"
+            iconClass: "border-white border-2 text-md rounded-full w-5 h-5 p-2"
         },
         {
+            icon: faCode,
             url: "https://gitlab.com/estructuras-de-datos/proyecto-seed",
             title: "Código fuente",
             style: "cursor-pointer transform hover:scale-105 duration-300 bg-white rounded-full py-2 px-4 text-black flex items-center w-fit",
-            icon: "border-black border-2 text-md rounded-full w-3 h-3 p-2"
+            iconClass: "border-black border-2 text-md rounded-full w-5 h-5 p-2"
         },
         {
+            icon: faBrain,
             url: "https://repositorio.ufps.edu.co/bitstream/handle/ufps/485/SEED.%20A%20software%20tool%20and%20an%20active-learning%20strategy%20for%20data%20structures%20courses.pdf?sequence=1",
             title: "Learning",
             style: "cursor-pointer transform hover:scale-105 duration-300 bg-white rounded-full py-2 px-4 text-black flex items-center w-fit",
-            icon: "border-black border-2 text-md rounded-full w-3 h-3 p-2"
+            iconClass: "border-black border-2 text-md rounded-full w-5 h-5 p-2"
         },
     ]
     return(
@@ -46,7 +48,7 @@ export default function Home() {
                                         target={index === 0 ? "_self" : "_blank"}
                                     >
                                         <p className="text-lg font-medium pr-2">{item.title}</p>
-                                        <FontAwesomeIcon icon={faRightLong} className={item.icon} />
+                                        <FontAwesomeIcon icon={item.icon} className={item.iconClass} />
                                     </Link>
                                 )
                         }
