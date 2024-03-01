@@ -39,7 +39,7 @@ export default function DevelopmentTeam() {
                     <FontAwesomeIcon icon={faUserGroup} className="border-white border-2 text-md rounded-full w-3 h-3 md:w-5 md:h-5 p-1 md:p-2" />
                     <div className="text-md xl:text-lg font-medium pr-2 flex items-center flex-wrap">
                         <p>Equipo</p>
-                        <p className="hidden md:block">de desarrollo</p>
+                        <p className="hidden md:block ml-1"> de desarrollo</p>
                     </div>
                 </div>
             </PopoverTrigger>
