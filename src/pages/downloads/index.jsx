@@ -10,8 +10,8 @@ export default function Downloads() {
         <main className="w-full bg-white bg-seed py-20 relative">
             <Background first={true} last={true}/>
            
-            <div className="mx-auto w-11/12 lg:w-8/12 space-y-10 relative">
-                
+            <div className="mx-auto w-11/12 lg:w-9/12 space-y-10 relative">
+                <br />
                 <TitleMd title="Descargas" color="text-white" />
                 {
                     downloads && downloads.length > 0 &&
@@ -25,7 +25,7 @@ export default function Downloads() {
                                         {
                                             item.items.map((elem, index) => {
                                                 return (
-                                                    <div key={index} className="p-3 bg-white rounded-lg text-black flex flex-col sm:flex-row justify-between gap-6">
+                                                    <div key={index} className="p-3 bg-white transform hover:scale-105 duration-300 rounded-lg text-black flex flex-col sm:flex-row justify-between gap-6">
                                                         <div className="flex gap-2">
                                                             <FontAwesomeIcon icon={item.icon} className="text-2xl px-3 py-2 rounded-full bg-gray-200" />
                                                             <p className="text-xl font-medium mt-1">{elem.title}</p>
