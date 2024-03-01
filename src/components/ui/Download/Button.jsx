@@ -9,10 +9,10 @@ export default function Button({ item }) {
             <Link
                 to={item.url}
                 target="_blank"
-                className="bg-white font-medium rounded-full text-black w-80 flex items-center gap-3 justify-start shadow-lg text-xl transform hover:scale-105 hover:shadow-xl duration-300"
+                className="bg-white font-medium rounded-full text-black w-52 flex items-center gap-3 justify-start shadow-lg text-xl transform hover:scale-105 hover:shadow-xl duration-300"
             >
                 <FontAwesomeIcon icon={faDownload} className="text-white bg-seed p-4 rounded-full fa-lg" />
-                Descargar material
+                Descargar
             </Link>
         </div>
     )

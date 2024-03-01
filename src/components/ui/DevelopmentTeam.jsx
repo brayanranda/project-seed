@@ -12,22 +12,22 @@ export default function DevelopmentTeam() {
     const data = [
         {
             name: "Marco Adarme",
-            url: "https://github.com/brayanranda",
+            email: "madarme@gmail.com",
             img: MarcoA,
         },
         {
             name: "Wilfred Garcia",
-            url: "https://github.com/brayanranda",
+            email: "",
             img: "",
         },
         {
             name: "Cindy Pabón",
-            url: "https://github.com/brayanranda",
+            email: "",
             img: "",
         },
         {
             name: "Brayan Peñaranda",
-            url: "https://github.com/brayanranda",
+            email: "brpenaranda@gmail.com",
             img: "",
         }
     ]
@@ -48,16 +48,22 @@ export default function DevelopmentTeam() {
                     {
                         data && data.length > 0 &&
                             data.map((item, index) => 
-                                <li key={index} className="cursor-pointer flex items-center justify-between hover:bg-gray-100 p-2 rounded-lg">
-                                    {item.name}
-                                    {
-                                        item.img !== ""
-                                            ? <img className="h-8 w-8 rounded-full" src={item.img} alt="Img dev" />
-                                            :
-                                                <Link to={item.url} className="flex items-center justify-center h-8 w-8 bg-gray-300 rounded-full" target="_blank">
-                                                    <FontAwesomeIcon icon={faUser} className="fa-md" />
-                                                </Link>
-                                    }
+                                <li key={index}>
+                                    <a
+                                        target="_blank"
+                                        href={`mailto:${item.email}`}
+                                        className="cursor-pointer flex items-center justify-between hover:bg-gray-100 p-2 rounded-lg"
+                                    >
+                                        {item.name}
+                                        {
+                                            item.img !== ""
+                                                ? <img className="h-8 w-8 rounded-full" src={item.img} alt="Img dev" />
+                                                :
+                                                    <div className="flex items-center justify-center h-8 w-8 bg-gray-300 rounded-full">
+                                                        <FontAwesomeIcon icon={faUser} className="fa-md" />
+                                                    </div>
+                                        }
+                                    </a>
                                 </li>
                             )
                     }

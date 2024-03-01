@@ -11,7 +11,7 @@ import { classCircle } from '@/utilities/const';
 export default function Description () {
     
     return(
-        <section className="w-full pb-20 relative">
+        <section className="w-full pb-20 relative overflow-hidden">
             <article className="mx-auto w-11/12 md:w-8/12 lg:w-6/12">
                 <TitleTextImg
                     title="Description"
@@ -34,7 +34,7 @@ export default function Description () {
                     title="Secuencia unidimensional"
                     description="Es un conjunto de elementos del mismo tipo."
                 />
-                <div className='flex items-center gap-5 mt-8 mb-12'>
+                <div className='flex items-center gap-5 mt-8 mb-12 flex-wrap'>
                     <p className='text-cyan-300 font-medium font-xl'>Declaración:</p>
                     <img className='rounded-lg' src={Secuencia_3} />
                 </div>
