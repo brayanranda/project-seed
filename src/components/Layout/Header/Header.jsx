@@ -4,7 +4,7 @@ import { faArrowRight, faBars, faChevronDown, faDownload, faHome, faXmark } from
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { items } from '@/utilities/navbar'
 import { Link } from 'react-router-dom'
-import ImgSlider4 from '../../../assets/images/logo_4.png'
+import logo from '../../../assets/images/logo_4.png'
 
 export const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -21,7 +21,7 @@ export const Header = () => {
             <nav className="w-11/12 md:w-11/12 lg:w-9/12 mx-auto flex items-center justify-between py-4" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/">
-                        <img className='w-52' src={ImgSlider4} alt="Project Seed Logo" />
+                        <img className='w-52' src={logo} alt="Project Seed Logo" />
                     </Link>
                 </div>
                 <div className="flex 2xl:hidden">
