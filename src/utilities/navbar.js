@@ -5,9 +5,9 @@ export const items  = [
         items: [
             { name: 'Secuencia', href: '/linear-structures/sequence' },
             { name: 'Listas', href: '/linear-structures/lists' },
-            // { name: 'Pilas', href: '/linear-structures/stacks' },
+            { name: 'Pilas', href: '/linear-structures/stacks' },
             { name: 'Colas', href: '/linear-structures/queue' },
-            // { name: 'Tabla hash', href: '/linear-structures/hash-table' },
+            { name: 'Tabla hash', href: '/linear-structures/hash-table' },
         ]
     },
     // {
