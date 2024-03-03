@@ -14,18 +14,18 @@ Un árbol (tree) es un **T.D.A.** que consta de un conjunto finito T de **nodos*
 - Todo nodo, a excepción del nodo raíz, tiene **uno y sólo un padre**.  
 - Los nodos distintos a null se denominan : **nodos internos(ni)** ; de lo contrario, son llamados **nodos externos (ne)**.
   
-![](/public/assets/images/binary-tree/ab_2.jpg)
+![](/src/assets/images/binary-tree/ab_2.jpg)
 
 ## Árboles Binarios
 
 Los **árboles binarios** constituyen un tipo particular de árboles de gran aplicación. Estos árboles se caracterizan porque no existen nodos con grado mayor que dos, es decir, un nodo tendrá como máximo dos subárboles.  
 **Un árbol binario** es un conjunto finito de nodos que puede estar vacío o consistir en un nodo raíz y dos árboles binarios disjuntos, llamados subárbol izquierdo y subárbol derecho.  
 
-![ab](/public/assets/images/binary-tree/ab_11.jpg)
+![ab](/src/assets/images/binary-tree/ab_11.jpg)
 
 En general, en un árbol no se distingue entre los subárboles de un nodo, mientras que en un árbol binario se suele utilizar la nomenclatura subárbol izquierdo y derecho para identificar los dos posibles subárboles de un nodo determinado. De forma que, por ejemplo, los dos siguientes árboles, a pesar de contener la misma información son distintos por la disposición de los subárboles:
 
-![ab](/public/assets/images/binary-tree/ab_3.jpg)![ab](/public/assets/images/binary-tree/ab_12.jpg)
+![ab](/src/assets/images/binary-tree/ab_3.jpg)![ab](/src/assets/images/binary-tree/ab_12.jpg)
 
 ## Conceptos Básicos:
 
@@ -53,26 +53,26 @@ Procedimiento:
 - Recorrer el Subarbol izquierdo.  
 - Recorrer el Subarbol derecho.  
 
-![](/public/assets/images/binary-tree/preorden.gif)
+![](/src/assets/images/binary-tree/preorden.gif)
 
 Este recorrido consiste en visitar el nodo actual (visitar puede ser simplemente mostrar la clave del nodo por pantalla), y después visitar el subárbol izquierdo y una vez visitado, visitar el subárbol derecho. Es un proceso recursivo por naturaleza.  
   
 **RECORRIDO POSTORDEN:** Donde el nodo dado se procesa después de haber procesado recursivamente a sus hijos.  
 
-![](/public/assets/images/binary-tree/postorden.gif)
+![](/src/assets/images/binary-tree/postorden.gif)
 
 En este caso se trata primero el subárbol izquierdo, después el derecho y por último el nodo actual.  
   
 **RECORRIDO INORDEN:** En este se procesa recursivamente el hijo izquierdo, luego se procesa el nodo actual y finalmente se procesa recursivamente el hijo derecho.  
 
-![](/public/assets/images/binary-tree/inorden.gif)
+![](/src/assets/images/binary-tree/inorden.gif)
 
 En este caso se trata primero el subárbol izquierdo, después el nodo actual y por último el subárbol derecho. En un Arbol Binario de Búsqueda este recorrido daría los valores de clave ordenados de menor a mayor.  
   
 Hay un último recorrido que implementa a estos 3.  
 **RECORRIDIDO POR NIVELES:** Este recorrido procesa los nodos comenzando en la raíz y avanzando de forma descendente y de izquierda a derecha.  
 
-![](/public/assets/images/binary-tree/niveles.gif)
+![](/src/assets/images/binary-tree/niveles.gif)
 
 Concluimos implementando el recorrido por niveles. Este recorrido procesa los nodos comenzando en la raíz y avanzando en forma descendente y de izquierda a derecha.  
 El nombre se deriva del hecho de que primero visitamos:  
@@ -89,7 +89,7 @@ Se define la **longitud de camino X** como el número de arcos que deben ser rec
   
 La **longitud de camino interno** es la suma de las longitudes de camino de todos los nodos del árbol. Es importante por que permite conocer los caminos que tiene el árbol. Puede calcularse por medio de la siguiente fórmula:  
 
-![](/public/assets/images/binary-tree/ab_4.jpg)
+![](/src/assets/images/binary-tree/ab_4.jpg)
 
 donde "i" representa el **nivel del árbol**, "h" su **altura** y "ni" el **número de nodos** en el nivel "i".  
   
@@ -99,7 +99,7 @@ Primero definiremos los conceptos de:
 - Los **nodos especiales** tienen como objetivo reemplazar las ramas vacías o nulas, no pueden tener descendientes y normalmente se representan con la forma de un cuadrado.  
 Se puede definir ahora la **longitud de camino externo** como la suma de las longitudes de camino de todos los nodos especiales del árbol. Se calcula por medio de la siguiente fórmula:
 
-![](/public/assets/images/binary-tree/ab_5.jpg)
+![](/src/assets/images/binary-tree/ab_5.jpg)
 
 en donde "i" representa el **nivel del árbol**, "h" su **altura** y "nei" el **número de nodos especiales** en el nivel "i".  
 
@@ -107,7 +107,7 @@ en donde "i" representa el **nivel del árbol**, "h" su **altura** y "nei" el **
 
 Se define un árbol binario completo como un árbol en el que todos sus nodos, excepto los de último nivel, tienen dos hijos; el subárbol izquierdo y el subárbol derecho.
 
-![](/public/assets/images/binary-tree/ab_6.jpg)
+![](/src/assets/images/binary-tree/ab_6.jpg)
 
 Cabe aclarar que existen algunos autores que definen un árbol binario completo de otra forma; y otros que utilizan el término lleno para referirse a completo.  
 
@@ -121,10 +121,10 @@ La implementación en SEED se realiza por medio de punteros.
   
 Los nodos del árbol binario serán representados como registros, que contendrán como mínimo tres campos. En un campo se almacenará la **información del nodo**. Los dos restantes se utilizarán para apuntar a los subárboles **izquierdo y derecho** respectivamente del subnodo en cuestión.
 
-![](/public/assets/images/binary-tree/ab_7.jpg)
+![](/src/assets/images/binary-tree/ab_7.jpg)
 
 **IZQ**: Campo donde se almacena la dirección del subárbol izquierdo del nodo T.  
 **INFO**: Campo donde se almacena la información de interés del nodo.  
 **DER**: Campo donde se almacena la dirección del subárbol derecho del nodo T.  
 
-![](/public/assets/images/binary-tree/ab_8.jpg)
+![](/src/assets/images/binary-tree/ab_8.jpg)
