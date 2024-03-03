@@ -11,6 +11,8 @@ import HashTable from "./pages/linearStructures/hash-table";
 import Downloads from "./pages/downloads";
 import ScrollToTop from "./utilities/ScrollToTop";
 
+import BinaryTree from "./pages/binary-trees/binaryTree";
+
 export default function App() {
   return (
     <Router>
@@ -29,6 +31,17 @@ export default function App() {
             <Route path="stacks" element={<Stacks />} />
             <Route path="queue" element={<Queue />} />
             <Route path="hash-table" element={<HashTable />} />
+          </Routes>
+        } />
+
+        <Route path="binary-trees/*" element={
+          <Routes>
+            <Route path="binary-tree" element={<BinaryTree />} />
+            {/* <Route path="binary-search-trees" element={<BinarySearchTree />} />
+            <Route path="avl-tree" element={<AVLTree />} />
+            <Route path="red-black-tree" element={<RedBlackTree />} />
+            <Route path="splay-tree" element={<SplayTree />} />
+            <Route path="heap-tree" element={<HeapTree />} /> */}
           </Routes>
         } />
       </Routes>

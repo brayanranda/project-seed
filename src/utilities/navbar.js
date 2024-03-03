@@ -10,18 +10,18 @@ export const items  = [
             { name: 'Tabla hash', href: '/linear-structures/hash-table' },
         ]
     },
-    // {
-    //     name: "Arboles Binarios",
-    //     url: "binary-trees",
-    //     items: [
-    //         { name: 'Árbol Binario', href: '/binary-trees/binary-tree' },
-    //         { name: 'Árbol Binario Busqueda', href: '/binary-trees/binary-search-trees' },
-    //         { name: 'Árbol AVL', href: '/binary-trees/avl-tree' },
-    //         { name: 'Árbol RojiNegro', href: '/binary-trees/red-black-tree' },
-    //         { name: 'Árbol Splay', href: '/binary-trees/splay-tree' },
-    //         { name: 'Árbol Heap', href: '/binary-trees/heap-tree' },
-    //     ]
-    // },
+    {
+        name: "Arboles Binarios",
+        url: "binary-trees",
+        items: [
+            { name: 'Árbol Binario', href: '/binary-trees/binary-tree' },
+            // { name: 'Árbol Binario Busqueda', href: '/binary-trees/binary-search-trees' },
+            // { name: 'Árbol AVL', href: '/binary-trees/avl-tree' },
+            // { name: 'Árbol RojiNegro', href: '/binary-trees/red-black-tree' },
+            // { name: 'Árbol Splay', href: '/binary-trees/splay-tree' },
+            // { name: 'Árbol Heap', href: '/binary-trees/heap-tree' },
+        ]
+    },
     // {
     //     name: "Arboles Enearios",
     //     url: "n-ary-trees",
