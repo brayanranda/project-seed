@@ -20,7 +20,6 @@ export const Footer = () => {
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-y-10">
                         <p className="text-white font-medium">
                             ©2024 Copyright: <Link to="https://madarme.co/" target="_blank" className="underline">madarme.com</Link>
-                            <Link target="_blank" to="https://gitlab.com/estructuras-de-datos/proyecto-seed" className="ml-3 border-l-2 border-white pl-3 hover:underline">Código fuente</Link>
                         </p>
                         <SocialMedia />
                     </div>

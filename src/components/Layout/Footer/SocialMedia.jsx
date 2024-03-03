@@ -16,7 +16,7 @@ export const SocialMedia = () => {
             {
                 items && items.length > 0 &&
                     items.map((item, index) =>
-                        <Link to={item.url} key={index} className="transform hover:scale-110 duration-300 ease-in-out opacity-65 hover:opacity-100">
+                        <Link to={item.url} key={index} target="_blank" className="transform hover:scale-110 duration-300 ease-in-out opacity-65 hover:opacity-100">
                             <li className="text-white flex items-center gap-2 font-medium">
                                 <FontAwesomeIcon icon={icons[item.name]} />
                                 {item.name}
