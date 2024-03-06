@@ -66,14 +66,14 @@ La implementación de la Clase ListaS se ilustra en el siguiente diagrama de cla
   
 **Requerimientos funcionales implementados:**  
 
-- RF1 - Crear una nueva Lista Simple.  
-- RF2 - Insertar datos en la nueva Lista Simple.  
-- RF3 - Eliminar datos en la Lista Simple.  
-- RF4 - Editar datos de la Lista Simple.  
-- RF5 - Consultar datos en la Lista Simple.  
-- RF6 - Conocer el tamaño de la Lista Simple.  
-- RF7 - Crear un Iterador para recorrer la Lista Simple.  
-- RF8 - Conocer los datos de la Lista Simple.  
+- **RF1** - Crear una nueva Lista Simple.  
+- **RF2** - Insertar datos en la nueva Lista Simple.  
+- **RF3** - Eliminar datos en la Lista Simple.  
+- **RF4** - Editar datos de la Lista Simple.  
+- **RF5** - Consultar datos en la Lista Simple.  
+- **RF6** - Conocer el tamaño de la Lista Simple.  
+- **RF7** - Crear un Iterador para recorrer la Lista Simple.  
+- **RF8** - Conocer los datos de la Lista Simple.  
   
 **Implementación de un Simulador para Lista Simple:**  
 El Simulador posee las operaciones indicadas por su menú de opciones:  
@@ -129,13 +129,13 @@ La implementación de la Clase ListaD se ilustra en el siguiente diagrama de cla
 
 **Requerimientos funcionales implementados:**  
   
-- RF1 - Crear una Lista Doble.  
-- RF2 - Insertar datos en la Lista Doble.  
-- RF3 - Eliminar datos en la Lista Doble.  
-- RF4 - Editar datos de la Lista Doble.  
-- RF5 - Consultar datos en la Lista Doble.  
-- RF6 - Conocer el tamaño de la Lista Doble.  
-- RF7 - Imprimir los datos de la Lista Doble.  
+- **RF1** - Crear una Lista Doble.  
+- **RF2** - Insertar datos en la Lista Doble.  
+- **RF3** - Eliminar datos en la Lista Doble.  
+- **RF4** - Editar datos de la Lista Doble.  
+- **RF5** - Consultar datos en la Lista Doble.  
+- **RF6** - Conocer el tamaño de la Lista Doble.  
+- **RF7** - Imprimir los datos de la Lista Doble.  
   
   
 **Implementación de un Simulador para Lista Doble:**  
@@ -203,14 +203,14 @@ Adicionalmente a esto, con la Lista Circular es posible generar un Iterador de L
 
 **Requerimientos funcionales implementados:**  
   
-- RF1 - Crear una nueva Lista Circular.  
-- RF2 - Insertar datos en la nueva Lista Circular.  
-- RF3 - Eliminar datos en la Lista Circular.  
-- RF4 - Editar datos de la Lista Circular.  
-- RF5 - Consultar datos en la Lista Circular.  
-- RF6 - Conocer el tamaño de la Lista Circular.  
-- RF7 - Crear un Iterador para recorrer la Lista Circular.  
-- RF8 - Conocer los datos de la Lista Circular.  
+- **RF1** - Crear una nueva Lista Circular.  
+- **RF2** - Insertar datos en la nueva Lista Circular.  
+- **RF3** - Eliminar datos en la Lista Circular.  
+- **RF4** - Editar datos de la Lista Circular.  
+- **RF5** - Consultar datos en la Lista Circular.  
+- **RF6** - Conocer el tamaño de la Lista Circular.  
+- **RF7** - Crear un Iterador para recorrer la Lista Circular.  
+- **RF8** - Conocer los datos de la Lista Circular.  
   
   
 **Implementación de un Simulador para Lista Circular:**  
@@ -270,13 +270,13 @@ La implementación de la Clase ListaCD se ilustra en el siguiente diagrama de cl
 
 **Requerimientos funcionales implementados:**  
   
-- RF1 - Crear una Lista Circular Doble.  
-- RF2 - Insertar datos en la Lista Circular Doble.  
-- RF3 - Eliminar datos en la Lista Circular Doble.  
-- RF4 - Editar datos de la Lista Circular Doble.  
-- RF5 - Consultar datos en la Lista Circular Doble.  
-- RF6 - Conocer el tamaño de la Lista Circular Doble.  
-- RF7 - Imprimir los datos de la Lista Circular Doble.  
+- **RF1** - Crear una Lista Circular Doble.  
+- **RF2** - Insertar datos en la Lista Circular Doble.  
+- **RF3** - Eliminar datos en la Lista Circular Doble.  
+- **RF4** - Editar datos de la Lista Circular Doble.  
+- **RF5** - Consultar datos en la Lista Circular Doble.  
+- **RF6** - Conocer el tamaño de la Lista Circular Doble.  
+- **RF7** - Imprimir los datos de la Lista Circular Doble.  
   
 **Implementación de un Simulador para Lista Circular Doble:**  
 El Simulador posee las operaciones indicadas por su menú de opciones:  

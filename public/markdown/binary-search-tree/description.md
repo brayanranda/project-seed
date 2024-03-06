@@ -7,12 +7,14 @@ Un árbol binario de búsqueda (ABB) es un árbol binario con la propiedad de qu
 ![partes del arbol binario de busqueda](/assets/images/bynary-search-tree/abb_2.jpg) ![ejemplo de Arbol binario de búsqueda](/assets/images/bynary-search-tree/abb_1.jpg)
 
 Para cada nodo de un árbol binario de búsqueda debe cumplirse la propiedad:  
-Las claves de los nodos del subárbol izquierdo deben ser menores que la clave de la raíz.  
-Las claves de los nodos del subárbol derecho deben ser mayores que la clave de la raíz
+
+- Las claves de los nodos del subárbol izquierdo deben ser menores que la clave de la raíz.  
+- Las claves de los nodos del subárbol derecho deben ser mayores que la clave de la raíz
 
 ![](/assets/images/bynary-search-tree/abb_5.jpg)
 
 Esta definición no acepta elementos con claves duplicadas.  
+
 Se indican en el diagrama de la figura anterior, el descendiente del subárbol izquierdo con mayor clave y el descendiente del subárbol derecho con menor valor de clave; los cuales son el antecesor y sucesor de la raíz.  
   
 El siguiente árbol no es binario de búsqueda, ya que el nodo con clave 2, ubicado en el subárbol derecho de la raíz, tiene clave menor que ésta.  

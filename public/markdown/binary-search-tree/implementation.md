@@ -12,18 +12,18 @@ Los método básicos insertar se implementaron de nuevo teniendo en cuenta la pr
 
 **Requerimientos funcionales implementados:**  
   
-- RF1 Crear un nuevo Árbol Binario de Búsqueda.  
-- RF2 Conocer y editar la raíz del Árbol Binario de Búsqueda.  
-- RF3 Insertar nuevos datos en un Árbol Binario de Búsqueda.  
-- RF4 Eliminar datos de un Árbol Binario de Búsqueda.  
-- RF5 Consultar la existencia de objetos dentro del Árbol Binario de Búsqueda.  
-- RF6 Editar objetos existentes dentro del Árbol Binario de Búsqueda. RF9 Consultar si un Nodo es o no una hoja del Árbol Binario de Búsqueda.
-- RF10 Recorrer un Árbol Binario de Búsqueda en Preorden, en Inorden y en PostOrden.  
-- RF11 Recorrer un Árbol Binario de Búsqueda por niveles.  
-- RF12 Conocer el peso de un Árbol Binario de Búsqueda.  
-- RF13 Consultar la altura de un Árbol Binario de Búsqueda.
-- RF14 Podar un Árbol Binario de Búsqueda. (Eliminar sus Nodos Hoja).  
-- RF15 Conocer por consola los datos presentes en el Árbol.  
+- **RF1** Crear un nuevo Árbol Binario de Búsqueda.  
+- **RF2** Conocer y editar la raíz del Árbol Binario de Búsqueda.  
+- **RF3** Insertar nuevos datos en un Árbol Binario de Búsqueda.  
+- **RF4** Eliminar datos de un Árbol Binario de Búsqueda.  
+- **RF5** Consultar la existencia de objetos dentro del Árbol Binario de Búsqueda.  
+- **RF6** Editar objetos existentes dentro del Árbol Binario de Búsqueda. RF9 Consultar si un Nodo es o no una hoja del Árbol Binario de Búsqueda.
+- **RF10** Recorrer un Árbol Binario de Búsqueda en Preorden, en Inorden y en PostOrden.  
+- **RF11** Recorrer un Árbol Binario de Búsqueda por niveles.  
+- **RF12** Conocer el peso de un Árbol Binario de Búsqueda.  
+- **RF13** Consultar la altura de un Árbol Binario de Búsqueda.
+- **RF14** Podar un Árbol Binario de Búsqueda. (Eliminar sus Nodos Hoja).  
+- **RF15** Conocer por consola los datos presentes en el Árbol.  
   
   
 ## Implementación de un Simulador para Árbol Binario de Búsqueda

@@ -10,19 +10,19 @@ La implementación de la estructura Árbol Binario General se encuentra en la cl
 
   
 ## Requerimientos funcionales implementados para Arbol Binario General:
-- RF1 - Crear un nuevo Árbol Binario.  
-- RF2 - Conocer y editar la raíz del Árbol Binario.  
-- RF3 - Insertar nuevos datos en un Árbol Binario.  
-- RF4 - Eliminar datos de un Árbol Binario.  
-- RF5 - Consultar la existencia de objetos dentro del Árbol Binario.  
-- RF6 - Editar objetos existentes dentro del Árbol Binario.  
-- RF9 - Consultar si un Nodo es o no una hoja del Árbol Binario.  
-- RF10 - Recorrer un Árbol Binario en Preorde, en Inorden y en PostOrden.  
-- RF11 - Recorrer un Árbol Binario por niveles.  
-- RF12 - Conocer el peso de un Árbol Binario.  
-- RF13 - Consultar la altura de un Árbol Binario.  
-- RF14 - Podar un Árbol Binario. (Eliminar sus Nodos Hoja).  
-- RF15 - Conocer por consola los datos presentes en el Árbol.  
+- **RF1** - Crear un nuevo Árbol Binario.  
+- **RF2** - Conocer y editar la raíz del Árbol Binario.  
+- **RF3** - Insertar nuevos datos en un Árbol Binario.  
+- **RF4** - Eliminar datos de un Árbol Binario.  
+- **RF5** - Consultar la existencia de objetos dentro del Árbol Binario.  
+- **RF6** - Editar objetos existentes dentro del Árbol Binario.  
+- **RF9** - Consultar si un Nodo es o no una hoja del Árbol Binario.  
+- **RF10** - Recorrer un Árbol Binario en Preorde, en Inorden y en PostOrden.  
+- **RF11** - Recorrer un Árbol Binario por niveles.  
+- **RF12** - Conocer el peso de un Árbol Binario.  
+- **RF13** - Consultar la altura de un Árbol Binario.  
+- **RF14** - Podar un Árbol Binario. (Eliminar sus Nodos Hoja).  
+- **RF15** - Conocer por consola los datos presentes en el Árbol.  
   
 **Implementación de un Simulador para Arbol Binario General:**  
 El Simulador para ArbolBinario posee las operaciones indicadas por su menú de opciones dentro del mismo:  

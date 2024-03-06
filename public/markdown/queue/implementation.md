@@ -10,12 +10,12 @@ La estructura Cola implementada, es un conjunto de nodos entrelazados entre sí,
 
 **Requerimientos funcionales implementados:**  
   
-- RF1 - Crear una Cola.  
-- RF2 - enColar datos en la Cola.  
-- RF3 - deColar datos de la Cola.  
-- RF4 - Consultar datos en la Cola.  
-- RF5 - Conocer el tamaño de la Cola.  
-- RF6 - Conocer los datos existentes en la Cola.  
+- **RF1** - Crear una Cola.  
+- **RF2** - enColar datos en la Cola.  
+- **RF3** - deColar datos de la Cola.  
+- **RF4** - Consultar datos en la Cola.  
+- **RF5** - Conocer el tamaño de la Cola.  
+- **RF6** - Conocer los datos existentes en la Cola.  
   
 **Implementación de un Simulador para Pila:**  
 El Simulador posee las operaciones indicadas por su menú de opciones:  

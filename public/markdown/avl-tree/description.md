@@ -27,19 +27,23 @@ Si alguno de los pesos de los nodos se modifica en un valor no válido (2 o -2) 
 
 - Insertar  
 - Balancear  
-    - Caso 1 Rotación simple izquierda RSI  
-    - Caso 2 Rotación simple derecha RSD  
-    - Caso 3 Rotación doble izquierda RDI  
-    - Caso 4 Rotación doble derecha RDD  
+    - **Caso 1** Rotación simple izquierda RSI  
+    - **Caso 2** Rotación simple derecha RSD  
+    - **Caso 3** Rotación doble izquierda RDI  
+    - **Caso 4** Rotación doble derecha RDD  
 - Eliminar  
 - Calcular Altura  
 
 ## Insertar un Dato
 
 Usamos la misma técnica para insertar un nodo en un ABB ordenado.  
+
 Trazamos una ruta desde el nodo raiz hasta un nodo hoja (donde hacemos la inserción).  
+
 Insertamos el nodo nuevo.  
+
 Volvemos a trazar la ruta de regreso al nodo raíz, ajustando el equilibrio a lo largo de ella.  
+
 Si el equilibrio de un nodo llega a ser + - 2, volvemos a ajustar los subárboles de los nodos para que su equilibrio se mantenga acorde con los lineamientos AVL (que son +- 1).  
 
 ## Balancear el Árbol
