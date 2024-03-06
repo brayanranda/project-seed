@@ -12,10 +12,10 @@ La implementación de la Clase ColaP ilustrara en el siguiente diagrama de clase
   
 # Requerimientos funcionales implementados:
   
-- RF1 - Crear una nueva Cola de Prioridad.  
-- RF2 - Encolar datos en la nueva estructura.  
-- RF3 - Decolar datos de la Cola.  
-- RF4 - Consultar el dato que se encuentra en el inicio de la Cola.  
-- RF5 - Consultar el dato que se encuentra en el final de la Cola.  
-- RF6 - Conocer el tamaño de la Cola.  
-- RF7 - Conocer los datos existentes en la Cola.  
+- **RF1** - Crear una nueva Cola de Prioridad.  
+- **RF2** - Encolar datos en la nueva estructura.  
+- **RF3** - Decolar datos de la Cola.  
+- **RF4** - Consultar el dato que se encuentra en el inicio de la Cola.  
+- **RF5** - Consultar el dato que se encuentra en el final de la Cola.  
+- **RF6** - Conocer el tamaño de la Cola.  
+- **RF7** - Conocer los datos existentes en la Cola.  

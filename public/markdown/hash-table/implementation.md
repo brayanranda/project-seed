@@ -13,10 +13,10 @@ La función hash utilizada para la distribución de índices, consiste en la ra�
   
 **Requerimientos funcionales implementados:**  
   
-- RF1 Crear un nueva Tabla Hash.  
-- RF2 Insertar nuevos datos en una Tabla hash.  
-- RF3 Modificar el Objeto asociado con determinada clave.  
-- RF4 Eliminar datos de una Tabla Hash.  
-- RF5 Consultar la existencia de objetos dentro de la Tabla Hash.  
-- RF6 Consultar el numero de elementos almacenados de una Tabla Hash.  
-- RF7 Conocer y editar el factor de cargar de una Tabla Hash.  
+- **RF1** Crear un nueva Tabla Hash.  
+- **RF2** Insertar nuevos datos en una Tabla hash.  
+- **RF3** Modificar el Objeto asociado con determinada clave.  
+- **RF4** Eliminar datos de una Tabla Hash.  
+- **RF5** Consultar la existencia de objetos dentro de la Tabla Hash.  
+- **RF6** Consultar el numero de elementos almacenados de una Tabla Hash.  
+- **RF7** Conocer y editar el factor de cargar de una Tabla Hash.  

@@ -12,12 +12,12 @@ La implementación de la Clase Pila se ilustra en el siguiente diagrama de clase
 
 **Requerimientos funcionales implementados:**  
   
-- RF1 - Crear una nueva Pila.  
-- RF2 - Apilar datos en la nueva estructura.  
-- RF3 - Desapilar datos de la Pila.  
-- RF4 - Consultar el dato que se encuentra en el tope de la Pila.  
-- RF5 - Conocer el tamaño de la Pila.  
-- RF6 - Conocer los datos existentes en la Pila.  
+- **RF1** - Crear una nueva Pila.  
+- **RF2** - Apilar datos en la nueva estructura.  
+- **RF3** - Desapilar datos de la Pila.  
+- **RF4** - Consultar el dato que se encuentra en el tope de la Pila.  
+- **RF5** - Conocer el tamaño de la Pila.  
+- **RF6** - Conocer los datos existentes en la Pila.  
   
 **Implementación de un Simulador para Pila:**  
 El Simulador posee las operaciones indicadas por su menú de opciones:  
