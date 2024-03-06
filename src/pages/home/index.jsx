@@ -11,22 +11,22 @@ export default function Home() {
             icon: faBook,
             url: "/about",
             title: "Documentación",
-            style: "cursor-pointer transform hover:scale-105 duration-300 bg-cyan-400 rounded-full py-2 px-4 text-white flex items-center w-fit",
-            iconClass: "border-white border-2 text-md rounded-full w-5 h-5 p-2"
+            style: "bg-cyan-400 text-white",
+            iconClass: "border-white"
         },
         {
             icon: faCode,
             url: "https://gitlab.com/estructuras-de-datos/proyecto-seed",
             title: "Código fuente",
-            style: "cursor-pointer transform hover:scale-105 duration-300 bg-white rounded-full py-2 px-4 text-black flex items-center w-fit",
-            iconClass: "border-black border-2 text-md rounded-full w-5 h-5 p-2"
+            style: "bg-white text-black",
+            iconClass: "border-black"
         },
         {
             icon: faBrain,
             url: "https://repositorio.ufps.edu.co/bitstream/handle/ufps/485/SEED.%20A%20software%20tool%20and%20an%20active-learning%20strategy%20for%20data%20structures%20courses.pdf?sequence=1",
             title: "Learning",
-            style: "cursor-pointer transform hover:scale-105 duration-300 bg-white rounded-full py-2 px-4 text-black flex items-center w-fit",
-            iconClass: "border-black border-2 text-md rounded-full w-5 h-5 p-2"
+            style: "bg-white text-black",
+            iconClass: "border-black"
         },
     ]
     return(
@@ -44,11 +44,11 @@ export default function Home() {
                                     <Link
                                         key={index}
                                         to={item.url}
-                                        className={item.style}
+                                        className={`cursor-pointer transform hover:scale-105 duration-300 rounded-full py-2 px-4 flex items-center w-fit ${item.style}`}
                                         target={index === 0 ? "_self" : "_blank"}
                                     >
                                         <p className="text-lg font-medium pr-2">{item.title}</p>
-                                        <FontAwesomeIcon icon={item.icon} className={item.iconClass} />
+                                        <FontAwesomeIcon icon={item.icon} className={`${item.iconClass} border-2 text-md rounded-full w-5 h-5 p-2`} />
                                     </Link>
                                 )
                         }
