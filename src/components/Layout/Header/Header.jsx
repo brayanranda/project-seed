@@ -1,6 +1,6 @@
 import { Fragment, useState, useRef, useEffect } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import { faArrowRight, faBars, faChevronDown, faDownload, faHome, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faBars, faChevronDown, faDownload, faBook, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { items } from '@/utilities/navbar'
 import { Link } from 'react-router-dom'
@@ -34,7 +34,7 @@ export const Header = () => {
                     </button>
                 </div>
                 <div className='hidden 2xl:flex items-center space-x-6'>
-                    <Link to="/about"><FontAwesomeIcon className='text-white' icon={faHome} /></Link>
+                    <Link to="/about"><FontAwesomeIcon className='text-white' icon={faBook} /></Link>
                     <Popover.Group className="flex lg:gap-x-5 xl:gap-x-12">
                         {
                             items && items.length > 0 &&

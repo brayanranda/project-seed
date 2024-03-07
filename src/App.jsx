@@ -14,6 +14,8 @@ import ScrollToTop from "./utilities/ScrollToTop";
 import BinaryTree from "./pages/binary-trees/binaryTree";
 import BinarySearchTree from "./pages/binary-trees/binary-search-trees";
 import AVLTree from "./pages/binary-trees/avl-tree";
+import RedBlackTree from "./pages/binary-trees/red-black-tree";
+import SplayTree from "./pages/binary-trees/splay-tree";
 
 export default function App() {
   return (
@@ -41,9 +43,9 @@ export default function App() {
             <Route path="binary-tree" element={<BinaryTree />} />
             <Route path="binary-search-trees" element={<BinarySearchTree />} />
             <Route path="avl-tree" element={<AVLTree />} />
-            {/* <Route path="red-black-tree" element={<RedBlackTree />} />
+            <Route path="red-black-tree" element={<RedBlackTree />} />
             <Route path="splay-tree" element={<SplayTree />} />
-            <Route path="heap-tree" element={<HeapTree />} /> */}
+            {/* <Route path="heap-tree" element={<HeapTree />} /> */}
           </Routes>
         } />
       </Routes>
