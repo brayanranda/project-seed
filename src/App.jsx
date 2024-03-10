@@ -16,6 +16,9 @@ import BinarySearchTree from "./pages/binary-trees/binary-search-trees";
 import AVLTree from "./pages/binary-trees/avl-tree";
 import RedBlackTree from "./pages/binary-trees/red-black-tree";
 import SplayTree from "./pages/binary-trees/splay-tree";
+import HeapTree from "./pages/binary-trees/heap-tree";
+import NAryTree from "./pages/n-ary-trees/n-ary-tree";
+import OneTwoThreeTree from "./pages/n-ary-trees/1-2-3-tree";
 
 export default function App() {
   return (
@@ -45,7 +48,16 @@ export default function App() {
             <Route path="avl-tree" element={<AVLTree />} />
             <Route path="red-black-tree" element={<RedBlackTree />} />
             <Route path="splay-tree" element={<SplayTree />} />
-            {/* <Route path="heap-tree" element={<HeapTree />} /> */}
+            <Route path="heap-tree" element={<HeapTree />} />
+          </Routes>
+        } />
+
+        <Route path="n-ary-trees/*" element={
+          <Routes>
+            <Route path="n-ary-tree" element={<NAryTree />} />
+            <Route path="1-2-3-tree" element={<OneTwoThreeTree />} />
+            {/* <Route path="b-tree" element={<BTree />} />
+            <Route path="b-plus-tree" element={<BPlusTree />} /> */}
           </Routes>
         } />
       </Routes>
