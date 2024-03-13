@@ -19,6 +19,8 @@ import SplayTree from "./pages/binary-trees/splay-tree";
 import HeapTree from "./pages/binary-trees/heap-tree";
 import NAryTree from "./pages/n-ary-trees/n-ary-tree";
 import OneTwoThreeTree from "./pages/n-ary-trees/1-2-3-tree";
+import BTree from "./pages/n-ary-trees/b-tree";
+import BPlusTree from "./pages/n-ary-trees/b-plus-tree";
 
 export default function App() {
   return (
@@ -56,8 +58,8 @@ export default function App() {
           <Routes>
             <Route path="n-ary-tree" element={<NAryTree />} />
             <Route path="1-2-3-tree" element={<OneTwoThreeTree />} />
-            {/* <Route path="b-tree" element={<BTree />} />
-            <Route path="b-plus-tree" element={<BPlusTree />} /> */}
+            <Route path="b-tree" element={<BTree />} />
+            <Route path="b-plus-tree" element={<BPlusTree />} />
           </Routes>
         } />
       </Routes>
