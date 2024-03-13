@@ -28,8 +28,8 @@ export const items  = [
         items: [
             { name: 'Árbol Eneario', href: '/n-ary-trees/n-ary-tree' },
             { name: 'Árbol 1-2-3', href: '/n-ary-trees/1-2-3-tree' },
-            // { name: 'Árbol B', href: '/n-ary-trees/b-tree' },
-            // { name: 'Árbol B +', href: '/n-ary-trees/b-plus-tree' },
+            { name: 'Árbol B', href: '/n-ary-trees/b-tree' },
+            { name: 'Árbol B +', href: '/n-ary-trees/b-plus-tree' },
         ]
     },
     // {
