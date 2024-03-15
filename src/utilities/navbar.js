@@ -32,11 +32,11 @@ export const items  = [
             { name: 'Árbol B +', href: '/n-ary-trees/b-plus-tree' },
         ]
     },
-    // {
-    //     name: "Teoria de Grafos",
-    //     url: "graphic-schema-theory",
-    //     items: [
-    //         { name: 'Grafos', href: '/graphic-schema-theory/graph' },
-    //     ]
-    // }
+    {
+        name: "Teoria de Grafos",
+        url: "graphic-schema-theory",
+        items: [
+            { name: 'Grafos', href: '/graphic-schema-theory/graph' },
+        ]
+    }
 ]

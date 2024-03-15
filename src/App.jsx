@@ -21,6 +21,7 @@ import NAryTree from "./pages/n-ary-trees/n-ary-tree";
 import OneTwoThreeTree from "./pages/n-ary-trees/1-2-3-tree";
 import BTree from "./pages/n-ary-trees/b-tree";
 import BPlusTree from "./pages/n-ary-trees/b-plus-tree";
+import Graph from "./pages/graphic-schema-theory/graph";
 
 export default function App() {
   return (
@@ -62,6 +63,8 @@ export default function App() {
             <Route path="b-plus-tree" element={<BPlusTree />} />
           </Routes>
         } />
+        <Route path="/graphic-schema-theory/graph" element={<Graph />} /> 
+
       </Routes>
       <Footer />
     </Router>
