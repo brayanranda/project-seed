@@ -13,21 +13,25 @@ export default function DevelopmentTeam() {
         {
             name: "Marco Adarme",
             email: "madarme@gmail.com",
+            url: "https://madarme.co/",
             img: MarcoA,
         },
         {
             name: "Wilfred Garcia",
             email: "",
+            url: "",
             img: "",
         },
         {
             name: "Cindy Pabón",
             email: "",
+            url: "",
             img: "",
         },
         {
             name: "Brayan Peñaranda",
             email: "brpenaranda@gmail.com",
+            url: "https://brayanranda.com",
             img: "",
         }
     ]
@@ -51,7 +55,7 @@ export default function DevelopmentTeam() {
                                 <li key={index}>
                                     <a
                                         target="_blank"
-                                        href={`mailto:${item.email}`}
+                                        href={item.url}
                                         className="cursor-pointer flex items-center justify-between hover:bg-gray-100 p-2 rounded-lg"
                                     >
                                         {item.name}

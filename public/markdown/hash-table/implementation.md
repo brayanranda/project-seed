@@ -1,4 +1,4 @@
-# Implementación de Tabla Hash en SEED
+# Tabla Hash en SEED {"subTitle":"Implementación de"}
 
 ## Descripción
 
