@@ -1,0 +1,2 @@
+# Consultar {"subTitle":"Operación","color":"text-black"}
+Se indica el dato que se desea consultar de la estructura, esta recorre la cantidad de datos almacenados hasta encontrar el dato que se está consultando, teniendo en cuenta que el dato se encuentre almacenado en la Secuencia.  
