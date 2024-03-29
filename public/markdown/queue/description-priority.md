@@ -1,4 +1,4 @@
-# Prioridad {"subTitle":"Cola de"}
+# Cola de Prioridad {"subTitle":"Estructuras Lineales"}
 
 Las colas de prioridad es una extensión de la estructura de datos Cola. Se basan en el orden de salida de sus elementos: en el orden de llegada y orden de prioridad; asi un elemento que ingresa a la cola se posicionará al final del segmento de elementos de su misma prioridad. Las colas de prioridad permiten alterar el orden de salida de los elementos de una cola:  
 
