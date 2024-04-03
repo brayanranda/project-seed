@@ -1,4 +1,4 @@
-# Cola con prioridad en SEED {"subTitle":"Implementación de"}
+# Cola de Prioridad en SEED {"subTitle":"Implementación de"}
 
 ## Descripción
 
