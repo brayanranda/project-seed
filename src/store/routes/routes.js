@@ -1,14 +1,14 @@
 const SEED = {
     ESTRUCTURAS_LINEALES: {
-        SECUENCIAS: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/secuencias.md",
-        LISTAS_SIMPLES: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/listas_simples.md",
-        LISTAS_DOBLES: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/listas_dobles.md",
-        LISTA_CIRCULARES_SIMPLES: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/listas_circulares.md",
-        LISTA_CIRCULARES_DOBLES: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/listas_circulares_dobles.md",
-        PILAS: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/pilas.md",
-        COLAS: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/colas.md",
-        COLAS_PRIORITARIAS: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/colas_p.md",
-        HASH: "https://gitlab.com/Yoner_Silva/analisis-de-algoritmos-seed/-/raw/main/ESTRUCTURAS_LINEALES/hash.md"
+        SECUENCIAS: "/analisis/ESTRUCTURAS_LINEALES/secuencias.md",
+        LISTAS_SIMPLES: "/analisis/ESTRUCTURAS_LINEALES/listas_simples.md",
+        LISTAS_DOBLES: "/analisis/ESTRUCTURAS_LINEALES/listas_dobles.md",
+        LISTA_CIRCULARES_SIMPLES: "/analisis/ESTRUCTURAS_LINEALES/listas_circulares.md",
+        LISTA_CIRCULARES_DOBLES: "/analisis/ESTRUCTURAS_LINEALES/listas_circulares_dobles.md",
+        PILAS: "/analisis/ESTRUCTURAS_LINEALES/pilas.md",
+        COLAS: "/analisis/ESTRUCTURAS_LINEALES/colas.md",
+        COLAS_PRIORITARIAS: "/analisis/ESTRUCTURAS_LINEALES/colas_p.md",
+        HASH: "/analisis/ESTRUCTURAS_LINEALES/hash.md"
     },
     ARBOLES_BINARIOS: {
         ARBOL_BINARIO: "",
