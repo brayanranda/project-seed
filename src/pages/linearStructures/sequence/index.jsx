@@ -4,6 +4,8 @@ import TitleMd from "@/components/ui/TitleMd";
 import TabsComponentMd from "@/components/ui/TabsComponentMd";
 import { faPlus, faEdit, faMagnifyingGlass, faTrash } from "@fortawesome/free-solid-svg-icons";
 import CodeRunner from "@/components/ui/codeRunner";
+import Analisis from "@/components/ui/Analisis";
+import { getAnalisis_SEC } from "@/store/services/servicios";
 
 export default function Sequence() {
     const tabs = [
@@ -57,7 +59,7 @@ export default function Sequence() {
                     <TabsComponentMd data={tabs} />
                 </article>
             </section>
-            <Section url="/markdown/sequence/implementation.md" first={true} last={true} />
+            <Section url="/markdown/sequence/implementation.md" first={true} last={false} />
             <CodeRunner data={[
                 {
                     name: "Insertar",
@@ -70,6 +72,15 @@ export default function Sequence() {
                     icon: faEdit,
                 },
             ]} />
+            <Analisis 
+                id={0} 
+                servicio_markdown={getAnalisis_SEC} 
+                title="Secuencia en SEED" 
+                sub_title="Costo Operacional y Complejidad de" 
+                first={true} 
+                last={true} 
+                startLeft={true} 
+            />
             <Download data={downloads} />
         </main>
     );
