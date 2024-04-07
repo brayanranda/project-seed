@@ -2,11 +2,21 @@
 
 [CODIGO FUENTE (PILAS)](https://gitlab.com/estructuras-de-datos/proyecto-seed/-/blob/master/src/ufps/util/colecciones_seed/Pila.java)
 
-Los análisis que se harán a continuación son para el peor de los casos Big(O).
+Los análisis que se harán a continuación son para el peor de los casos Big(O) con la siguiente nomenclatura.
+
+KTE -> Constante
+
+n -> Tamaño de la estructura
+
+Número -> Número de operaciones elementales
+
+Cada instrucción se revisa línea a línea
+
+Métodos de la misma clase que son llamados en otros métodos, tienen su hipervínculo.
 
 ***
 
-## __Constructor__
+## __1. Constructor (Pila)__
 
 ```java
 /**
@@ -33,7 +43,7 @@ public Pila() {
 
 ***
 
-## __Insertar Elemento__
+## __2. Insertar Elemento (apilar)__
 
 ```java
 /**
@@ -42,9 +52,8 @@ public Pila() {
  * @param info es de tipo T y contiene la información a insertar en la pila.
  */
 public void apilar(T info) {
-     //T(esVacia) = 4 y 1 de la validacion
               5
-     if (this.esVacia())
+     if (`7¬this.esVacia()`)
           this.tope = new Nodo < T > (info, null);
      else
                     1       1      
@@ -66,7 +75,7 @@ public void apilar(T info) {
 
 ***
 
-## __Eliminar Elemento__
+## __3. Eliminar Elemento (desapilar)__
 
 ```java
 /**
@@ -75,9 +84,8 @@ public void apilar(T info) {
  * @return un tipo T y contiene la información retirada de la pila.<br>
  */
 public T desapilar() {
-     //T(esVacia) = 4 y 1 de la validacion
               5
-     if (this.esVacia())
+     if (`7¬this.esVacia()`)
      //Mejor de los casos
           return (null);
      //Peor de los casos
@@ -108,7 +116,7 @@ public T desapilar() {
 
 ***
 
-## __Eliminar Todos los Elementos__
+## __4. Eliminar Todos los Elementos (vaciar)__
 
 ```java
 /**
@@ -136,7 +144,7 @@ public void vaciar() {
 ***
 
 
-## __Obtener Elemento Tope__
+## __5. Obtener Elemento Tope (getTope)__
 
 ```java
 /**
@@ -162,7 +170,7 @@ public T getTope() {
 
 ***
 
-## __Obtener Cantidad de Elementos__
+## __6. Obtener Cantidad de Elementos (getTamanio)__
 
 ```java
 /**
@@ -186,7 +194,7 @@ public int getTamanio() {
 
 ***
 
-## __Consultar Existencia de Elementos__
+## __7. Consultar Existencia de Elementos (esVacia)__
 
 ```java
 /**
@@ -212,7 +220,7 @@ public boolean esVacia() {
 
 ***
 
-## __Imprimir Contenido__
+## __8. Imprimir Contenido (toString)__
 
 ```java
 /**
@@ -242,11 +250,11 @@ public String toString() {
 
 * ### __Costo Operacional__
 
-     $T({n}) = 1 + 1 + 1 + 1 + 1 + n( 2 + 1 + 1 + 1 + 1 + 1 ) + 1$
+     $T({n}) = 1 + 1 + 1 + 1 + 1 + n( 2 + 1 + 1 + 1 + 1 + 1 ) + 1 + 1$
 
-     $T({n}) = 5 + n( 7 ) + 1$
+     $T({n}) = 5 + n( 7 ) + 2$
 
-     $T({n}) = 7(n) + 6$
+     $T({n}) = 7(n) + 7$
 
 * ### __Complejidad (Notación Asintótica)__
 

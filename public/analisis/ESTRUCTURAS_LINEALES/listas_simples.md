@@ -2,11 +2,23 @@
 
 [CODIGO FUENTE (LISTAS SIMPLES)](https://gitlab.com/estructuras-de-datos/proyecto-seed/-/blob/master/src/ufps/util/colecciones_seed/ListaS.java)
 
-Los análisis que se harán a continuación son para el peor de los casos Big(O).
+Los análisis que se harán a continuación son para el peor de los casos Big(O) con la siguiente nomenclatura.
+
+KTE -> Constante
+
+n -> Tamaño de la estructura
+
+Número -> Número de operaciones elementales
+
+Cada instrucción se revisa línea a línea
+
+Métodos de la misma clase que son llamados en otros métodos, tienen su hipervínculo.
+
+Cuando se valida el valor de un metodo con retorno booleano, se suma la validacion + el costo del metodo
 
 ***
 
-## __Constructor__
+## __1. Constructor (ListaS)__
 
 ```java
 /**
@@ -33,7 +45,7 @@ public ListaS() {
 
 ***
 
-## __Insertar Elemento al Inicio__
+## __2. Insertar Elemento al Inicio (insertarAlInicio)__
 
 ```java
 /**
@@ -61,7 +73,7 @@ public void insertarAlInicio(T x) {
 
 ***
 
-## __Insertar Elemento al Final__
+## __3. Insertar Elemento al Final (insertarAlFinal)__
 
 ```java
 /**
@@ -77,7 +89,7 @@ public void insertarAlFinal(T x) {
     else {
         try {
                    1       1      (5(n) + 11)         1
-            Nodo < T > ult = this.getPos(this.tamanio - 1);
+            Nodo < T > ult = `15¬this.getPos(this.tamanio - 1)`;
                     1
             if (ult == null)
                 return;
@@ -107,7 +119,7 @@ public void insertarAlFinal(T x) {
 
 ***
 
-## __Insertar Elemento Ordenado a la Cabeza__
+## __4. Insertar Elemento Ordenado a la Cabeza (insertarOrdenado)__
 
 ```java
 /**
@@ -116,9 +128,8 @@ public void insertarAlFinal(T x) {
  * @param info Información que desea almacenar en la Lista de manera Ordenada.
  */
 public void insertarOrdenado(T info) {
-        //T(esVacia) = 2 y validacion si es true = 1
-               3
-    if (this.esVacia())
+               3 
+    if (`10¬this.esVacia()`)
         //Mejor de los casos
         this.insertarAlInicio(info);
     else {
@@ -162,11 +173,11 @@ public void insertarOrdenado(T info) {
 
 * ### __Costo Operacional__
 
-    $T({n}) = 3 + 1 + 1 + 1 + 1 + 1 + n(1 + 1 + KTE + 1 + 1 + KTE + 1 + 1 + 1 + 1 + 1 + 1) + 1 + 1 + 1 + 1 + 2$
+    $T({n}) = 3 + 1 + 1 + 1 + 1 + 1 + n(1 + 1 + KTE + 1 + 1 + KTE + 1 + 1 + 1 + 1 + 1 + 1) + 1 + 1 + 1 + 1 + 1 + 2$
 
-    $T({n}) = 8 + n(2 + KTE + 2 + KTE + 6) + 6$
+    $T({n}) = 8 + n(2 + KTE + 2 + KTE + 6) + 7$
 
-    $T({n}) = KTE(n) + 14$
+    $T({n}) = KTE(n) + 15$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -174,7 +185,7 @@ public void insertarOrdenado(T info) {
 
 ***
 
-## __Eliminar Elemento segun la Posicion__
+## __5. Eliminar Elemento segun la Posicion (eliminar)__
 
 ```java
 /**
@@ -184,9 +195,8 @@ public void insertarOrdenado(T info) {
  * @return El elemento que elimino. Si la posición no es válida retorna NULL.
  */
 public T eliminar(int i) {
-        //T(esVacia) = 2 y validacion si es true = 1
                3
-    if (this.esVacia())
+    if (`10¬this.esVacia()`)
         //Mejor de los casos
         return null;
     //Peor de los casos
@@ -199,9 +209,8 @@ public T eliminar(int i) {
     else {
         //Peor de los casos
         try {
-                           //T(getPos) = 5(n) + 11
-                   1     1 (5(n) + 11) + 1
-            Nodo < T > y = this.getPos(i - 1);
+                   1     1    (5(n) + 11)     1
+            Nodo < T > y = `15¬this.getPos(i - 1)`;
               1     1
             t = y.getSig();
                 1        1
@@ -235,7 +244,7 @@ public T eliminar(int i) {
 
 ***
 
-## __Eliminar Todos los Elementos__
+## __6. Eliminar Todos los Elementos (vaciar)__
 
 ```java
 /**
@@ -262,7 +271,7 @@ public void vaciar() {
 
 ***
 
-## __Obtener Elemento segun la Posicion__
+## __7. Obtener Elemento segun la Posicion (get)__
 
 ```java
 /**
@@ -276,9 +285,8 @@ public void vaciar() {
 public T get(int i) {
     try {
         //Peor de los casos
-                       //T(getPos) = 5(n) + 11
-               1     1      5(n) + 11 
-        Nodo < T > t = this.getPos(n);
+               1     1      (5n + 11) 
+        Nodo < T > t = `15¬this.getPos(n)`;
             1       1
         return (t.getInfo());
     } catch (ExceptionUFPS e) {
@@ -291,11 +299,11 @@ public T get(int i) {
 
 * ### __Costo Operacional__
 
-    $T({n}) = 1 + 1 + (5(n) + 11) + 1 + 1$
+    $T({n}) = 1 + 1 + (5n + 11) + 1 + 1$
 
-    $T({n}) = 2 + 5(n) + 13$
+    $T({n}) = 2 + 5n + 13$
 
-    $T({n}) = 5(n) + 15$
+    $T({n}) = 5n + 15$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -303,7 +311,7 @@ public T get(int i) {
 
 ***
 
-## __Modificar Elemento segun la Posición__
+## __8. Modificar Elemento segun la Posición (set)__
 
 ```java
 /**
@@ -315,9 +323,8 @@ public T get(int i) {
 public void set(int i, T dato) {
     try {
         //Peor de los casos
-                       //T(getPos) = 5(n) + 11
-               1     1      5(n) + 11
-        Nodo < T > t = this.getPos(i);
+               1     1      (5n + 11)
+        Nodo < T > t = `15¬this.getPos(i)`;
             1
         t.setInfo(dato);
     } catch (ExceptionUFPS e) {
@@ -329,11 +336,11 @@ public void set(int i, T dato) {
 
 * ### __Costo Operacional__
 
-    $T({n}) = 1 + 1 + (5(n) + 11) + 1$
+    $T({n}) = 1 + 1 + (5n + 11) + 1$
 
-    $T({n}) = 2 + 5(n) + 12$
+    $T({n}) = 2 + 5n + 12$
 
-    $T({n}) = 5(n) + 14$
+    $T({n}) = 5n + 14$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -341,7 +348,7 @@ public void set(int i, T dato) {
 
 ***
 
-## __Obtener Cantidad de Elementos__
+## __9. Obtener Cantidad de Elementos (getTamanio)__
 
 ```java
 /**
@@ -365,7 +372,7 @@ public int getTamanio() {
 
 ***
 
-## __Consultar Existencia de Elementos__
+## __10. Consultar Existencia de Elementos (esVacia)__
 
 ```java
 /**
@@ -391,7 +398,7 @@ public boolean esVacia() {
 
 ***
 
-## __Consultar Existencia de un Elemento__
+## __11. Consultar Existencia de un Elemento (esta)__
 
 ```java
 /**
@@ -401,19 +408,18 @@ public boolean esVacia() {
  * @return un boolean, si es true encontro el dato en la lista y si es false no lo encontro.
  */
 public boolean esta(T info) {
-            //T(getIndice) = 8n + 6
-        1        8n + 6          1   
-    return (this.getIndice(info) != -1);
+        1        (8n + 9)              1   
+    return (`16¬this.getIndice(info)` != -1);
 }
 ```
 
 * ### __Costo Operacional__
 
-    $T({n}) = 1 + ( 8n + 6 ) + 1$
+    $T({n}) = 1 + ( 8n + 9 ) + 1$
 
-    $T({n}) = 1 + 8n + 7$
+    $T({n}) = 1 + 8n + 10$
 
-    $T({n}) = 8n + 8$
+    $T({n}) = 8n + 11$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -421,7 +427,7 @@ public boolean esta(T info) {
 
 ***
 
-## __Obtener Iterator__
+## __12. Obtener Iterator (iterator)__
 
 ```java
 /**
@@ -448,7 +454,7 @@ public Iterator < T > iterator() {
 
 ***
 
-## __Obtener Contenido en un Vector__
+## __13. Obtener Contenido en un Vector (aVector)__
 
 ```java
 /**
@@ -456,20 +462,18 @@ public Iterator < T > iterator() {
  * @return Un vector de Objetos con la informacion de cada posicion de la Lista.
  */
 public Object[] aVector() {
-            //T(esVacia) = 2 y 1 de la validacion = true
               3
-    if (this.esVacia())
+    if (`10¬this.esVacia()`)
     //Mejor de los casos
         return (null);
-    //Peor de los casos         //T(getTamanio) = 1
+    //Peor de los casos 
            1        1       1             1
-    Object vector[] = new Object[this.getTamanio()];
-                        //T(iterator) = 2
-               1      1       2
-    Iterator < T > it = this.iterator();
+    Object vector[] = new Object[`9¬this.getTamanio()`];
+               1      1          2
+    Iterator < T > it = `12¬this.iterator()`;
       1   1
     int i = 0;
-               1 + KTE
+               KTE
     while (it.hasNext())
                 2   1    KTE
         vector[i++] = it.next();
@@ -480,11 +484,11 @@ public Object[] aVector() {
 
 * ### __Costo Operacional__
 
-    $T({n}) = 3 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1 + KTE + n( 2 + 1 + KTE + 1 + KTE ) + 1$
+    $T({n}) = 3 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1 + KTE + n( 2 + 1 + KTE + 1 + KTE ) + KTE + 1$
 
-    $T({n}) = 14 + n( KTE ) + 1$
+    $T({n}) = 14 + n( KTE ) + KTE$
 
-    $T({n}) = KTE(n) + 15$
+    $T({n}) = KTE(n) + KTE$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -492,7 +496,7 @@ public Object[] aVector() {
 
 ***
 
-## __Imprime Contenido__
+## __14. Imprime Contenido (toString)__
 
 ```java
 /**
@@ -503,9 +507,8 @@ public Object[] aVector() {
  */
 @Override
 public String toString() {
-    //T(esVacia) = 2 y 1 de la validacion = true
               3
-    if (this.esVacia())
+    if (`10¬this.esVacia()`)
     //Mejor de los casos
         return ("Lista Vacia");
     //Peor de los casos
@@ -522,11 +525,11 @@ public String toString() {
 
 * ### __Costo Operacional__
 
-    $T({n}) = 3 + 1 + 1 + 1 + 1 + 1 + n( 2 + 1 + 1 + 1 + 1 + 1 + 1 ) + 1$
+    $T({n}) = 3 + 1 + 1 + 1 + 1 + 1 + n( 2 + 1 + 1 + 1 + 1 + 1 + 1 ) + 1 + 1 + 1 + 1$
 
-    $T({n}) = 8 + n( 8 ) + 1$
+    $T({n}) = 8 + n( 8 ) + 4$
 
-    $T({n}) = 8(n) + 9$
+    $T({n}) = 8(n) + 12$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -534,7 +537,7 @@ public String toString() {
 
 ***
 
-## __Obtener el elemento de una Posición__
+## __15. Obtener el elemento de una Posición (getPos)__
 
 ```java
 /**
@@ -545,9 +548,8 @@ public String toString() {
  * retorna null
  */
 private Nodo < T > getPos(int i) throws ExceptionUFPS {
-        //T(esVacia) = 2 y se valida si es true = 1
-              3         1   1               1   1
-    if (this.esVacia() || i > this.tamanio || i < 0) {
+              3              1   1               1   1
+    if (`10¬this.esVacia()` || i > this.tamanio || i < 0) {
         //Mejor de los casos
         throw new ExceptionUFPS("El índice solicitado no existe en la Lista Simple");
     }
@@ -570,11 +572,11 @@ private Nodo < T > getPos(int i) throws ExceptionUFPS {
 
 * ### __Costo Operacional__
 
-    $T({n}) = 3 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n (1 + 1 + 2 + 1) + 1$
+    $T({n}) = 3 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n (1 + 1 + 2 + 1) + 1 + 1$
 
-    $T({n}) = 10 + n( 5 ) + 1$
+    $T({n}) = 10 + n( 5 ) + 1 + 1$
 
-    $T({n}) = 5(n) + 11$
+    $T({n}) = 5(n) + 12$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -582,7 +584,7 @@ private Nodo < T > getPos(int i) throws ExceptionUFPS {
 
 ***
 
-## __Obtener la Posición de un Elemento__
+## __16 Obtener la Posición de un Elemento (getIndice)__
 
 ```java
 /**
@@ -612,11 +614,11 @@ public int getIndice(T info) {
 
 * ### __Costo Operacional__
 
-    $T({n}) = 1 + 1 + 1 + 1 + 1 + n( 1 + 2 + 2 + 1 + 1 + 1 ) + 1$
+    $T({n}) = 1 + 1 + 1 + 1 + 1 + n( 1 + 2 + 2 + 1 + 1 + 1 ) + 1 + 1 + 1 + 1$
 
-    $T({n}) = 5 + n( 8 ) + 1$
+    $T({n}) = 5 + n( 8 ) + 4$
 
-    $T({n}) = 8(n) + 6$
+    $T({n}) = 8(n) + 9$
 
 * ### __Complejidad (Notación Asintótica)__
 

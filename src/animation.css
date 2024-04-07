@@ -58,6 +58,20 @@
     overflow-x: auto;
 }
 
+.code-container div button {
+    background-color: white; 
+    color: blue; 
+    border: 2px solid #008CBA;
+    font-weight: bold;
+    font-style: italic;
+    line-height: normal;
+}
+
+.code-container div button:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
 .mathexpresion {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -69,6 +83,10 @@
 
 .keycosto {
     color: red;
+}
+
+.keycomentario {
+    color: greenyellow;
 }
 
 .btn_action {

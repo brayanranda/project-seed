@@ -2,11 +2,21 @@
 
 [CODIGO FUENTE (COLAS-P)](https://gitlab.com/estructuras-de-datos/proyecto-seed/-/blob/master/src/ufps/util/colecciones_seed/ColaP.java)
 
-Los análisis que se harán a continuación son para el peor de los casos Big(O).
+Los análisis que se harán a continuación son para el peor de los casos Big(O) con la siguiente nomenclatura.
+
+KTE -> Constante
+
+n -> Tamaño de la estructura
+
+Número -> Número de operaciones elementales
+
+Cada instrucción se revisa línea a línea
+
+Métodos de la misma clase que son llamados en otros métodos, tienen su hipervínculo.
 
 ***
 
-## __Constructor__
+## __1. Constructor (ColaP)__
 
 ```java
 /**
@@ -14,7 +24,7 @@ Los análisis que se harán a continuación son para el peor de los casos Big(O)
  * <b>post: </b> Se construyo una Cola.
  */
 public ColaP() {
-       1
+       5
      super();
            1            1
      super.setInicio(new NodoP < T > (null, null, null, 0));
@@ -29,9 +39,9 @@ public ColaP() {
 
 * ### __Costo Operacional__
 
-     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1$
+     $T({n}) = 5 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1$
 
-     $T({n}) = 9$
+     $T({n}) = 13$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -39,7 +49,7 @@ public ColaP() {
 
 ***
 
-## __Insertar Elemento__
+## __2. Insertar Elemento (enColar)__
 
 ```java
 /**
@@ -51,9 +61,8 @@ public ColaP() {
 public void enColar(T info, int p) {
           1            1    1 
      NodoP < T > nuevo = new NodoP < T > (info, null, null, p);
-     //T(esVacia()) = 2 y la validacion del true = 1
-             3
-     if (this.esVacia()) {
+             4            1
+     if (`7¬this.esVacia()`) {
           //Mejor de los casos
           NodoP < T > x = new NodoP < T > (info, (NodoP < T > ) super.getInicio(), (NodoP < T> ) super.getInicio().getAnt(),p);
           ((NodoP < T > ) super.getInicio()).getAnt().setSig(x);
@@ -89,7 +98,6 @@ public void enColar(T info, int p) {
                          c.setSig(nuevo);
                                   1
                          nuevo.setAnt(c);
-                         //T(aumentarTamanio()) = 2
                                        2
                          super.aumentarTamanio();
                              1
@@ -110,7 +118,6 @@ public void enColar(T info, int p) {
                     ((NodoP < T > ) super.getInicio()).getAnt().setSig(x);
                          1                   1           1
                     ((NodoP < T > ) super.getInicio()).setAnt(x);
-                    //T(aumentarTamanio()) = 2
                                 2
                     this.aumentarTamanio();
                }
@@ -121,11 +128,11 @@ public void enColar(T info, int p) {
 
 * ### __Costo Operacional__
 
-     $T({n}) = 1 + 1 + 1 + 3 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n(1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1 + 1 + 1 + 1) + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2$
+     $T({n}) = 1 + 1 + 1 + 4 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n(1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1 + 1 + 1 + 1) 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2$
      
-     $T({n}) = 24 + n(23) + 20$
+     $T({n}) = 26 + n(23) + 25$
 
-     $T({n}) = 23n + 44$
+     $T({n}) = 23n + 51$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -133,7 +140,7 @@ public void enColar(T info, int p) {
 
 ***
 
-## __Eliminar Elemento__
+## __3. Eliminar Elemento (deColar)__
 
 ```java
 /**
@@ -143,7 +150,6 @@ public void enColar(T info, int p) {
  */
 @Override
 public T deColar() {
-     //T(deColar())=18
        1           18
      return (super.deColar());
 }
@@ -161,7 +167,7 @@ public T deColar() {
 
 ***
 
-## __Vaciar la Cola__
+## __4. Vaciar la Cola (vaciar)__
 
 ```java
 /**
@@ -170,7 +176,6 @@ public T deColar() {
  */
 @Override
 public void vaciar() {
-     //T(vaciar())=3
           3
      super.vaciar();
 }
@@ -186,7 +191,7 @@ public void vaciar() {
 
 ***
 
-## __Obtener Informacion Primer Elemento__
+## __5. Obtener Informacion Primer Elemento (getInfoInicio)__
 
 ```java
 /**
@@ -211,7 +216,7 @@ public T getInfoInicio() {
 
 ***
 
-## __Obtener Tamanio__
+## __6. Obtener Tamanio (getTamanio)__
 
 ```java
 /**
@@ -236,7 +241,7 @@ public int getTamanio() {
 
 ***
 
-## __Consultar Existencia de Elementos__
+## __7. Consultar Existencia de Elementos (esVacia)__
 
 ```java
 /**
@@ -246,16 +251,16 @@ public int getTamanio() {
  */
 @Override
 public boolean esVacia() {
-        1         4
+        1         3
      return (super.esVacia());
 }
 ```
 
 * ### __Costo Operacional__
 
-     $T({n}) = 1 + 4$
+     $T({n}) = 1 + 3$
 
-     $T({n}) = 5$
+     $T({n}) = 4$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -263,7 +268,7 @@ public boolean esVacia() {
 
 ***
 
-## __Imprimir Contenido__
+## __8. Imprimir Contenido (toString)__
 
 ```java
 /**
@@ -280,7 +285,7 @@ public String toString() {
      NodoP < T > c = ((NodoP < T > ) super.getInicio());
           1        1
      NodoP < T > x = c;
-       1  1
+       1     1
      x = x.getSig();
               1         1             1
      while (x != ((NodoP < T > ) super.getInicio())) {
@@ -296,11 +301,11 @@ public String toString() {
 
 * ### __Costo Operacional__
 
-     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n( 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1) + 1$
+     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n( 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1) + 1 + 1 + 1 + 1$
 
-     $T({n}) = 6 + n( 9 ) + 1$
+     $T({n}) = 6 + n( 9 ) + 4$
 
-     $T({n}) = 9n + 7$
+     $T({n}) = 9n + 10$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -308,22 +313,21 @@ public String toString() {
 
 ***
 
-## __Clonar__
+## __9. Clonar (clonar)__
 
 ```java
 public ColaP < T > clonar() {
-          1           1    1
-     ColaP < T > clon = new ColaP();
+          1           1    13
+     ColaP < T > clon = new `1¬ColaP()`;
           1        1       1              1
      NodoP < T > c = ((NodoP < T > ) super.getInicio());
           1        1
      NodoP < T > x = c;
-       1  1
+       1     1
      x = x.getSig();
                1        1             1
      while (x != ((NodoP < T > ) super.getInicio())) {
-          //T(enColar()) = 23n + 44
-          23n + 44     1            1
+          (23n + 51)        1              1
           clon.enColar(x.getInfo(), x.getPrioridad());
             1  1
           x = x.getSig();
@@ -335,11 +339,11 @@ public ColaP < T > clonar() {
 
 * ### __Costo Operacional__
 
-     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n(23n + 44 + 1 + 1 + 1 + 1) + 1$
+     $T({n}) = 1 + 1 + 13 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n((23n + 51) + 1 + 1 + 1 + 1 + 1 + 1 + 1) + 1 + 1 + 1 + 1$
 
-     $T({n}) = 14 + n(23n + 48) + 1$
+     $T({n}) = 26 + n(23n + 58) + 4$
 
-     $T({n}) = 23n² + 48n + 15$
+     $T({n}) = 23n² + 58n + 30$
 
 * ### __Complejidad (Notación Asintótica)__
 

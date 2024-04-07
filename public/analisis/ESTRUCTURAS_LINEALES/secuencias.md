@@ -2,11 +2,21 @@
 
 [CODIGO FUENTE (SECUENCIAS)](https://gitlab.com/Yoner_Silva/proyecto-seed/-/blob/master/src/ufps/util/colecciones_seed/Secuencia.java)
 
-Los análisis que se harán a continuación son para el peor de los casos Big(O).
+Los análisis que se harán a continuación son para el peor de los casos Big(O) con la siguiente nomenclatura.
+
+KTE -> Constante
+
+n -> Tamaño de la estructura
+
+Número -> Número de operaciones elementales
+
+Cada instrucción se revisa línea a línea
+
+Métodos de la misma clase que son llamados en otros métodos, tienen su hipervínculo.
 
 ***
 
-## __Constructor__
+## __1. Constructor (Secuencia)__
 
 ```java
 /**
@@ -43,7 +53,7 @@ public Secuencia(int n) {
 
 ***
 
-## __Insertar Elemento__
+## __2. Insertar Elemento (insertar)__
 
 ```java
 /**
@@ -75,7 +85,7 @@ public void insertar(T elem) {
 
 ***
 
-## __Eliminar Elemento__
+## __3. Eliminar Elemento (eliminar)__
 
 ```java
 /**
@@ -124,7 +134,7 @@ public void eliminar(T elem) {
 
 ***
 
-## __Eliminar Elemento por Posición__
+## __4. Eliminar Elemento por Posición (eliminarP)__
 
 ```java
 /**
@@ -180,7 +190,7 @@ public void eliminarP(int pos) {
 
 ***
 
-## __Vaciar Contenido__
+## __5. Vaciar Contenido (vaciar)__
 
 ```java
 /**
@@ -212,7 +222,7 @@ public void vaciar() {
 
 ***
 
-## __Obtener Elemento por Posición__
+## __6. Obtener Elemento por Posición (get)__
 
 ```java
 /**
@@ -246,7 +256,7 @@ public T get(int i) {
 
 ***
 
-## __Modificar Elemento de una Posición__
+## __7. Modificar Elemento de una Posición (set)__
 
 ```java
 /**
@@ -287,7 +297,7 @@ public void set(int i, T nuevo) {
 
 ***
 
-## __Consultar Existencia de un Elemento__
+## __8. Consultar Existencia de un Elemento (esta)__
 
 ```java
 /**
@@ -324,7 +334,7 @@ public boolean esta(T elem) {
 
 ***
 
-## __Obtener Indice de Posición de un Elemento__
+## __9. Obtener Indice de Posición de un Elemento (getIndice)__
 
 ```java
 /**
@@ -361,7 +371,7 @@ public int getIndice(T elem) {
 
 ***
 
-## __Obtener la Cantidad Lógica Total de Elementos__
+## __10. Obtener la Cantidad Lógica Total de Elementos (getTamanio)__
 
 ```java
 /**
@@ -385,7 +395,7 @@ public int getTamanio() {
 
 ***
 
-## __Consultar Existencia de Elementos__
+## __11. Consultar Existencia de Elementos (esVacia)__
 
 ```java
 /**
@@ -411,7 +421,7 @@ public boolean esVacia() {
 
 ***
 
-## __Obtener la Cantidad Real Total de Elementos__
+## __12. Obtener la Cantidad Real Total de Elementos (getCapacidad)__
 
 ```java
 /**
@@ -435,7 +445,7 @@ public int getCapacidad() {
 
 ***
 
-## __Imprimir Contenido__
+## __13. Imprimir Contenido (toString)__
 
 ```java
 /**
@@ -445,9 +455,8 @@ public int getCapacidad() {
  */
 @Override
 public String toString() {
-    //T(esVacia) = 2
               2      1
-    if (this.esVacia())
+    if (`11¬this.esVacia()`)
         //Mejor de los casos
         return "Secuencia vacia!";
     //Peor de los casos

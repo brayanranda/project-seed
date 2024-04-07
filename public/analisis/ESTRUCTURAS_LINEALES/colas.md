@@ -2,11 +2,21 @@
 
 [CODIGO FUENTE (COLAS)](https://gitlab.com/estructuras-de-datos/proyecto-seed/-/blob/master/src/ufps/util/colecciones_seed/Cola.java)
 
-Los análisis que se harán a continuación son para el peor de los casos Big(O).
+Los análisis que se harán a continuación son para el peor de los casos Big(O) con la siguiente nomenclatura.
+
+KTE -> Constante
+
+n -> Tamaño de la estructura
+
+Número -> Número de operaciones elementales
+
+Cada instrucción se revisa línea a línea
+
+Métodos de la misma clase que son llamados en otros métodos, tienen su hipervínculo.
 
 ***
 
-## __Constructor__
+## __1. Constructor (Cola)__
 
 ```java
 /**
@@ -37,7 +47,7 @@ public Cola() {
 
 ***
 
-## __Insertar Elemento__
+## __2. Insertar Elemento (enColar)__
 
 ```java
 /**
@@ -52,9 +62,8 @@ public void enColar(T info) {
      inicio.getAnt().setSig(x);
            1
      inicio.setAnt(x);
-     //T(aumentarTamanio()) = 2
               2
-     this.aumentarTamanio();
+     `7¬this.aumentarTamanio();`
 }
 ```
 
@@ -70,7 +79,7 @@ public void enColar(T info) {
 
 ***
 
-## __Eliminar Elemento__
+## __3. Eliminar Elemento (deColar)__
 
 ```java
 /**
@@ -79,9 +88,8 @@ public void enColar(T info) {
  * @return un tipo T que contiene la informacion del nodo retirado.
  */
 public T deColar() {
-     //T(esVacia()) = 4 y la validacion del true = 1
              5
-     if (this.esVacia())
+     if (`10¬this.esVacia()`)
           //Mejor de los casos
           return (null);
           1        1            1
@@ -113,7 +121,7 @@ public T deColar() {
 
 ***
 
-## __Vaciar la Cola__
+## __4. Vaciar la Cola (vaciar)__
 
 ```java
 /**
@@ -142,7 +150,7 @@ public void vaciar() {
 
 ***
 
-## __Obtener Primer Elemento__
+## __5. Obtener Primer Elemento (getInicio)__
 
 ```java
 /**
@@ -166,7 +174,7 @@ protected NodoD < T > getInicio() {
 
 ***
 
-## __Obtener Informacion Primer Elemento__
+## __6. Obtener Informacion Primer Elemento (getInfoInicio)__
 
 ```java
 /**
@@ -190,7 +198,7 @@ public T getInfoInicio() {
 
 ***
 
-## __Aumentar Tamanio__
+## __7. Aumentar Tamanio (aumentarTamanio)__
 
 ```java
 /**
@@ -212,7 +220,7 @@ protected void aumentarTamanio() {
 
 ***
 
-## __Modificar Nodo Inicial__
+## __8. Modificar Nodo Inicial (setInicio)__
 
 ```java
 /**
@@ -235,7 +243,7 @@ protected void setInicio(NodoD < T > ini) {
 
 ***
 
-## __Obtener Tamanio__
+## __9. Obtener Tamanio (getTamanio)__
 
 ```java
 /**
@@ -259,7 +267,7 @@ public int getTamanio() {
 
 ***
 
-## __Consultar Existencia de Elementos__
+## __10. Consultar Existencia de Elementos (esVacia)__
 
 ```java
 /**
@@ -268,16 +276,16 @@ public int getTamanio() {
  * @return un tipo boolean, true si es vacio y false si contiene nodos
  */
 public boolean esVacia() {
-        1              2        1
-     return (this.getTamanio() == 0);
+        1              1           1
+     return (`9¬this.getTamanio()` == 0);
 }
 ```
 
 * ### __Costo Operacional__
 
-     $T({n}) = 1 + 2 + 1$
+     $T({n}) = 1 + 1 + 1$
 
-     $T({n}) = 4$
+     $T({n}) = 3$
 
 * ### __Complejidad (Notación Asintótica)__
 
@@ -285,7 +293,7 @@ public boolean esVacia() {
 
 ***
 
-## __Imprimir Contenido__
+## __11. Imprimir Contenido (toString)__
 
 ```java
 /**
@@ -314,11 +322,11 @@ public String toString() {
 
 * ### __Costo Operacional__
 
-     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1+ n( 2 + 1 + 1 + 1 + 1 + 1 + 1 ) + 1$
+     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1+ n( 2 + 1 + 1 + 1 + 1 + 1 + 1 ) + 1 + 1$
 
-     $T({n}) = 6 + n( 8 ) + 1$
+     $T({n}) = 6 + n( 8 ) + 2$
 
-     $T({n}) = 8n + 7$
+     $T({n}) = 8n + 8$
 
 * ### __Complejidad (Notación Asintótica)__
 

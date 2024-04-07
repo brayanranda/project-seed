@@ -1,6 +1,10 @@
 import katex from "katex";
 
+var expresionRegular = /`([^`]+)`/g;
+var id_element_sel = "";
+
 function animateCode(id_element) {
+    id_element_sel = id_element;
     let codeElement = document.getElementById(id_element).firstElementChild;
     let codeText = codeElement.textContent.trim();
     let codeLines = codeText.split('\n');
@@ -42,6 +46,9 @@ function highlightKeywords(lineElement) {
         'switch', 'Iterable'];
     
     let keycostos = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+    let keycomentarios = ['//Mejor de los casos','//Peor de los casos'];
+
     let text = lineElement.textContent;
     keywords.forEach(function (keyword) {
         let regex = new RegExp('\\b' + keyword + '\\b', 'g');
@@ -51,7 +58,64 @@ function highlightKeywords(lineElement) {
         let regex = new RegExp('\\b' + keycosto + '\\b', 'g');
         text = text.replace(regex, '<span class="keycosto">' + keycosto + '</span>');
     });
-    lineElement.innerHTML = text;
+    keycomentarios.forEach(function (keycomentario) {
+        let regex = new RegExp('\\b' + keycomentario + '\\b', 'g');
+        text = text.replace(regex, '<span class="keycomentario">' + keycomentario + '</span>');
+    });
+    lineElement.innerHTML = text.replace(expresionRegular, reemplazarPalabras);
+    document.querySelectorAll(".element_a_scroll").forEach((element) => {
+        if(element.getAttribute("click_action")=="false"){
+            element.addEventListener("click",function (e) {handleClickLink(e);},false);
+            element.setAttribute("click_action","true")
+        }
+    });
+}
+
+// Función para reemplazar palabras entre `` con una nueva palabra
+function reemplazarPalabras(match, palabra) {
+    palabra = palabra.replace('<span class="keyword">',"");
+    palabra = palabra.replace('<span class="keycosto">',"");
+    palabra = palabra.replace('</span>',"");
+
+    let array = palabra.split("¬");
+    let id_element = id_element_sel.split("_")[0] + "_" + (parseInt(array[0])-1) + "_div_padre";
+    id_element_sel = "";
+
+    return (
+        "<button class='element_a_scroll' id_div='"+id_element+"' click_action='false' >"+array[1]+"</button>"
+    );
+}
+
+function handleClickLink(e){
+    console.log(e.target)
+    let id = e.target.getAttribute("id_div");
+    let id_button_action = id.split("_")[0] + "_" + id.split("_")[1] + "_button_action";
+    let element_div = document.getElementById(e.target.getAttribute("id_div"));
+    let element_h2 = element_div.previousElementSibling;
+
+    let posicionInicial = e.target.getBoundingClientRect().top + window.scrollY;
+    let posicionFinal = element_h2.getBoundingClientRect().top + window.scrollY;
+    // Calcular la cantidad de desplazamiento necesario
+    let desplazamiento = posicionFinal - posicionInicial;
+
+    // Hacer desplazamiento suave hacia la nueva posición
+    window.scrollBy({
+        top: desplazamiento,
+        behavior: 'instant'
+    });
+    element_div.className = "bg-sky-300";
+    element_h2.className = "bg-sky-300";
+    setTimeout(() => {
+        element_div.classList.remove("bg-sky-300");
+        element_h2.classList.remove("bg-sky-300");
+    }, 500);
+
+    setTimeout(()=>{
+        let ele_button_action = document.getElementById(id_button_action);
+        if(ele_button_action.textContent == "Mostrar Análisis"){
+            ele_button_action.click();
+        }
+    },1000);
 }
 
 function handleClickAction(id_button) {
