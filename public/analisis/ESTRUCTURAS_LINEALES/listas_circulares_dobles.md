@@ -169,6 +169,8 @@ public void insertarOrdenado(T info) {
 
 * ### __Costo Operacional__
 
+    $T({n}) = 6 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + \sum_{i=0}^{n-1}(1 + 1 + KTE + 1 + 1 + KTE + 1 + 1 + 1 + 1 + 1) + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2$
+
     $T({n}) = 6 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n(1 + 1 + KTE + 1 + 1 + KTE + 1 + 1 + 1 + 1 + 1) + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2$
 
     $T({n}) = 13 + n(KTE) + 10$
@@ -483,6 +485,8 @@ public Object[] aVector() {
 
 * ### __Costo Operacional__
 
+    $T({n}) = 7 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1+ KTE + \sum_{i=0}^{n-1}( 2 + 1 + KTE + 1 + KTE ) + (1+KTE) + 1$
+
     $T({n}) = 7 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1+ KTE + n( 2 + 1 + KTE + 1 + KTE ) + (1+KTE) + 1$
 
     $T({n}) = 18 + KTE + n( KTE ) + KTE$
@@ -522,7 +526,9 @@ public String toString() {
 }
 ```
 
-* ### __Costo Operacional__
+* ### __Costo Operacional__ 
+
+    $T({n}) = 7 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + \sum_{x=0}^{n-1}( 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 ) + 1 + 1 + 1 + 1 + 1$
 
     $T({n}) = 7 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + n( 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 ) + 1 + 1 + 1 + 1 + 1$
 
@@ -568,6 +574,8 @@ private NodoD < T > getPos(int i) throws ExceptionUFPS {
 ```
 
 * ### __Costo Operacional__
+
+    $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + 1 + \sum_{i>0}^{n-1}(1 + 1 + 2 + 1) + 1 + 1$
 
     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + 1 + n(1 + 1 + 2 + 1) + 1 + 1$
 
@@ -628,6 +636,8 @@ private NodoD < T > getPos_optimizado(int pos) throws ExceptionUFPS {
 
 * ### __Costo Operacional__
 
+    $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + \sum_{pos>0}^{n-1}(1 + 1 + 2 + 1) + 2 + 1 + 1$
+
     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + n(1 + 1 + 2 + 1) + 2 + 1 + 1$
 
     $T({n}) = 14 + n(5) + 4$
@@ -667,8 +677,10 @@ public int getIndice(T dato) {
 }
 ```
 
-* ### __Costo Operacional__
+* ### __Costo Operacional__ 
 
+    $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + \sum_{x=0}^{n-1}( 1 + 2 + 2 + 1 + 1 + 1 ) + 1 + 1 + 1 + 1$
+    
     $T({n}) = 1 + 1 + 1 + 1 + 1 + 1 + n( 1 + 2 + 2 + 1 + 1 + 1 ) + 1 + 1 + 1 + 1$
 
     $T({n}) = 6 + n( 8 ) + 4$
