@@ -122,6 +122,8 @@ public void eliminar(T elem) {
 
 * ### __Costo Operacional__
 
+    $T({n}) = 1 + 1 + 2 + 1 + 1 + 1 + \sum_{i=0}^{n-1}( 1 + 2 + 1 + 2 + 1 + 2 ) + 1 + 2$
+
     $T({n}) = 1 + 1 + 2 + 1 + 1 + 1 + n( 1 + 2 + 1 + 2 + 1 + 2 ) + 1 + 2$
 
     $T({n}) = 7 + n( 9 ) + 3$
@@ -178,6 +180,8 @@ public void eliminarP(int pos) {
 
 * ### __Costo Operacional__
 
+    $T({n}) = 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1 + \sum_{i=0}^{n-1}( 1 + 1 + 2 + 1 + 2 ) + 1 + 2$
+
     $T({n}) = 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1 + n( 1 + 1 + 2 + 1 + 2 ) + 1 + 2$
 
     $T({n}) = 10 + n( 7 ) + 3$
@@ -209,6 +213,8 @@ public void vaciar() {
 ```
 
 * ### __Costo Operacional__ 
+
+    $T({n}) = 1 + 1 + 1 + \sum_{i=0}^{n-1}( 1 + 1 + 2 ) + 1$
 
     $T({n}) = 1 + 1 + 1 + n( 1 + 1 + 2 ) + 1$
 
@@ -322,6 +328,8 @@ public boolean esta(T elem) {
 
 * ### __Costo Operacional__
 
+    $T({n}) = 1 + 1 + 1 + \sum_{i=0}^{n-1}( 2 + 1 + 2 ) + 1$
+
     $T({n}) = 1 + 1 + 1 + n( 2 + 1 + 2 ) + 1$
 
     $T({n}) = 3 + n( 5 ) + 1$
@@ -358,6 +366,8 @@ public int getIndice(T elem) {
 ```
 
 * ### __Costo Operacional__
+
+    $T({n}) = 1 + 1 + 1 + \sum_{i=0}^{n-1}( 2 + 1 + 2 ) + 1$
 
     $T({n}) = 1 + 1 + 1 + n( 2 + 1 + 2 ) + 1$
 
@@ -472,6 +482,8 @@ public String toString() {
 ```
 
 * ### __Costo Operacional__
+
+    $T({n}) = 2 + 1 + 1 + 1 + 1 + 1 + 1 + \sum_{i=0}^{n-1}( 2 + 1 + 1 + 1 + 2) + 1$
 
     $T({n}) = 2 + 1 + 1 + 1 + 1 + 1 + 1 + n( 2 + 1 + 1 + 1 + 2) + 1$
 
