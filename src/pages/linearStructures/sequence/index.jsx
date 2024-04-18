@@ -13,11 +13,13 @@ export default function Sequence() {
             name: "Insertar",
             icon: faPlus,
             url: "/markdown/sequence/insert.md",
+            runner: "/code-runner/sequence/Insertar.java"
         },
         {
             name: "Editar",
             icon: faEdit,
             url: "/markdown/sequence/edit.md",
+            runner: "/code-runner/sequence/Editar.java"
         },
         {
             name: "Consultar",
@@ -60,24 +62,12 @@ export default function Sequence() {
                 </article>
             </section>
             <Section url="/markdown/sequence/implementation.md" first={true} last={false} />
-            <CodeRunner data={[
-                {
-                    name: "Insertar",
-                    url: "/code-runner/sequence/Insertar.java",
-                    icon: faPlus
-                },
-                {
-                    name: "Editar",
-                    url: "/code-runner/sequence/Editar.java",
-                    icon: faEdit,
-                },
-            ]} />
             <Analisis 
                 id={0} 
                 servicio_markdown={getAnalisis_SEC} 
                 title="Secuencia en SEED" 
                 sub_title="Costo Operacional y Complejidad de" 
-                first={true} 
+                first={false} 
                 last={true} 
                 startLeft={true} 
             />
