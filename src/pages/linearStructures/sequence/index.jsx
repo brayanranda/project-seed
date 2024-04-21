@@ -6,6 +6,8 @@ import { faPlus, faEdit, faMagnifyingGlass, faTrash } from "@fortawesome/free-so
 import CodeRunner from "@/components/ui/codeRunner";
 import Analisis from "@/components/ui/Analisis";
 import { getAnalisis_SEC } from "@/store/services/servicios";
+import Background from "@/components/ui/Background";
+import Aside from "@/components/ui/Aside";
 
 export default function Sequence() {
     const tabs = [
@@ -52,26 +54,51 @@ export default function Sequence() {
         },
     ]
 
+    const asideSecuencia = [
+        {
+            title: "Secuencia",
+            url: "/linear-structures/sequence",
+        },
+        {
+            title: "Operaciones",
+            url: "/linear-structures/sequence/operations",
+        },
+        {
+            title: "Implementación",
+            url: "/linear-structures/sequence/implementation",
+        },
+        {
+            title: "Costo & Complejidad",
+            url: "/linear-structures/sequence/costo-complejidad",
+        }
+    ]
+
     return (
         <main className="bg-seed text-white">
-            <Section url="/markdown/sequence/description.md" first={true} last={true} />
-            <section className="w-full bg-white py-20 text-black relative z-20">
-                <article className="mx-auto w-11/12 md:w-8/12 lg:w-6/12">
-                    <TitleMd title="Operaciones" type={2} />
-                    <TabsComponentMd data={tabs} />
-                </article>
-            </section>
-            <Section url="/markdown/sequence/implementation.md" first={true} last={false} />
-            <Analisis 
-                id={0} 
-                servicio_markdown={getAnalisis_SEC} 
-                title="Secuencia en SEED" 
-                sub_title="Costo Operacional y Complejidad de" 
-                first={false} 
-                last={true} 
-                startLeft={true} 
-            />
-            <Download data={downloads} />
+            <Background first={true} last={true} startLeft={false}/>
+            <div className="flex gap-2 relative">
+                <Aside data={asideSecuencia} />
+                <div className="w-10/12">
+                    <Section url="/markdown/sequence/description.md" first={true} last={true} />
+                    <section className="w-full bg-white py-20 text-black relative z-20">
+                        <article className="mx-auto w-11/12 md:w-8/12 lg:w-6/12">
+                            <TitleMd title="Operaciones" type={2} />
+                            <TabsComponentMd data={tabs} />
+                        </article>
+                    </section>
+                    <Section url="/markdown/sequence/implementation.md" first={true} last={false} />
+                    <Analisis 
+                        id={0} 
+                        servicio_markdown={getAnalisis_SEC} 
+                        title="Secuencia en SEED" 
+                        sub_title="Costo Operacional y Complejidad de" 
+                        first={false} 
+                        last={true} 
+                        startLeft={true} 
+                    />
+                    <Download data={downloads} />
+                </div>
+            </div>
         </main>
     );
 }
