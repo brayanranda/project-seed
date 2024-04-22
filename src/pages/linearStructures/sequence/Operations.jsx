@@ -29,9 +29,9 @@ function SequenceOperations() {
     ]
 
     return (
-        <section className="w-full bg-white py-20 text-black relative z-20">
-            <article className="mx-auto w-11/12 md:w-9/12">
-                <TitleMd title="Operaciones" type={2} />
+        <section className="w-full text-white pb-20">
+            <article className="mx-auto mt-40 w-11/12 md:w-10/12">
+                <TitleMd color="text-white" title="Operaciones" type={2} />
                 <TabsComponentMd data={tabs} />
             </article>
         </section>

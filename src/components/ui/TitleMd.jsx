@@ -1,6 +1,6 @@
 import BlueLine from "./BlueLine";
 
-export default function TitleMd({ title, subTitle, color = "text-black", type = 1 }) {
+export default function TitleMd({ title, subTitle, color = "text-white", type = 1 }) {
 
     return (
         <div className={`${color}`}>
