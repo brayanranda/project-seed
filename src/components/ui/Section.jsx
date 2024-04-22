@@ -20,7 +20,6 @@ export default function Section({ url, first = false, last = false, startLeft = 
 
     return (
         <section className={`w-full pb-20 ${first ? "pt-40" : ""} relative`}>
-
             <article className="mx-auto w-11/12 md:w-10/12 relative">
                 <Markdown value={data} renderer={renderer} />
             </article>

@@ -55,7 +55,7 @@ export default function Sequence() {
             <div className="flex gap-2 relative">
                 <Aside
                     data={asideSecuencia}
-                    setAsideSecuencia={setAsideSecuencia}
+                    setData={setAsideSecuencia}
                     setViewTypeComponent={setViewTypeComponent}
                 />
                 <div className="w-10/12">
