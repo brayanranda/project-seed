@@ -1,102 +1,66 @@
-import Download from "@/components/ui/Download/Download";
 import Section from "@/components/ui/Section";
-import TitleMd from "@/components/ui/TitleMd";
-import TabsComponentMd from "@/components/ui/TabsComponentMd";
-import { faPlus, faEdit, faMagnifyingGlass, faTrash } from "@fortawesome/free-solid-svg-icons";
-import CodeRunner from "@/components/ui/codeRunner";
 import Analisis from "@/components/ui/Analisis";
 import { getAnalisis_SEC } from "@/store/services/servicios";
 import Background from "@/components/ui/Background";
 import Aside from "@/components/ui/Aside";
+import { useState } from "react";
+import SequenceDownloads from "./SequenceDownloads";
+import SequenceOperations from "./Operations";
 
 export default function Sequence() {
-    const tabs = [
-        {
-            name: "Insertar",
-            icon: faPlus,
-            url: "/markdown/sequence/insert.md",
-            runner: "/code-runner/sequence/Insertar.java"
-        },
-        {
-            name: "Editar",
-            icon: faEdit,
-            url: "/markdown/sequence/edit.md",
-            runner: "/code-runner/sequence/Editar.java"
-        },
-        {
-            name: "Consultar",
-            icon: faMagnifyingGlass,
-            url: "/markdown/sequence/search.md",
-        },
-        {
-            name: "Eliminar",
-            icon: faTrash,
-            url: "/markdown/sequence/delete.md",
-        }
-    ]
+    const [asideSecuencia, setAsideSecuencia] = useState(
+        [
+            {
+                key: "est",
+                title: "Estructuras Lineales",
+                state: true,
+            },
+            {
+                key: "ope",
+                title: "Operaciones",
+                state: false,
+            },
+            {
+                key: "impl",
+                title: "Implementación",
+                state: false,
+            },
+            {
+                key: "coscom",
+                title: "Costo & Complejidad",
+                state: false,
+            }
+        ]
+    );
 
-    const downloads = [
-        {
-            title: "Material de Teoría de Secuencia",
-            url: "/contenido/recurso/SECUENCIA.zip",
-        },
-        {
-            title: "Componente SEED - UFPS",
-            url: "/contenido/componente/SEED_UFPS.zip",
-        },
-        {
-            title: "Simulador para Secuencia",
-            url: "/contenido/JARS/SimSecuencia.zip",
-        },
-        {
-            title: "Manual de Usuario del Simulador de Secuencia",
-            url: "/contenido/JARS/SimSecuencia.zip",
-        },
-    ]
-
-    const asideSecuencia = [
-        {
-            title: "Secuencia",
-            url: "/linear-structures/sequence",
-        },
-        {
-            title: "Operaciones",
-            url: "/linear-structures/sequence/operations",
-        },
-        {
-            title: "Implementación",
-            url: "/linear-structures/sequence/implementation",
-        },
-        {
-            title: "Costo & Complejidad",
-            url: "/linear-structures/sequence/costo-complejidad",
-        }
-    ]
+    const [viewTypeComponent, setViewTypeComponent] = useState("est");
+    const viewComponents = {
+        est: <Section url="/markdown/sequence/description.md" first={true} last={true} />,
+        ope: <SequenceOperations />,
+        impl: <Section url="/markdown/sequence/implementation.md" first={true} last={false} />,
+        coscom: <Analisis 
+            id={0} 
+            servicio_markdown={getAnalisis_SEC} 
+            title="Secuencia en SEED" 
+            sub_title="Costo Operacional y Complejidad de" 
+            first={false} 
+            last={true} 
+            startLeft={true} 
+        />,
+    }
 
     return (
         <main className="bg-seed text-white">
             <Background first={true} last={true} startLeft={false}/>
             <div className="flex gap-2 relative">
-                <Aside data={asideSecuencia} />
+                <Aside
+                    data={asideSecuencia}
+                    setAsideSecuencia={setAsideSecuencia}
+                    setViewTypeComponent={setViewTypeComponent}
+                />
                 <div className="w-10/12">
-                    <Section url="/markdown/sequence/description.md" first={true} last={true} />
-                    <section className="w-full bg-white py-20 text-black relative z-20">
-                        <article className="mx-auto w-11/12 md:w-8/12 lg:w-6/12">
-                            <TitleMd title="Operaciones" type={2} />
-                            <TabsComponentMd data={tabs} />
-                        </article>
-                    </section>
-                    <Section url="/markdown/sequence/implementation.md" first={true} last={false} />
-                    <Analisis 
-                        id={0} 
-                        servicio_markdown={getAnalisis_SEC} 
-                        title="Secuencia en SEED" 
-                        sub_title="Costo Operacional y Complejidad de" 
-                        first={false} 
-                        last={true} 
-                        startLeft={true} 
-                    />
-                    <Download data={downloads} />
+                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
+                    <SequenceDownloads />
                 </div>
             </div>
         </main>

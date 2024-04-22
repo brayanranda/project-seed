@@ -1,5 +1,5 @@
-function CostoComplejidad() {
+function SequenceCostoComplejidad() {
     return ( <></> );
 }
 
-export default CostoComplejidad;
+export default SequenceCostoComplejidad;

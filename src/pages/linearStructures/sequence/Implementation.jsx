@@ -1,5 +1,5 @@
-function Implementation() {
+function SequenceImplementation() {
     return ( <></> );
 }
 
-export default Implementation;
+export default SequenceImplementation;

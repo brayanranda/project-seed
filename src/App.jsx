@@ -22,6 +22,9 @@ import OneTwoThreeTree from "./pages/n-ary-trees/1-2-3-tree";
 import BTree from "./pages/n-ary-trees/b-tree";
 import BPlusTree from "./pages/n-ary-trees/b-plus-tree";
 import Graph from "./pages/graphic-schema-theory/graph";
+import SequenceOperations from "./pages/linearStructures/sequence/Operations";
+import SequenceImplementation from "./pages/linearStructures/sequence/Implementation";
+import SequenceCostoComplejidad from "./pages/linearStructures/sequence/CostoComplejidad";
 
 export default function App() {
   return (
@@ -43,6 +46,15 @@ export default function App() {
             <Route path="hash-table" element={<HashTable />} />
           </Routes>
         } />
+{/* 
+        <Route path="linear-structures/sequence/*" element={
+          <Routes>
+            <Route path="" element={<Sequence />} />
+            <Route path="operations" element={<SequenceOperations />} />
+            <Route path="implementation" element={<SequenceImplementation />} />
+            <Route path="costo-complejidad" element={<SequenceCostoComplejidad />} />
+          </Routes>
+        } /> */}
 
         <Route path="binary-trees/*" element={
           <Routes>

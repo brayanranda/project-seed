@@ -17,7 +17,7 @@ export const Header = ({ main = true }) => {
     }, [])
 
     return (
-        <header ref={headerRef} className="w-full fixed z-50 top-0 left-0 duration-300">
+        <header ref={headerRef} className="w-full fixed z-40 top-0 left-0 duration-300">
             <nav className={`${main ? "w-11/12 mx-auto" : "w-11/12 md:w-11/12 lg:w-9/12 mx-auto"} flex items-center justify-between py-4`} aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/">
