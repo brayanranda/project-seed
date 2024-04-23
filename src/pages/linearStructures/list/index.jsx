@@ -2,45 +2,22 @@ import Section from "@/components/ui/Section";
 import Analisis from "@/components/ui/Analisis";
 import { getAnalisis_LS, getAnalisis_LD, getAnalisis_LCS, getAnalisis_LCD } from "@/store/services/servicios";
 import ListDownloads from "./ListDownloads";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Aside from "@/components/ui/Aside";
 import Background from "@/components/ui/Background";
 import ListOperations from "./Operations";
+import { constLista } from "@/utilities/aside/estructuras_lineales/listas";
 
 export default function List() {
-    const [asideList, setAsideList] = useState(
-        [
-            {
-                key: "est",
-                title: "Estructuras Lineales",
-                state: true,
-            },
-            {
-                key: "ope",
-                title: "Operaciones",
-                state: false,
-            },
-            {
-                key: "lse",
-                title: "Lista Simplemente Enlazada",
-                state: false,
-            },
-            {
-                key: "lde",
-                title: "Lista Doblemente Enlazada",
-                state: false,
-            },
-            {
-                key: "lcse",
-                title: "Lista Circular Simplemente Enlazada",
-                state: false,
-            }
-        ]
-    );
+    const [asideList, setAsideList] = useState(constLista);
+    
+    useEffect(() => {
+        setAsideList(constLista)
+    }, [constLista]);
 
-    const [viewTypeComponent, setViewTypeComponent] = useState("est");
+    const [viewTypeComponent, setViewTypeComponent] = useState("list");
     const viewComponents = {
-        est: <>
+        list: <>
                 <Section url="/markdown/list/introduction.md" first={true} last={true} />
                 <Section url="/markdown/list/clasificacion.md" first={true}/>
             </>,
@@ -90,7 +67,7 @@ export default function List() {
             <div className="flex gap-2 relative">
                 <Aside
                     data={asideList}
-                    setAsideSecuencia={setAsideList}
+                    setData={setAsideList}
                     setViewTypeComponent={setViewTypeComponent}
                 />
                 <div className="w-10/12">

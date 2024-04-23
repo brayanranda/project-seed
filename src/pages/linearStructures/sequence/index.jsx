@@ -3,39 +3,21 @@ import Analisis from "@/components/ui/Analisis";
 import { getAnalisis_SEC } from "@/store/services/servicios";
 import Background from "@/components/ui/Background";
 import Aside from "@/components/ui/Aside";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SequenceDownloads from "./SequenceDownloads";
 import SequenceOperations from "./Operations";
+import { constSecuencia } from "@/utilities/aside/estructuras_lineales/secuencia";
 
 export default function Sequence() {
-    const [asideSecuencia, setAsideSecuencia] = useState(
-        [
-            {
-                key: "est",
-                title: "Estructuras Lineales",
-                state: true,
-            },
-            {
-                key: "ope",
-                title: "Operaciones",
-                state: false,
-            },
-            {
-                key: "impl",
-                title: "Implementación",
-                state: false,
-            },
-            {
-                key: "coscom",
-                title: "Costo & Complejidad",
-                state: false,
-            }
-        ]
-    );
+    const [asideSecuencia, setAsideSecuencia] = useState(constSecuencia);
 
-    const [viewTypeComponent, setViewTypeComponent] = useState("est");
+    useEffect(() => {
+        setAsideSecuencia(constSecuencia)
+    }, [constSecuencia]);
+
+    const [viewTypeComponent, setViewTypeComponent] = useState("sec");
     const viewComponents = {
-        est: <Section url="/markdown/sequence/description.md" first={true} last={true} />,
+        sec: <Section url="/markdown/sequence/description.md" first={true} last={true} />,
         ope: <SequenceOperations />,
         impl: <Section url="/markdown/sequence/implementation.md" first={true} last={false} />,
         coscom: <Analisis 
