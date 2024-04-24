@@ -14,7 +14,7 @@ function Aside({ data, setData, setViewTypeComponent }) {
                                         state: i === index ? true : false,
                                     })))
                                 }}
-                                className={`${item.state ? "bg-cyan-400 text-cyan-900" : "bg-slate-700 text-white"} cursor-pointer transform hover:scale-110 hover:translate-x-3 w-full hover:bg-white hover:text-black duration-300 py-2 px-4 rounded-full`}
+                                className={`${item.state ? "bg-cyan-400 text-cyan-900" : "bg-slate-700 text-white"} cursor-pointer transform hover:scale-110 hover:translate-x-3 w-full hover:bg-white hover:text-black duration-300 py-2 px-4 rounded-xl`}
                             >
                                 {item.title} {item.state}
                             </li>
