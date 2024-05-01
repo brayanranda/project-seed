@@ -18,12 +18,12 @@ export default function List() {
     const [viewTypeComponent, setViewTypeComponent] = useState("list");
     const viewComponents = {
         list: <>
-                <Section url="/markdown/list/introduction.md" first={true} last={true} />
-                <Section url="/markdown/list/clasificacion.md" first={true}/>
+                <Section url="/markdown/list/introduction.md" first={true} />
+                <Section url="/markdown/list/clasificacion.md" last={true}/>
             </>,
         ope: <ListOperations />,
-        lse: <div className="pt-40">
-                <Section url="/markdown/list/lista_simple.md" />
+        lse: <div>
+                <Section url="/markdown/list/lista_simple.md" first={true} />
                 <Analisis 
                     id={0} 
                     servicio_markdown={getAnalisis_LS} 
@@ -31,8 +31,8 @@ export default function List() {
                     sub_title="Costo Operacional y Complejidad de" 
                 />
             </div>,
-        lde: <div className="pt-40">
-                <Section url="/markdown/list/lista_doble.md" />
+        lde: <div>
+                <Section url="/markdown/list/lista_doble.md" first={true} />
                 <Analisis 
                     id={1} 
                     servicio_markdown={getAnalisis_LD} 
@@ -40,8 +40,8 @@ export default function List() {
                     sub_title="Costo Operacional y Complejidad de" 
                 />
             </div>,
-        lc: <div className="pt-40">
-                <Section url="/markdown/list/lista_circular.md" />
+        lc: <div>
+                <Section url="/markdown/list/lista_circular.md" first={true} />
                 <Analisis 
                     id={2} 
                     servicio_markdown={getAnalisis_LCS} 
@@ -49,8 +49,8 @@ export default function List() {
                     sub_title="Costo Operacional y Complejidad de" 
                 />
             </div>,
-        lcse: <div className="pt-40">
-                <Section url="/markdown/list/lista_circular_doble.md" />
+        lcse: <div>
+                <Section url="/markdown/list/lista_circular_doble.md" first={true} />
                 <Analisis 
                     id={3} 
                     servicio_markdown={getAnalisis_LCD} 
