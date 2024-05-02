@@ -1,7 +1,7 @@
 function Aside({ data, setData, setViewTypeComponent }) {
     return (
         <div className="w-2/12 pt-40">
-            <ul className="px-6 space-y-2 text-white flex flex-col font-bold fixed w-2/12">
+            <ul className="px-6 space-y-2 text-white flex flex-col font-bold fixed w-2/12 overflow-y-scroll h-[600px]">
                 {
                     data && data.length > 0 &&
                         data.map((item, index) => 
