@@ -40,6 +40,21 @@ export const constLista = [
         state: false,
     },
     {
+        key: "lc",
+        title: "Lista Circular Simple en SEED",
+        state: false,
+    },
+    {
+        key: "implemeListCircular",
+        title: "Implementación Lista Circular Enlazada",
+        state: false,
+    },
+    {
+        key: "costoComplejidadListCircular",
+        title: "Costo & Complejidad de Lista Circular Enlazada",
+        state: false,
+    },
+    {
         key: "lcse",
         title: "Lista Circular Doble Enlazada",
         state: false,

@@ -38,15 +38,14 @@ export default function List() {
             title="Lista Doble en SEED" 
             sub_title="Costo Operacional y Complejidad de" 
         />,
-        lc: <div>
-                <Section url="/markdown/list/lista_circular.md" first={true} />
-                <Analisis 
-                    id={2} 
-                    servicio_markdown={getAnalisis_LCS} 
-                    title="Lista Circular Simple en SEED" 
-                    sub_title="Costo Operacional y Complejidad de" 
-                />
-            </div>,
+        lc: <Section url="/markdown/list/lista_circular.md" first={true} />,
+        implemeListCircular: <Section url="/markdown/list/implementacion_list_circular_simple.md" first={true} />,
+        costoComplejidadListCircular: <Analisis 
+            id={2} 
+            servicio_markdown={getAnalisis_LCS} 
+            title="Lista Circular Simple en SEED" 
+            sub_title="Costo Operacional y Complejidad de" 
+        />,
         lcse: <Section url="/markdown/list/lista_circular_doble.md" first={true} />,
         implemeListCircularDoble: <Section url="/markdown/list/implementacion_list_circular_doble.md" first={true} />,
         costoComplejidadListCircularDoble: <Analisis 
