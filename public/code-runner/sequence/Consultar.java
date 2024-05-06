@@ -1,15 +1,15 @@
 public class Secuencia<T>
-{       
-
+{
     public static void main(String[] args) {
         Secuencia<Integer> secuencia = new Secuencia<Integer>(5);
 
         secuencia.insertar(1);
-        secuencia.insertar(4);
-        secuencia.insertar(7);
+        secuencia.insertar(8);
 
-        secuencia.eliminar(7);
-        secuencia.eliminarP(1);
+        secuencia.get(1);
+        secuencia.esta(8);
+        secuencia.getTamanio();
+        secuencia.getCapacidad();
 
         System.out.println(secuencia);
     }
@@ -35,42 +35,33 @@ public class Secuencia<T>
         this.vector[this.cant++]=elem;
     }
 
-    public void eliminar(T elem){     
-        boolean e = false;
-        for( int i=0, j=0; i<this.cant; i++){
-            if(!this.vector[i].equals(elem)){
-                this.vector[j]=vector[i];
-                j++;
-            }else{
-                e=true;
-                this.vector[j]=null;
-            }
+    public T get(int i){        
+        if (i<0 || i>this.cant){
+            System.err.println("Indíce fuera de rango!");
+            return (null);
         }
-        if(e)
-        this.cant--;
+        else
+        return (this.vector[i]);
     }
 
-    public void eliminarP(int pos){        
-        if (pos<0 || pos>this.cant){
-            System.err.println("Indíce fuera de rango!");
-            return;
-        }
-        boolean e = false;
-        for( int i=0, j=0; i < this.cant; i++ ){
-            if(i!=pos){
-                this.vector[j]=vector[i];
-                j++;
-            }else{
-                e=true;
-                this.vector[j]=null;
-            }
-        }
-        if(e)
-        this.cant--;
+    public boolean esta(T elem){        
+        for(int i=0;i<this.cant;i++)
+            if(this.vector[i].equals(elem))
+                return true;
+            return false;
+    }
+
+
+    public int getTamanio(){
+        return this.cant;
     }
     
     public boolean esVacia(){
         return(this.cant==0);
+    }
+
+    public int getCapacidad(){
+        return (this.vector.length);
     }
 
     @Override
@@ -82,5 +73,4 @@ public class Secuencia<T>
             msg+=this.vector[i].toString()+" | ";
         return (msg);
     }
-
 }
