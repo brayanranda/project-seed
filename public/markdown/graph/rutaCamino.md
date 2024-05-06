@@ -1,4 +1,4 @@
-## Ruta o Camino de Longitud "n"
+# Ruta o Camino de Longitud "n"
 
 Una **Ruta** o Camino de longitud n de u a v en un grafo no-dirigido es una secuencia de arcos **e1, e2, . . ., en** del grafo tal que arco e1 tiene nodos terminales xo y x1 , arco e2 tiene nodos terminales x1 y x2 ,. . . y arco en tiene nodos terminales xn-1 y xn , Donde x0 = u y xn = v.
 

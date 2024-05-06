@@ -1,4 +1,4 @@
-## Circuitos y Rutas Eulerianas
+# Circuitos y Rutas Eulerianas
 
 Un **circuito** es un recorrido con el mismo origen y final. Un **circuito euleriano** de un multigrafo conexo G es un circuito que contiene todas las aristas de G. Un grafo G con un circuito euleriano se denomina un **grafo euleriano**.
 

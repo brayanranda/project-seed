@@ -1,4 +1,4 @@
-## Representación de los Grafos
+# Representación de los Grafos
 
 Una forma de representar grafos sin aristas múltiples es enumerar todas las aristas del grafo. Otra forma de representar grafos sin aristas múltiples es utilizar **Lista de Adyacencia** - Cada vértice tiene una lista de vértices los cuales son adyacentes a él. Esto causa redundancia en un grafo no dirigido (ya que A existe en la lista de adyacencia de B y viceversa).
 

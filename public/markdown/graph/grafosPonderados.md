@@ -1,4 +1,4 @@
-## Grafos Ponderados y Algoritmos
+# Grafos Ponderados y Algoritmos
 
 A Los grafos que tienen un número asignado a cada arista se les denomina grafos ponderados.
 

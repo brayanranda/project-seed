@@ -1,4 +1,4 @@
-## Isomorfismo de Grafos
+# Isomorfismo de Grafos
 
 Se puede decir que dos grafos son **isomorfos** si existe una correspondencia uno a uno entre los vértices de los grafos tal que para todo par de vértices que son adyacentes en un grafo si y solo si el correspondiente par de vértices son adyacentes en el otro grafo, pero al final tienen diferente forma.  
 

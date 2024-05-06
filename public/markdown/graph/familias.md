@@ -1,4 +1,4 @@
-## Familias distinguidas de Grafos Simples
+# Familias distinguidas de Grafos Simples
 
 Grafo Completo: Un Grafo **completo** de n Vértices denotado por **Kn**, es el grafo simple que contiene exactamente una arista entre cada par de vértices distintos.
 

@@ -16,27 +16,23 @@ export default function Queue () {
 
     const [viewTypeComponent, setViewTypeComponent] = useState("col");
     const viewComponents = {
-        col: <div>
-                <Section url="/markdown/queue/description.md" first={true}/>
-                <Section url="/markdown/queue/implementation.md" />
-                <Analisis 
-                    id={0} 
-                    servicio_markdown={getAnalisis_COLAS} 
-                    title="Cola en SEED" 
-                    sub_title="Costo Operacional y Complejidad de" 
-                />
-            </div>,
-        colp: <div className="pt-40">
-                <Section url="/markdown/queue/description-priority.md" startLeft={true}/>
-                <Section url="/markdown/queue/implementation-priority.md"/>
-                <Analisis 
-                    id={1} 
-                    servicio_markdown={getAnalisis_COLASP} 
-                    title="Cola de Prioridad en SEED" 
-                    sub_title="Costo Operacional y Complejidad de" 
-                    last={true}
-                />
-            </div>,
+        col: <Section url="/markdown/queue/description.md" first={true}/>,
+        implementacionCola: <Section url="/markdown/queue/implementation.md" first={true} />,
+        costoComplejidadCola: <Analisis 
+            id={0} 
+            title="Cola en SEED" 
+            servicio_markdown={getAnalisis_COLAS} 
+            sub_title="Costo Operacional y Complejidad de" 
+        />,
+        colp: <Section url="/markdown/queue/description-priority.md" first={true} startLeft={true}/>,
+        implementacionColaPrioridad: <Section url="/markdown/queue/implementation-priority.md" first={true} />,
+        costoComplejidadColaPrioridad: <Analisis 
+            id={1} 
+            servicio_markdown={getAnalisis_COLASP} 
+            title="Cola de Prioridad en SEED" 
+            sub_title="Costo Operacional y Complejidad de" 
+            last={true}
+        />,
     }
     
     return(

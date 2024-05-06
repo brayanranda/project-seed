@@ -1,4 +1,4 @@
-## Representación gráfica de un Grafo
+# Representación gráfica de un Grafo
 
 Ejemplo: Un grafo hipotético de vuelos sin escala entre ciudades de Colombia:
 

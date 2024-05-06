@@ -1,4 +1,4 @@
-## Grafos Conexos
+# Grafos Conexos
 
 Un grafo es conexo si cada par de vértices está conectado por un camino; es decir, si para cualquier par de vértices (a, b), existe al menos un camino posible desde a hacia b.
 

@@ -1,4 +1,4 @@
-## Algoritmo de Dijkstra
+# Algoritmo de Dijkstra
 
 Algoritmo descubierto por el matemático holandés **Edsger Dijkstra** en 1959. Describe como solucionar el problema de camino de **longitud mínima** desde a hasta z en grafos ponderados no dirigidos, donde todos los pesos son positivos. Es fácil adaptarlo para solucionar el problema de camino de longitud mínima en grafos dirigidos.  
 

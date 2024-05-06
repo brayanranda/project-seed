@@ -1,4 +1,4 @@
-## Grafos Bipartitos
+# Grafos Bipartitos
 
 Un grafo simple es **bipartito** si su conjunto de V de vértices se puede dividir en dos conjuntos disyuntos V1 y V2 tales que cada arista del grafo conecta un vértice de V1 con un vértice de V2.
 

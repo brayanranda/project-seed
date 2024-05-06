@@ -19,27 +19,25 @@ export default function List() {
     const viewComponents = {
         list: <>
                 <Section url="/markdown/list/introduction.md" first={true} />
-                <Section url="/markdown/list/clasificacion.md" last={true}/>
+                <Section url="/markdown/list/clasificacion.md" />
             </>,
         ope: <ListOperations />,
-        lse: <div>
-                <Section url="/markdown/list/lista_simple.md" first={true} />
-                <Analisis 
-                    id={0} 
-                    servicio_markdown={getAnalisis_LS} 
-                    title="Lista Simple en SEED" 
-                    sub_title="Costo Operacional y Complejidad de" 
-                />
-            </div>,
-        lde: <div>
-                <Section url="/markdown/list/lista_doble.md" first={true} />
-                <Analisis 
-                    id={1} 
-                    servicio_markdown={getAnalisis_LD} 
-                    title="Lista Doble en SEED" 
-                    sub_title="Costo Operacional y Complejidad de" 
-                />
-            </div>,
+        lse: <Section url="/markdown/list/lista_simple.md" first={true} />,
+        implemeListSimple: <Section url="/markdown/list/implementacion_list_simple.md" first={true} />,
+        costoComplejidadListSimple: <Analisis 
+            id={0} 
+            servicio_markdown={getAnalisis_LS} 
+            title="Lista Simple en SEED" 
+            sub_title="Costo Operacional y Complejidad de" 
+        />,
+        lde: <Section url="/markdown/list/lista_doble.md" first={true} />,
+        implemeListDoble: <Section url="/markdown/list/implementacion_list_doble.md" first={true} />,
+        costoComplejidadListDoble: <Analisis 
+            id={1} 
+            servicio_markdown={getAnalisis_LD} 
+            title="Lista Doble en SEED" 
+            sub_title="Costo Operacional y Complejidad de" 
+        />,
         lc: <div>
                 <Section url="/markdown/list/lista_circular.md" first={true} />
                 <Analisis 
@@ -49,16 +47,15 @@ export default function List() {
                     sub_title="Costo Operacional y Complejidad de" 
                 />
             </div>,
-        lcse: <div>
-                <Section url="/markdown/list/lista_circular_doble.md" first={true} />
-                <Analisis 
-                    id={3} 
-                    servicio_markdown={getAnalisis_LCD} 
-                    title="Lista Circular Doble en SEED" 
-                    sub_title="Costo Operacional y Complejidad de" 
-                    last={true}
-                />
-            </div>,
+        lcse: <Section url="/markdown/list/lista_circular_doble.md" first={true} />,
+        implemeListCircularDoble: <Section url="/markdown/list/implementacion_list_circular_doble.md" first={true} />,
+        costoComplejidadListCircularDoble: <Analisis 
+            id={3} 
+            servicio_markdown={getAnalisis_LCD} 
+            title="Lista Circular Doble en SEED" 
+            sub_title="Costo Operacional y Complejidad de" 
+            last={true}
+        />,
     }
 
     return (

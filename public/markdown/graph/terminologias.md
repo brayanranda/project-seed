@@ -1,4 +1,4 @@
-## Terminología Básica para Grafos No Dirigidos
+# Terminología Básica para Grafos No Dirigidos
 
 - Dos vértices de un grafo No Dirigido son **Adyacentes** si comparten la misma arista: "Dos vértices u y v en un grafo no dirigido G son llamados adyacentes (o vecinos) en G si {u, v} es una arista de G. Si e = {u, v}, la arista e es llamada incidente con los vértices u y v. Se dice que la arista e conecta a u y v. Los vértices u y v son llamados puntos finales (extremos) de la arista {u, v}."  
 - Los **extremos** de una arista son los vértices que comparte dicha arista:
