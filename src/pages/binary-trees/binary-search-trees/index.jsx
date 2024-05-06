@@ -28,7 +28,7 @@ export default function BinarySearchTree () {
                     setData={setAsideBinarySearchTree}
                     setViewTypeComponent={setViewTypeComponent}
                 />
-                <div className="w-10/12">
+                <div className="w-9/12">
                     {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
                     <BinarySearchTreeDownloads />
                 </div>

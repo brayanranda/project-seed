@@ -29,7 +29,7 @@ export default function RedBlackTree () {
                     setData={setRedBlackTree}
                     setViewTypeComponent={setViewTypeComponent}
                 />
-                <div className="w-10/12">
+                <div className="w-9/12">
                     {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
                     <RedBlackTreeDownloads />
                 </div>
