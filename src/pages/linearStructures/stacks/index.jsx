@@ -1,36 +1,46 @@
-import Download from "../../../components/ui/Download/Download";
 import Section from "@/components/ui/Section";
 import Analisis from "@/components/ui/Analisis";
 import { getAnalisis_PILAS } from "@/store/services/servicios";
+import { constPilas } from "@/utilities/aside/estructuras_lineales/pilas";
+import Background from "@/components/ui/Background";
+import Aside from "@/components/ui/Aside";
+import ListDownloads from "./ListDownloads";
+import { useEffect, useState } from "react";
 
 export default function Queue () {
-    const data = [
-        {
-            title: "Material de Teoría de Pila",
-            url: "/contenido/recurso/PILAS.zip",
-        },
-        {
-            title: "Componente SEED - UFPS",
-            url: "/contenido/componente/SEED_UFPS.zip",
-        },
-        {
-            title: "Simulador para Pila",
-            url: "/contenido/JARS/Pilas.zip",
-        }
-    ]
+    const [asideStacks, setAsideStacks] = useState(constPilas);
+    
+    useEffect(() => {
+        setAsideStacks(constPilas)
+    }, [constPilas]);
 
-    return(
-        <main className="bg-seed text-white">
-            <Section url="/markdown/stack/description.md" first={true}/>
-            <Section url="/markdown/stack/implementation.md" />
-            <Analisis 
+    const [viewTypeComponent, setViewTypeComponent] = useState("pil");
+    const viewComponents = {
+        pil: <Section url="/markdown/stack/description.md" first={true} />,
+        impl: <Section url="/markdown/stack/implementation.md" first={true} />,
+        cosCom: <Analisis 
                 id={0} 
                 servicio_markdown={getAnalisis_PILAS} 
                 title="Pila en SEED" 
                 sub_title="Costo Operacional y Complejidad de" 
                 last={true}
-            />
-            <Download data={data} />
+            />,
+    }
+
+    return(
+        <main className="bg-seed text-white">
+            <Background first={true} last={true} startLeft={false}/>
+            <div className="flex gap-2 relative">
+                <Aside
+                    data={asideStacks}
+                    setData={setAsideStacks}
+                    setViewTypeComponent={setViewTypeComponent}
+                />
+                <div className="w-9/12">
+                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
+                    <ListDownloads />
+                </div>
+            </div>
         </main>
     );
 }
