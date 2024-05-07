@@ -6,6 +6,7 @@ import Background from "@/components/ui/Background";
 import Aside from "@/components/ui/Aside";
 import ListDownloads from "./ListDownloads";
 import { useEffect, useState } from "react";
+import ApilarFrame from "./ApilarFrame";
 
 export default function Queue () {
     const [asideStacks, setAsideStacks] = useState(constPilas);
@@ -16,7 +17,11 @@ export default function Queue () {
 
     const [viewTypeComponent, setViewTypeComponent] = useState("pil");
     const viewComponents = {
-        pil: <Section url="/markdown/stack/description.md" first={true} />,
+        pil: <>
+            <Section url="/markdown/stack/description.md" first={true} />
+            <ApilarFrame />
+            <Section url="/markdown/stack/desapilar.md" first={true} />
+        </>,
         impl: <Section url="/markdown/stack/implementation.md" first={true} />,
         cosCom: <Analisis 
                 id={0} 
