@@ -20,11 +20,13 @@ function SequenceOperations() {
             name: "Consultar",
             icon: faMagnifyingGlass,
             url: "/markdown/sequence/search.md",
+            runner: "/code-runner/sequence/Consultar.java"
         },
         {
             name: "Eliminar",
             icon: faTrash,
             url: "/markdown/sequence/delete.md",
+            runner: "/code-runner/sequence/Eliminar.java"
         }
     ]
 

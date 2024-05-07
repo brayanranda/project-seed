@@ -7,6 +7,7 @@ import Aside from "@/components/ui/Aside";
 import Background from "@/components/ui/Background";
 import ListOperations from "./Operations";
 import { constLista } from "@/utilities/aside/estructuras_lineales/listas";
+import OperationsGetEditDelete from "./OperationsGetEditDelete";
 
 export default function List() {
     const [asideList, setAsideList] = useState(constLista);
@@ -21,7 +22,10 @@ export default function List() {
                 <Section url="/markdown/list/introduction.md" first={true} />
                 <Section url="/markdown/list/clasificacion.md" />
             </>,
-        ope: <ListOperations />,
+        ope: <>
+            <ListOperations />
+            <OperationsGetEditDelete />
+        </>,
         lse: <Section url="/markdown/list/lista_simple.md" first={true} />,
         implemeListSimple: <Section url="/markdown/list/implementacion_list_simple.md" first={true} />,
         costoComplejidadListSimple: <Analisis 

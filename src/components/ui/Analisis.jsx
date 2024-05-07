@@ -35,8 +35,8 @@ export default function Analisis({ id,servicio_markdown, title = "", sub_title="
             <article className="mx-auto w-11/12 md:w-10/12 relative">
                 {
                     !loading 
-                    ? <CosteComplejidad id={id} analisis={analisis} />
-                    : <div></div>
+                        ? <CosteComplejidad id={id} analisis={analisis} />
+                        : <div></div>
                 }
             </article>
         </section>
