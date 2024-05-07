@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-function ApilarFrame({url}) {
+function FrameCode ({url}) {
     const [code, setCode] = useState([]);
     const [showIframe, setShowIframe] = useState(false);
 
     const method = async () => {
-        const url = "/code-runner/stacks/Apilar.java";
         const req = await fetch(url);
         const text = await req.text();
         setCode(text)
@@ -13,7 +12,7 @@ function ApilarFrame({url}) {
 
     useEffect(() => {
         method()
-    }, []);
+    }, [url]);
 
     return (
         <section className="w-full relative z-20">
@@ -34,4 +33,4 @@ function ApilarFrame({url}) {
     );
 }
 
-export default ApilarFrame;
+export default FrameCode;
