@@ -14,11 +14,13 @@ function OperationsGetEditDelete() {
             name: "Consultar",
             icon: faMagnifyingGlass,
             url: "/markdown/list/search.md",
+            runner: "/code-runner/list/Consultar.java"
         },
         {
             name: "Eliminar",
             icon: faTrash,
             url: "/markdown/list/delete.md",
+            runner: "/code-runner/list/Eliminar.java"
         }
     ]
 
