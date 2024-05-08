@@ -8,6 +8,7 @@ import Background from "@/components/ui/Background";
 import ListOperations from "./Operations";
 import { constLista } from "@/utilities/aside/estructuras_lineales/listas";
 import OperationsGetEditDelete from "./OperationsGetEditDelete";
+import AsideMobile from "@/components/ui/AsideMobile";
 
 export default function List() {
     const [asideList, setAsideList] = useState(constLista);
@@ -61,15 +62,40 @@ export default function List() {
         />,
     }
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        function checkIfMobile() {
+          const mobile = window.innerWidth < 768;
+          if (mobile !== isMobile) {
+            setIsMobile(mobile);
+          }
+        }
+        checkIfMobile();
+    
+        window.addEventListener('resize', checkIfMobile);
+    
+        return () => {
+          window.removeEventListener('resize', checkIfMobile);
+        };
+    }, [isMobile]);
+
     return (
         <main className="bg-seed text-white">
             <Background first={true} last={true} startLeft={false}/>
-            <div className="flex gap-2 relative">
-                <Aside
-                    data={asideList}
-                    setData={setAsideList}
-                    setViewTypeComponent={setViewTypeComponent}
-                />
+            <div className="flex flex-col md:flex-row gap-2 relative">
+                {isMobile 
+                    ?   <AsideMobile
+                            data={asideList}
+                            setData={setAsideList}
+                            setViewTypeComponent={setViewTypeComponent}
+                        /> 
+                    :  <Aside
+                            data={asideList}
+                            setData={setAsideList}
+                            setViewTypeComponent={setViewTypeComponent}
+                        />
+                }
                 <div className="w-9/12">
                     {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
                     <ListDownloads />

@@ -18,10 +18,10 @@ export default function Queue () {
     const [viewTypeComponent, setViewTypeComponent] = useState("pil");
     const viewComponents = {
         pil: <>
-            <Section url="/markdown/stack/description.md" first={true} />
+            <Section url="/markdown/stack/description.md" first={true} notPb={true} />
             <FrameCode url="/code-runner/stacks/Apilar.java" />
-            <Section url="/markdown/stack/desapilar.md" first={true} />
-            <FrameCode url="/code-runner/stacks/Desapilar.java" />
+            <Section url="/markdown/stack/desapilar.md" notPb={true} />
+            <FrameCode url="/code-runner/stacks/Desapilar.java" last={true} />
         </>,
         impl: <Section url="/markdown/stack/implementation.md" first={true} />,
         cosCom: <Analisis 

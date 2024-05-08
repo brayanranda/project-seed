@@ -6,6 +6,7 @@ import { constColas } from "@/utilities/aside/estructuras_lineales/colas";
 import Aside from "@/components/ui/Aside";
 import Background from "@/components/ui/Background";
 import { useEffect, useState } from "react";
+import FrameCode from "../stacks/ApilarFrame";
 
 export default function Queue () {
     const [asideQueue, setAsideQueue] = useState(constColas);
@@ -16,7 +17,10 @@ export default function Queue () {
 
     const [viewTypeComponent, setViewTypeComponent] = useState("col");
     const viewComponents = {
-        col: <Section url="/markdown/queue/description.md" first={true}/>,
+        col: <>
+            <Section url="/markdown/queue/description.md" first={true}/>
+            <FrameCode url="/code-runner/colas/Cola.java" />
+        </>,
         implementacionCola: <Section url="/markdown/queue/implementation.md" first={true} />,
         costoComplejidadCola: <Analisis 
             id={0} 
@@ -24,7 +28,10 @@ export default function Queue () {
             servicio_markdown={getAnalisis_COLAS} 
             sub_title="Costo Operacional y Complejidad de" 
         />,
-        colp: <Section url="/markdown/queue/description-priority.md" first={true} startLeft={true}/>,
+        colp: <>
+            <Section url="/markdown/queue/description-priority.md" first={true} startLeft={true}/>
+            <FrameCode url="/code-runner/colas/ColaP.java" />
+        </>,
         implementacionColaPrioridad: <Section url="/markdown/queue/implementation-priority.md" first={true} />,
         costoComplejidadColaPrioridad: <Analisis 
             id={1} 
