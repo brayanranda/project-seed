@@ -7,6 +7,7 @@ Una lista circularmente enlazada tiene el mismo tipo de nodos que una lista simp
 ![Lista circular](/assets/images/list/listaC_1.1.jpg)
 
 Aún cuando una lista circularmente enlazada no tiene inicio o terminación, no obstante se necesita que algún nodo esté marcado como especial, el cual será llamado el cursor. El nodo cursor permite tener un lugar para iniciar si se requiere recorrer una lista circularmente inversa. Y si se recuerda esta posición inicial, entonces también se puede saber cuando se haya terminado con un recorrido en la lista circularmente enlazada, que es cuando se regresa al nodo que fue el nodo cursor cuando se inicio.  
+
 **Ejemplo de Insertar**  
 Se desea insertar en una estructura Lista Circular, los siguientes datos: 1, 12, 3, 9 y 8.
 
