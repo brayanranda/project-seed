@@ -1,4 +1,4 @@
-public class ListaS {
+public class ListaS<T> {
     public static void main(String[] args) {
         ListaS<Integer> listaS = new ListaS<Integer>();
 
@@ -29,7 +29,23 @@ public class ListaS {
         }catch(ExceptionUFPS e){            
             System.err.println(e.getMensaje());            
         }        
-    } 
+    }
+
+    public boolean esVacia(){        
+        return(this.cabeza==null);        
+    }
+    
+    private Nodo<T> getPos(int i)throws ExceptionUFPS{        
+        if(this.esVacia() || i>this.tamanio  || i<0){
+            throw new ExceptionUFPS("El índice solicitado no existe en la Lista Simple");
+        }            
+        Nodo<T> t=this.cabeza;        
+        while(i>0){            
+            t=t.getSig();
+            i--;            
+        }        
+        return(t);        
+    }
 }
 
 class Nodo<T>{

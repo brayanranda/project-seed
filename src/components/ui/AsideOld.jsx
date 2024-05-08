@@ -3,10 +3,9 @@ import React, { useState, useEffect } from 'react';
 function Aside({ data, setData, setViewTypeComponent }) {
     const [openList, setOpenList] = useState(false);
     const [activeList, setActiveList] = useState(null);
-
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [data])
+    }, [data]);
 
     const handleItemClick = (key, list) => {
         return list.map(item => {
@@ -27,13 +26,12 @@ function Aside({ data, setData, setViewTypeComponent }) {
                 };
             }
         });
-    }
+    };
 
     const onItemClick = (key) => {
         const updatedData = handleItemClick(key, data);
         setData(updatedData);
-    }
-
+    };
     const handleOpen = (key) => {
         if (activeList !== key) {
             if (!openList) {setOpenList(!openList);}
@@ -41,10 +39,9 @@ function Aside({ data, setData, setViewTypeComponent }) {
         }else{
             setOpenList(!openList);
         }
-    }
-
+    };
     return (
-        <div className="w-full md:w-3/12 pt-40">
+        <div className="w-3/12 pt-40">
             <ul
                 className={`px-6 space-y-2 text-white flex flex-col font-bold fixed w-3/12 ${data && data.length > 8 ? "overflow-y-scroll h-[600px]" : ""}`}
             >
