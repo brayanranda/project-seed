@@ -1,12 +1,17 @@
-public class EliminarCD<T> {
+import java.util.Iterator;
+public class EliminarCD<T> implements Iterable<T> {
     public static void main(String[] args) {
         EliminarCD<Integer> eliminar = new EliminarCD<Integer>();
         eliminar.insertarAlInicio(7);
-        eliminar.insertarAlInicio(3);
+        eliminar.eliminar(7);
         System.out.println(eliminar);
     }
     private NodoD<T> cabeza;
     private int tamanio=0;
+    @Override
+    public Iterator<T> iterator(){
+        return (new IteratorLCD<T>(this.cabeza));
+    }
     public void insertarAlInicio(T dato){
         NodoD<T> x=new NodoD<T> (dato, cabeza.getSig(), cabeza);
         cabeza.setSig(x);
@@ -16,7 +21,7 @@ public class EliminarCD<T> {
     public EliminarCD() {
         this.cabeza=new NodoD<T> (null,null,null);
         this.cabeza.setSig(cabeza);
-        cabeza.setAnt(cabeza);        
+        cabeza.setAnt(cabeza);
     }
     public T eliminar(int i){
         try{
@@ -43,19 +48,11 @@ public class EliminarCD<T> {
         }
         return(null);
     }
-    public void vaciar(){
-        this.cabeza=new NodoD<T> (null,null,null);
-        this.cabeza.setSig(cabeza);
-        cabeza.setAnt(cabeza);
-        this.tamanio=0;
-    }
     @SuppressWarnings("empty-statement")
     private NodoD<T> getPos(int i)throws ExceptionUFPS{
         if(i<0||i>=this.tamanio){
-            throw new ExceptionUFPS("El índice solicitado no existe en la Lista Doble");
-        }
-        else
-        {
+            throw new ExceptionUFPS("El índice no existe");
+        }else{
             NodoD<T> t=this.cabeza.getSig();
             while(i>0){
                 t=t.getSig();
@@ -89,4 +86,23 @@ class NodoD<T> {
 class ExceptionUFPS extends Exception {
     public ExceptionUFPS(String mensaje) { super(mensaje); }
     public String getMensaje(){ return (super.getMessage()); }
+}
+class IteratorLCD<T> implements Iterator<T> {
+    private NodoD<T> cab;
+    private NodoD<T> posicion;
+    IteratorLCD(NodoD<T> cab) {
+        this.cab=cab;
+        this.posicion=this.cab.getSig();
+    }
+    @Override
+    public boolean hasNext(){return (this.posicion!=this.cab);}
+    @Override
+    public T next() {
+        if(!this.hasNext())
+            return (null);
+        this.posicion=this.posicion.getSig();
+        return(this.posicion.getAnt().getInfo());
+    }
+    @Override
+    public void remove() {}
 }

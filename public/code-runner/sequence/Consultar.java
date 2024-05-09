@@ -1,24 +1,24 @@
-public class Secuencia<T>
+public class Consultar<T>
 {
     public static void main(String[] args) {
-        Secuencia<Integer> secuencia = new Secuencia<Integer>(5);
+        Consultar<Integer> consultar = new Consultar<Integer>(5);
 
-        secuencia.insertar(1);
-        secuencia.insertar(8);
+        consultar.insertar(1);
+        consultar.insertar(8);
 
-        secuencia.get(1);
-        secuencia.esta(8);
-        secuencia.getTamanio();
-        secuencia.getCapacidad();
+        consultar.get(1);
+        consultar.esta(8);
+        consultar.getTamanio();
+        consultar.getCapacidad();
 
-        System.out.println(secuencia);
+        System.out.println(consultar);
     }
 
     private T vector[];   
 
     private int cant;      
     
-    public Secuencia(int n){        
+    public Consultar(int n){        
         if (n<=0){
             System.err.println("Tamaño de secuencia no valido!");
             return;

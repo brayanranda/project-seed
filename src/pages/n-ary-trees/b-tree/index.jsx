@@ -2,8 +2,7 @@ import Section from "@/components/ui/Section";
 import { consArbolB } from "@/utilities/aside/arboles_enearios/arbol_b";
 import React, { useState, useEffect } from 'react';
 import BTreeDownloads from "./BTreeDownloads";
-import Background from "@/components/ui/Background";
-import Aside from "@/components/ui/Aside";
+import Template from "@/components/Layout/Template";
 
 export default function BTree () {
     const [bTree, setBTree] = useState(consArbolB);
@@ -20,19 +19,14 @@ export default function BTree () {
     }
 
     return(
-        <main className="bg-seed text-white">
-            <Background first={true} last={true} startLeft={false}/>
-            <div className="flex gap-2 relative">
-                <Aside
-                    data={bTree}
-                    setData={setBTree}
-                    setViewTypeComponent={setViewTypeComponent}
-                />
-                <div className="w-9/12">
-                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
-                    <BTreeDownloads />
-                </div>
-            </div>
-        </main>
+        <Template
+            data={bTree}
+            setData={setBTree}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <BTreeDownloads/>
+        </Template>
     )
 }

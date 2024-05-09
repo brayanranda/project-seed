@@ -1,9 +1,8 @@
-import Aside from "@/components/ui/Aside";
-import Background from "@/components/ui/Background";
 import Section from "@/components/ui/Section";
 import React, { useState, useEffect } from 'react';
 import BPlusTreeDownloads from "./BPlusTreeDownloads";
 import { consArbolBPlus } from "@/utilities/aside/arboles_enearios/arbol_b+";
+import Template from "@/components/Layout/Template";
 
 export default function BPlusTree () {
     const [bPlusTree, setBPlusTree] = useState(consArbolBPlus);
@@ -20,19 +19,14 @@ export default function BPlusTree () {
     }
 
     return(
-        <main className="bg-seed text-white">
-            <Background first={true} last={true} startLeft={false}/>
-            <div className="flex gap-2 relative">
-                <Aside
-                    data={bPlusTree}
-                    setData={setBPlusTree}
-                    setViewTypeComponent={setViewTypeComponent}
-                />
-                <div className="w-9/12">
-                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
-                    <BPlusTreeDownloads />
-                </div>
-            </div>
-        </main>
+        <Template
+            data={bPlusTree}
+            setData={setBPlusTree}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <BPlusTreeDownloads/>
+        </Template>
     )
 }

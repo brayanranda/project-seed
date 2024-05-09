@@ -1,13 +1,18 @@
-public class ListaCircular<T> {
+import java.util.Iterator;
+public class InsertarLC<T> implements Iterable<T> {
     public static void main(String[] args) {
-        ListaCircular<Integer> listaCircular = new ListaCircular<Integer>();
+        InsertarLC<Integer> listaCircular = new InsertarLC<Integer>();
         listaCircular.insertarAlInicio(1);
         listaCircular.insertarAlInicio(1);
         System.out.println(listaCircular);
     }
     private Nodo<T> cabeza;
     private int tamanio=0;
-    public ListaCircular() {
+    @Override
+    public Iterator<T> iterator(){
+        return (new IteratorLC<T>(this.cabeza));
+    }
+    public InsertarLC() {
         this.cabeza=new Nodo<T> (null,null);
         this.cabeza.setSig(cabeza);     
     }
@@ -51,7 +56,7 @@ public class ListaCircular<T> {
                 this.tamanio++;
                 }
             }
-     }
+    }
     public boolean esVacia(){ return(cabeza==cabeza.getSig() || this.tamanio==0); }
     @SuppressWarnings("empty-statement")
     private Nodo<T> getPos(int i)throws ExceptionUFPS{
@@ -83,4 +88,26 @@ class Nodo<T>{
 class ExceptionUFPS extends Exception {
     public ExceptionUFPS(String mensaje) { super(mensaje); }
     public String getMensaje(){ return (super.getMessage()); }
+}
+class IteratorLC<T> implements Iterator<T>{
+    private Nodo<T> cabeza;
+    private Nodo<T> posicion;
+    IteratorLC(Nodo<T> cab){            
+        this.cabeza=cab;
+        this.posicion=this.cabeza.getSig();            
+    }
+    @Override
+    public boolean hasNext(){            
+        return (this.posicion!=this.cabeza);                
+    }
+    @Override
+    public T next(){            
+        if(!this.hasNext())
+            return (null);
+        Nodo<T> aux = posicion;
+        this.posicion=this.posicion.getSig();
+        return(aux.getInfo());
+    }
+    @Override
+    public void remove(){}
 }
