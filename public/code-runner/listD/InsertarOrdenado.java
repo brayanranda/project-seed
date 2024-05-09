@@ -1,4 +1,5 @@
-public class InsertarOrdenado<T> {
+import java.util.Iterator;
+public class InsertarOrdenado<T> implements Iterable<T>{
     public static void main(String[] args) {
         InsertarOrdenado<Integer> listaD = new InsertarOrdenado<Integer>();
         listaD.insertarAlInicio(1);
@@ -8,6 +9,10 @@ public class InsertarOrdenado<T> {
     }
     private NodoD<T> cabeza;
     private int tamanio;
+    @Override
+    public Iterator<T> iterator(){
+        return(new IteratorLD<T>(this.cabeza));
+    }
     public InsertarOrdenado(){
         this.cabeza=null;
         this.tamanio=0;
@@ -91,4 +96,24 @@ class NodoD<T> implements java.io.Serializable {
 class ExceptionUFPS extends Exception {
     public ExceptionUFPS(String mensaje) { super(mensaje); }
     public String getMensaje(){ return (super.getMessage()); }
+}
+class IteratorLD<T> implements Iterator<T>{
+    private NodoD<T> posicion;  
+    IteratorLD(NodoD<T> posicion){            
+        this.posicion=posicion;	            
+    }
+    @Override
+    public boolean hasNext(){return (posicion!=null);}
+    @Override
+    public T next(){            
+        if(!this.hasNext()){                
+            System.err.println("Error no hay mas elementos");
+        return null;                
+        }            
+        NodoD<T> actual=posicion;
+        posicion=posicion.getSig();            
+        return(actual.getInfo());
+    }
+    @Override
+    public void remove(){}
 }

@@ -1,12 +1,11 @@
-public class Consultar<T> {
+import java.util.Iterator;  
+public class Consultar<T> implements Iterable<T>{
     public static void main(String[] args) {
         Consultar<Integer> listaS = new Consultar<Integer>();
-
         listaS.insertarAlInicio(8);
         listaS.get(0);
         listaS.getTamanio();
         listaS.esta(8);
-
         System.out.println(listaS);
     }
     private Nodo<T> cabeza;
@@ -14,6 +13,10 @@ public class Consultar<T> {
     public Consultar(){
         this.cabeza=null;
         this.tamanio=0;
+    }
+    @Override
+    public Iterator<T> iterator() {        
+        return new IteratorLS<T>(this.cabeza) {};        
     }
     public void insertarAlInicio(T x){
         this.cabeza=new Nodo<T>(x, this.cabeza);
@@ -70,18 +73,10 @@ class Nodo<T>{
         this.info=info;
         this.sig=sig;
     }
-    protected T getInfo(){
-        return this.info;
-    }
-    protected Nodo<T> getSig(){        
-        return this.sig;        
-    }
-    protected void setInfo(T nuevo){        
-        this.info=nuevo;
-    }
-    protected void setSig(Nodo<T> nuevo){
-        this.sig=nuevo;
-    }
+    protected T getInfo(){return this.info;}
+    protected Nodo<T> getSig(){ return this.sig;}
+    protected void setInfo(T nuevo){this.info=nuevo;}
+    protected void setSig(Nodo<T> nuevo){this.sig=nuevo;}
 }
 class ExceptionUFPS extends Exception {
     public ExceptionUFPS(String mensaje) {
@@ -90,4 +85,26 @@ class ExceptionUFPS extends Exception {
     public String getMensaje(){
         return (super.getMessage());
     }
+}
+class IteratorLS<T> implements Iterator<T>{
+    private Nodo<T> posicion;
+    IteratorLS(Nodo<T> pos){            
+        this.posicion=pos;            
+    }
+    @Override
+    public boolean hasNext(){            
+        return (posicion!=null);            
+    }
+    @Override
+    public T next(){            
+        if(!this.hasNext()){                
+        System.err.println("Error no hay mas elementos");
+        return null;                
+        }            
+        Nodo<T> actual=posicion;
+        posicion=posicion.getSig();            
+        return(actual.getInfo());
+    }
+    @Override
+    public void remove(){}
 }
