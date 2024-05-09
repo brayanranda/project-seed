@@ -33,14 +33,11 @@ export default function Background({ first = false, last = false, startLeft = fa
                     }}
                 ></div>
             )
-
             left = !left;
-
             if (++colorIndex >= colors.length) {
                 colorIndex = 0;
             }
         }
-
         setCircles(circlesArr)
     }
 

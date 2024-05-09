@@ -48,7 +48,7 @@ const AsideMobile = ({ data, setData, setViewTypeComponent }) => {
     }
 
     return (
-        <div className="w-full pt-40">
+        <div className="w-full pt-40 relative z-10">
             <div className="container mx-auto">
                 <button
                     onClick={() => setopenMenuList(!openMenuList)}
