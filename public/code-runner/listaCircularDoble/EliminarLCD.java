@@ -1,7 +1,7 @@
 import java.util.Iterator;
-public class EliminarCD<T> implements Iterable<T> {
+public class EliminarLCD<T> implements Iterable<T> {
     public static void main(String[] args) {
-        EliminarCD<Integer> eliminar = new EliminarCD<Integer>();
+        EliminarLCD<Integer> eliminar = new EliminarLCD<Integer>();
         eliminar.insertarAlInicio(7);
         eliminar.eliminar(7);
         System.out.println(eliminar);
@@ -18,7 +18,7 @@ public class EliminarCD<T> implements Iterable<T> {
         x.getSig().setAnt(x);
         this.tamanio++;
     }
-    public EliminarCD() {
+    public EliminarLCD() {
         this.cabeza=new NodoD<T> (null,null,null);
         this.cabeza.setSig(cabeza);
         cabeza.setAnt(cabeza);

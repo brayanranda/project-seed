@@ -1,16 +1,16 @@
 import java.util.Iterator;  
-public class Consultar<T> implements Iterable<T>{
+public class EliminarLS<T> implements Iterable<T>{
     public static void main(String[] args) {
-        Consultar<Integer> listaS = new Consultar<Integer>();
+        EliminarLS<Integer> listaS = new EliminarLS<Integer>();
         listaS.insertarAlInicio(8);
-        listaS.get(0);
-        listaS.getTamanio();
-        listaS.esta(8);
+        listaS.eliminar(0);
+        listaS.insertarAlInicio(3);
+        listaS.vaciar();
         System.out.println(listaS);
     }
     private Nodo<T> cabeza;
     private int tamanio;
-    public Consultar(){
+    public EliminarLS(){
         this.cabeza=null;
         this.tamanio=0;
     }
@@ -22,20 +22,29 @@ public class Consultar<T> implements Iterable<T>{
         this.cabeza=new Nodo<T>(x, this.cabeza);
         this.tamanio++;
     }
-    public T get(int i) {
-        try {
-            Nodo<T> t=this.getPos(i);
-            return (t.getInfo());
-        }catch(ExceptionUFPS e) {
-            System.err.println(e.getMensaje());
-            return (null);
+    public T eliminar(int i) {
+        if(this.esVacia())
+            return null;
+        Nodo<T> t=this.cabeza;
+        if(i==0)
+            this.cabeza=this.cabeza.getSig();
+        else{
+            try {
+                Nodo<T> y=this.getPos(i-1);
+                t=y.getSig();
+                y.setSig(t.getSig());
+            }catch(ExceptionUFPS e){
+                    System.err.println(e.getMensaje());
+                    return (null);
+            }
         }
+        t.setSig(null);
+        this.tamanio--;
+        return(t.getInfo());
     }
-    public int getTamanio() {
-        return (this.tamanio);
-    }
-    public boolean esta(T info) {
-        return (this.getIndice(info)!=-1);
+    public void vaciar(){        
+        this.cabeza=null; 
+        this.tamanio=0;           
     }
     public boolean esVacia(){
         return(this.cabeza==null);
@@ -51,20 +60,10 @@ public class Consultar<T> implements Iterable<T>{
         }
         return(t);
     }
-    public int getIndice(T info){
-        int i=0;
-        for(Nodo<T> x=this.cabeza;x!=null;x=x.getSig()){
-            if(x.getInfo().equals(info))
-                return (i);
-            i++;
-        }
-        return (-1);
-    }
 }
 class Nodo<T>{
     private T info;
     private Nodo<T> sig;
-    
     public Nodo(){
         this.info=null;
         this.sig=null;        
@@ -74,7 +73,7 @@ class Nodo<T>{
         this.sig=sig;
     }
     protected T getInfo(){return this.info;}
-    protected Nodo<T> getSig(){ return this.sig;}
+    protected Nodo<T> getSig(){return this.sig;}
     protected void setInfo(T nuevo){this.info=nuevo;}
     protected void setSig(Nodo<T> nuevo){this.sig=nuevo;}
 }

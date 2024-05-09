@@ -8,19 +8,19 @@ function OperationsGetEditDelete() {
             name: "Editar",
             icon: faEdit,
             url: "/markdown/list/edit.md",
-            runner: "/code-runner/list/Editar.java"
+            runner: "/code-runner/list/EditarLS.java"
         },
         {
             name: "Consultar",
             icon: faMagnifyingGlass,
             url: "/markdown/list/search.md",
-            runner: "/code-runner/list/Consultar.java"
+            runner: "/code-runner/list/ConsultarLS.java"
         },
         {
             name: "Eliminar",
             icon: faTrash,
             url: "/markdown/list/delete.md",
-            runner: "/code-runner/list/Eliminar.java"
+            runner: "/code-runner/list/EliminarLS.java"
         }
     ]
 
