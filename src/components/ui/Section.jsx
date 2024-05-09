@@ -1,9 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import Markdown from "marked-react";
 import { renderer } from '@/utilities/mdRenderer';
-import Background from './Background';
 
-export default function Section({ url, first = false, last = false, startLeft = false }) {
+export default function Section({ url, first = false, last = false, startLeft = false, notPb = false }) {
     const [data, setData] = useState("");
 
     const container = useRef(null);
@@ -17,13 +16,11 @@ export default function Section({ url, first = false, last = false, startLeft = 
         }
 
         fetchData();
-    }, [])
+    }, [url])
 
     return (
-        <section className={`w-full pb-20 ${first ? "pt-40" : ""} relative`}>
-            <Background first={first} last={last} startLeft={startLeft}/>
-
-            <article className="mx-auto w-11/12 md:w-8/12 lg:w-6/12 relative">
+        <section className={`w-full ${notPb ? "" : "pb-20"} ${first ? "md:pt-40" : ""} relative`}>
+            <article className="mx-auto w-11/12 md:w-10/12 relative">
                 <Markdown value={data} renderer={renderer} />
             </article>
         </section>

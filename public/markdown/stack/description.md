@@ -19,8 +19,3 @@ La estructura de Datos Pila solo realiza dos operaciones que conforman el funcio
 Esta acción consiste en la inserción de elementos en la pila, cabe mencionar que se pueden encontrar datos repetidos y que no se encuentren ordenados en la estructura.
 
 ![apilar](/assets/images/stack/Pila_2.jpg)
-  
-**Desapilar**  
-Acción que elimina el elemento que se encuentre en el tope de la estructura, es decir, el ultimo elemento que fue insertado en la Pila, debido que su caracteristica LIFO (último en entrar, último en salir).
-
-![desapilar](/assets/images/stack/Pila_3.jpg)

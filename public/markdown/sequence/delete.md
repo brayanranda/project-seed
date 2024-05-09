@@ -1,6 +1,7 @@
 # Eliminar {"subTitle":"Operación","color":"text-black"}
   
-Se debe indicar el dato que se desea eliminar de la estructura, esta lo borra y consecutivamente de ser necesario reajusta las posiciones de los datos siguientes al dato eliminado, teniendo en cuenta que el dato se encuentre almacenado en la Secuencia.  
+Se debe indicar el dato que se desea eliminar de la estructura, esta lo borra y consecutivamente de ser necesario reajusta las posiciones de los datos siguientes al dato eliminado, teniendo en cuenta que el dato se encuentre almacenado en la Secuencia.
+  
 **Ejemplo de Eliminar:**  
 Tenemos la Secuencia y se desea eliminar el número 02 de la Secuencia:  
 

@@ -38,7 +38,7 @@ export const renderer = {
             }
         }
 
-        return <TitleMd title={value} subTitle={data.subTitle} color={data.color} type={level} />
+        return <TitleMd title={value} subTitle={data.subTitle} color="text-white" type={level} />
     },
 
     list(body, ordered, start) {

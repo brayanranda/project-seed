@@ -1,28 +1,34 @@
-import Download from "../../../components/ui/Download/Download";
-
+import { constBinaryTree } from "@/utilities/aside/arboles_binarios/binaryTree";
 import Section from "@/components/ui/Section";
+import BinaryTreeDownloads from "./BinaryTreeDownloads";
+import { useEffect, useState } from "react";
+import Template from "@/components/Layout/Template";
 
 export default function BinaryTree () {
-    const data = [
-        {
-            title: "Material Arbol Binario General",
-            url: "/contenido/recurso/ARBOL BINARIO.zip",
-        },
-        {
-            title: "Componente SEED - UFPS",
-            url: "/contenido/componente/SEED_UFPS.zip",
-        },
-        {
-            title: "Simulador para ArbolBinario",
-            url: "/contenido/JARS/SimArbolBinarioGral.zip",
-        },
-    ]
+    const [asideBinartTree, setAsideBinartTree] = useState(constBinaryTree);
+
+    useEffect(() => {
+        setAsideBinartTree(constBinaryTree)
+    }, [constBinaryTree]);
+
+    const [viewTypeComponent, setViewTypeComponent] = useState("ab");
+    const viewComponents = {
+        ab: <Section url="/markdown/binary-tree/description.md" first={true} />,
+        rec: <Section url="/markdown/binary-tree/recorrido.md" first={true} />,
+        lonIE: <Section url="/markdown/binary-tree/longitud-de-camino-interno-y-externo.md" first={true} />,
+        repABM: <Section url="/markdown/binary-tree/representacion.md" first={true} />,
+        imp: <Section url="/markdown/binary-tree/implementation.md" first={true} />,
+    }
 
     return(
-        <main className="bg-seed text-white">
-            <Section url="/markdown/binary-tree/description.md" first={true}/>
-            <Section url="/markdown/binary-tree/implementation.md" last={true}/>
-            <Download data={data} />
-        </main>
+        <Template
+            data={asideBinartTree}
+            setData={setAsideBinartTree}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <BinaryTreeDownloads/>
+        </Template>
     );
 }

@@ -26,7 +26,7 @@ export default function TabsComponentMd({ data = [{ name: "", icon: "", url: "",
                     resolve(text)
                 })
             }))
-
+            
             setContent(newContent);
             setCode(newCode)
         }

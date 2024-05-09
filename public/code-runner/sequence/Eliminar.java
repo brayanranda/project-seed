@@ -1,14 +1,15 @@
-public class Secuencia<T>
+public class Eliminar<T>
 {       
 
     public static void main(String[] args) {
-        Secuencia<Integer> secuencia = new Secuencia<Integer>(5);
+        Eliminar<Integer> secuencia = new Eliminar<Integer>(5);
 
         secuencia.insertar(1);
-        secuencia.insertar(2);
+        secuencia.insertar(4);
+        secuencia.insertar(7);
 
-        secuencia.eliminar(0);
-        secuencia.eliminar(1);
+        secuencia.eliminar(7);
+        secuencia.eliminarP(1);
 
         System.out.println(secuencia);
     }
@@ -17,7 +18,7 @@ public class Secuencia<T>
 
     private int cant;      
     
-    public Secuencia(int n){        
+    public Eliminar(int n){        
         if (n<=0){
             System.err.println("Tamaño de secuencia no valido!");
             return;
@@ -49,6 +50,24 @@ public class Secuencia<T>
         this.cant--;
     }
 
+    public void eliminarP(int pos){        
+        if (pos<0 || pos>this.cant){
+            System.err.println("Indíce fuera de rango!");
+            return;
+        }
+        boolean e = false;
+        for( int i=0, j=0; i < this.cant; i++ ){
+            if(i!=pos){
+                this.vector[j]=vector[i];
+                j++;
+            }else{
+                e=true;
+                this.vector[j]=null;
+            }
+        }
+        if(e)
+        this.cant--;
+    }
     
     public boolean esVacia(){
         return(this.cant==0);

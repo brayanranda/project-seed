@@ -1,28 +1,32 @@
-import Download from "@/components/ui/Download/Download";
-
+import React, { useState, useEffect } from 'react';
 import Section from "@/components/ui/Section";
+import NaryDownloads from './NaryDownloads';
+import { consEnearioTree } from '@/utilities/aside/arboles_enearios/arbol_eneario';
+import Template from '@/components/Layout/Template';
 
 export default function NAryTree () {
-    const data = [
-        {
-            title: "Material Arbol Eneario",
-            url: "/contenido/recurso/ARBOLENEARIO.zip",
-        },
-        {
-            title: "Componente SEED - UFPS",
-            url: "/contenido/componente/SEED_UFPS.zip",
-        },
-        {
-            title: "Simulador para ArbolEneario",
-            url: "/contenido/JARS/SimArbolEnearioGeneral.zip",
-        },
-    ]
+    const [naryTree, setNaryTree] = useState(consEnearioTree);
+
+    useEffect(() => {
+        setNaryTree(consEnearioTree)
+    }, [consEnearioTree]);
+
+    const [viewTypeComponent, setViewTypeComponent] = useState("arb");
+    const viewComponents = {
+        arb: <Section url="/markdown/n-ary-tree/description.md" first={true}/>,
+        reco: <Section url="/markdown/n-ary-tree/recorrido.md" first={true}/>,
+        impl: <Section url="/markdown/n-ary-tree/implementation.md" first={true} last={true}/>,
+    }
 
     return(
-        <main className="bg-seed text-white">
-            <Section url="/markdown/n-ary-tree/description.md" first={true}/>
-            <Section url="/markdown/n-ary-tree/implementation.md" last={true}/>
-            <Download data={data} />
-        </main>
-    );
+        <Template
+            data={naryTree}
+            setData={setNaryTree}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <NaryDownloads/>
+        </Template>
+    )
 }
