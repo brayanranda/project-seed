@@ -9,6 +9,7 @@ import ListOperations from "./Operations";
 import { constLista } from "@/utilities/aside/estructuras_lineales/listas";
 import OperationsGetEditDelete from "./OperationsGetEditDelete";
 import AsideMobile from "@/components/ui/AsideMobile";
+import FrameCode from "../../../components/ui/FrameCode";
 
 export default function List() {
     const [asideList, setAsideList] = useState(constLista);
@@ -43,7 +44,12 @@ export default function List() {
             title="Lista Doble en SEED" 
             sub_title="Costo Operacional y Complejidad de" 
         />,
-        lc: <Section url="/markdown/list/lista_circular.md" first={true} />,
+        lc: <>
+            <Section url="/markdown/list/lista_circular.md" first={true} />
+            <FrameCode url="/code-runner/listaCircular/ListaCircular.java" />
+            <Section url="/markdown/list/list_circular_eliminar.md" notPb={true} />
+            <FrameCode url="/code-runner/listaCircular/Eliminar.java" />
+        </>,
         implemeListCircular: <Section url="/markdown/list/implementacion_list_circular_simple.md" first={true} />,
         costoComplejidadListCircular: <Analisis 
             id={2} 
@@ -51,7 +57,12 @@ export default function List() {
             title="Lista Circular Simple en SEED" 
             sub_title="Costo Operacional y Complejidad de" 
         />,
-        lcse: <Section url="/markdown/list/lista_circular_doble.md" first={true} />,
+        lcse: <>
+            <Section url="/markdown/list/lista_circular_doble.md" first={true} />
+            <FrameCode url="/code-runner/listaCircularDoble/ListaCircularDoble.java" />
+            <Section url="/markdown/list/lista_circular_doble_eliminar.md" notPb={true} />
+            <FrameCode url="/code-runner/listaCircularDoble/EliminarCD.java" />
+        </>,
         implemeListCircularDoble: <Section url="/markdown/list/implementacion_list_circular_doble.md" first={true} />,
         costoComplejidadListCircularDoble: <Analisis 
             id={3} 

@@ -8,7 +8,8 @@ public class ColaP<T> extends Cola<T> {
         System.out.println(colaP);
     }
     public ColaP(){
-        super(); super.setInicio(new NodoP<T>(null,null,null,0));
+        super();
+        super.setInicio(new NodoP<T>(null,null,null,0));
         NodoP<T> x = (NodoP<T>)super.getInicio();
         x.setSig(x);x.setAnt(x);
     }
@@ -46,7 +47,7 @@ public class ColaP<T> extends Cola<T> {
                     ((NodoP<T>)super.getInicio()).setAnt(x);
                     this.aumentarTamanio();
                 }
-            }       
+            }
         }
     }
     public boolean esVacia(){

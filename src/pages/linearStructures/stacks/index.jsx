@@ -6,7 +6,7 @@ import Background from "@/components/ui/Background";
 import Aside from "@/components/ui/Aside";
 import ListDownloads from "./ListDownloads";
 import { useEffect, useState } from "react";
-import FrameCode from "./ApilarFrame";
+import FrameCode from "../../../components/ui/FrameCode";
 
 export default function Queue () {
     const [asideStacks, setAsideStacks] = useState(constPilas);
