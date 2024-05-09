@@ -1,4 +1,6 @@
-public class ListaCircularDoble<T> {
+import java.util.Iterator;
+
+public class ListaCircularDoble<T> implements Iterable<T> {
     public static void main(String[] args) {
         ListaCircularDoble<Integer> listaCircular = new ListaCircularDoble<Integer>();
         listaCircular.insertarAlInicio(7);
@@ -8,6 +10,10 @@ public class ListaCircularDoble<T> {
     }
     private NodoD<T> cabeza;
     private int tamanio=0;
+    @Override
+	public Iterator<T> iterator() {
+		return null;
+	}
     public ListaCircularDoble() {
         this.cabeza=new NodoD<T> (null,null,null);
         this.cabeza.setSig(cabeza);
