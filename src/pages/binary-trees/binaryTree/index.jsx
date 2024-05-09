@@ -1,9 +1,8 @@
 import { constBinaryTree } from "@/utilities/aside/arboles_binarios/binaryTree";
 import Section from "@/components/ui/Section";
 import BinaryTreeDownloads from "./BinaryTreeDownloads";
-import Aside from "@/components/ui/Aside";
-import Background from "@/components/ui/Background";
 import { useEffect, useState } from "react";
+import Template from "@/components/Layout/Template";
 
 export default function BinaryTree () {
     const [asideBinartTree, setAsideBinartTree] = useState(constBinaryTree);
@@ -22,19 +21,14 @@ export default function BinaryTree () {
     }
 
     return(
-        <main className="bg-seed text-white">
-            <Background first={true} last={true} startLeft={false}/>
-            <div className="flex gap-2 relative">
-                <Aside
-                    data={asideBinartTree}
-                    setData={setAsideBinartTree}
-                    setViewTypeComponent={setViewTypeComponent}
-                />
-                <div className="w-9/12">
-                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
-                    <BinaryTreeDownloads />
-                </div>
-            </div>
-        </main>
+        <Template
+            data={asideBinartTree}
+            setData={setAsideBinartTree}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <BinaryTreeDownloads/>
+        </Template>
     );
 }

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Section from "@/components/ui/Section";
-import Background from '@/components/ui/Background';
-import Aside from '@/components/ui/Aside';
 import NaryDownloads from './NaryDownloads';
 import { consEnearioTree } from '@/utilities/aside/arboles_enearios/arbol_eneario';
+import Template from '@/components/Layout/Template';
 
 export default function NAryTree () {
     const [naryTree, setNaryTree] = useState(consEnearioTree);
@@ -20,19 +19,14 @@ export default function NAryTree () {
     }
 
     return(
-        <main className="bg-seed text-white">
-            <Background first={true} last={true} startLeft={false}/>
-            <div className="flex gap-2 relative">
-                <Aside
-                    data={naryTree}
-                    setData={setNaryTree}
-                    setViewTypeComponent={setViewTypeComponent}
-                />
-                <div className="w-9/12">
-                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
-                    <NaryDownloads />
-                </div>
-            </div>
-        </main>
+        <Template
+            data={naryTree}
+            setData={setNaryTree}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <NaryDownloads/>
+        </Template>
     )
 }

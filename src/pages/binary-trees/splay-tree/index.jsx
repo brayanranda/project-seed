@@ -1,9 +1,8 @@
 import { constSplayTree } from "@/utilities/aside/arboles_binarios/splayTree";
 import React, { useState, useEffect } from 'react';
 import Section from "@/components/ui/Section";
-import Background from "@/components/ui/Background";
-import Aside from "@/components/ui/Aside";
 import SplayTreeDownloads from "./SplayTreeDownloads";
+import Template from "@/components/Layout/Template";
 
 export default function SplayTree () {
     const [splayTree, setSplayTree] = useState(constSplayTree);
@@ -21,19 +20,14 @@ export default function SplayTree () {
     }
 
     return(
-        <main className="bg-seed text-white">
-            <Background first={true} last={true} startLeft={false}/>
-            <div className="flex gap-2 relative">
-                <Aside
-                    data={splayTree}
-                    setData={setSplayTree}
-                    setViewTypeComponent={setViewTypeComponent}
-                />
-                <div className="w-9/12">
-                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
-                    <SplayTreeDownloads />
-                </div>
-            </div>
-        </main>
+        <Template
+            data={splayTree}
+            setData={setSplayTree}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <SplayTreeDownloads/>
+        </Template>
     );
 }

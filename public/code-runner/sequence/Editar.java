@@ -1,8 +1,8 @@
-public class Secuencia<T>
+public class Editar<T>
 {       
 
     public static void main(String[] args) {
-        Secuencia<Integer> secuencia = new Secuencia<Integer>(5);
+        Editar<Integer> secuencia = new Editar<Integer>(5);
         
         secuencia.insertar(1);
         secuencia.insertar(2);
@@ -16,7 +16,7 @@ public class Secuencia<T>
 
     private int cant;      
     
-    public Secuencia(int n){        
+    public Editar(int n){        
         if (n<=0){
             System.err.println("Tamaño de secuencia no valido!");
             return;

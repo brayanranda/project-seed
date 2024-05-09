@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Aside from "@/components/ui/Aside";
-import Background from "@/components/ui/Background";
 import Section from "@/components/ui/Section";
 import { consGrafos } from "@/utilities/aside/grafos";
 import GraphDownloads from "./GraphDownloads";
+import Template from '@/components/Layout/Template';
 
 export default function Graph () {
     const [grafos, setGrafos] = useState(consGrafos);
@@ -29,21 +28,17 @@ export default function Graph () {
         alg: <Section url="/markdown/graph/algoritmos.md" first={true} />,
         impl: <Section url="/markdown/graph/implementation.md" first={true} last={true} />,
     }
+    {/* <Background first={true} startLeft={false}/> */}
 
     return(
-        <main className="bg-seed text-white">
-            <Background first={true} startLeft={false}/>
-            <div className="flex gap-2 relative">
-                <Aside
-                    data={grafos}
-                    setData={setGrafos}
-                    setViewTypeComponent={setViewTypeComponent}
-                />
-                <div className="w-9/12">
-                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
-                    <GraphDownloads />
-                </div>
-            </div>
-        </main>
+        <Template
+            data={grafos}
+            setData={setGrafos}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <GraphDownloads/>
+        </Template>
     );
 }

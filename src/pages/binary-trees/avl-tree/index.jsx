@@ -1,9 +1,8 @@
-import Aside from "@/components/ui/Aside";
-import Background from "@/components/ui/Background";
 import Section from "@/components/ui/Section";
 import { useEffect, useState } from "react";
 import AvlTreeDownloads from "./AvlTreeDownloads";
 import { constAvlTree } from "@/utilities/aside/arboles_binarios/avlTree";
+import Template from "@/components/Layout/Template";
 
 export default function AVLTree () {
     const [asideAvlTree, setAsideAvlTree] = useState(constAvlTree);
@@ -21,19 +20,14 @@ export default function AVLTree () {
     }
     
     return(
-        <main className="bg-seed text-white">
-            <Background first={true} last={true} startLeft={false}/>
-            <div className="flex gap-2 relative">
-                <Aside
-                    data={asideAvlTree}
-                    setData={setAsideAvlTree}
-                    setViewTypeComponent={setViewTypeComponent}
-                />
-                <div className="w-9/12">
-                    {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
-                    <AvlTreeDownloads />
-                </div>
-            </div>
-        </main>
+        <Template
+            data={asideAvlTree}
+            setData={setAsideAvlTree}
+            viewComponents={viewComponents}
+            viewTypeComponent={viewTypeComponent}
+            setViewTypeComponent={setViewTypeComponent}
+        >
+            <AvlTreeDownloads/>
+        </Template>
     );
 }

@@ -27,7 +27,7 @@ export default function Analisis({ id,servicio_markdown, title = "", sub_title="
     }
 
     return (
-        <section className={`w-full pb-20 ${first ? "pt-40" : ""} relative pt-40`}>
+        <section className={`w-full pb-20 ${first ? "md:pt-40" : ""} relative md:pt-40`}>
             <Title
                 title={title}
                 sub_title={sub_title}
