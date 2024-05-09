@@ -1,8 +1,8 @@
 import java.util.Iterator;
 
-public class ListaCircularDoble<T> implements Iterable<T> {
+public class InsertarLCD<T> implements Iterable<T> {
     public static void main(String[] args) {
-        ListaCircularDoble<Integer> listaCircular = new ListaCircularDoble<Integer>();
+        InsertarLCD<Integer> listaCircular = new InsertarLCD<Integer>();
         listaCircular.insertarAlInicio(7);
         listaCircular.insertarAlInicio(3);
         listaCircular.insertarOrdenado(1);
@@ -14,7 +14,7 @@ public class ListaCircularDoble<T> implements Iterable<T> {
 	public Iterator<T> iterator() {
 		return null;
 	}
-    public ListaCircularDoble() {
+    public InsertarLCD() {
         this.cabeza=new NodoD<T> (null,null,null);
         this.cabeza.setSig(cabeza);
         cabeza.setAnt(cabeza);        
@@ -78,4 +78,23 @@ class NodoD<T> {
     protected void setInfo(T info){ this.info = info; }
     protected void setAnt(NodoD<T> ant){ this.ant=ant; }
     protected void setSig(NodoD<T> sig){ this.sig=sig; }
+}
+class IteratorLCD<T> implements Iterator<T> {
+    private NodoD<T> cab;
+    private NodoD<T> posicion;
+    IteratorLCD(NodoD<T> cab) {
+        this.cab=cab;
+        this.posicion=this.cab.getSig();
+    }
+    @Override
+    public boolean hasNext(){return (this.posicion!=this.cab);}
+    @Override
+    public T next() {
+        if(!this.hasNext())
+            return (null);
+        this.posicion=this.posicion.getSig();
+        return(this.posicion.getAnt().getInfo());
+    }
+    @Override
+    public void remove() {}
 }

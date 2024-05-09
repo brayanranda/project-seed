@@ -8,19 +8,19 @@ function ListOperations() {
             name: "Insertar Inicio",
             icon: faPlus,
             url: "/markdown/list/insert.md",
-            runner: "/code-runner/list/InsertarInicio.java"
+            runner: "/code-runner/list/InsertarInicioLS.java"
         },
         {
             name: "Insertar Final",
             icon: faPlus,
             url: "/markdown/list/insert.md",
-            runner: "/code-runner/list/InsertarFinal.java"
+            runner: "/code-runner/list/InsertarFinalLS.java"
         },
         {
             name: "Insertar Ordenado",
             icon: faPlus,
             url: "/markdown/list/insert.md",
-            runner: "/code-runner/list/InsertarOrdenado.java"
+            runner: "/code-runner/list/InsertarOrdenadoLS.java"
         },
     ]
 

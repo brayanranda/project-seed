@@ -34,7 +34,12 @@ export default function List() {
             title="Lista Simple en SEED" 
             sub_title="Costo Operacional y Complejidad de" 
         />,
-        lde: <Section url="/markdown/list/lista_doble.md" first={true} />,
+        lde: <>
+            <Section url="/markdown/list/lista_doble.md" first={true} />
+            <FrameCode url="/code-runner/listDoble/InsertarInicio.java" />
+            <Section url="/markdown/list/lista_doble_eliminar.md" notPb={true} />
+            <FrameCode url="/code-runner/listDoble/EliminarLD.java" last={true} />
+        </>,
         implemeListDoble: <Section url="/markdown/list/implementacion_list_doble.md" first={true} />,
         costoComplejidadListDoble: <Analisis 
             id={1} 
@@ -44,9 +49,9 @@ export default function List() {
         />,
         lc: <>
             <Section url="/markdown/list/lista_circular.md" first={true} />
-            <FrameCode url="/code-runner/listaCircular/ListaCircular.java" />
+            <FrameCode url="/code-runner/listaCircular/InsertarLC.java" />
             <Section url="/markdown/list/list_circular_eliminar.md" notPb={true} />
-            <FrameCode url="/code-runner/listaCircular/Eliminar.java" />
+            <FrameCode url="/code-runner/listaCircular/EliminarLC.java" last={true} />
         </>,
         implemeListCircular: <Section url="/markdown/list/implementacion_list_circular_simple.md" first={true} />,
         costoComplejidadListCircular: <Analisis 
@@ -57,9 +62,9 @@ export default function List() {
         />,
         lcse: <>
             <Section url="/markdown/list/lista_circular_doble.md" first={true} />
-            <FrameCode url="/code-runner/listaCircularDoble/ListaCircularDoble.java" />
+            <FrameCode url="/code-runner/listaCircularDoble/InsertarLCD.java" />
             <Section url="/markdown/list/lista_circular_doble_eliminar.md" notPb={true} />
-            <FrameCode url="/code-runner/listaCircularDoble/EliminarCD.java" />
+            <FrameCode url="/code-runner/listaCircularDoble/EliminarLCD.java" last={true} />
         </>,
         implemeListCircularDoble: <Section url="/markdown/list/implementacion_list_circular_doble.md" first={true} />,
         costoComplejidadListCircularDoble: <Analisis 
@@ -70,7 +75,6 @@ export default function List() {
             last={true}
         />,
     }
-
 
     return (
         <Template

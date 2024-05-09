@@ -1,7 +1,7 @@
 import java.util.Iterator;
-public class Editar<T> implements Iterable<T>{
+public class EditarLCD<T> implements Iterable<T>{
     public static void main(String[] args) {
-        Editar<Integer> listaCD = new Editar<Integer>();
+        EditarLCD<Integer> listaCD = new EditarLCD<Integer>();
         listaCD.insertarAlInicio(1);
         listaCD.set(0, 7);
         System.out.println(listaCD);
@@ -12,7 +12,7 @@ public class Editar<T> implements Iterable<T>{
     public Iterator<T> iterator(){
         return (new IteratorLCD<T>(this.cabeza));
     }
-    public Editar() {
+    public EditarLCD() {
         this.cabeza=new NodoD<T> (null,null,null);
         this.cabeza.setSig(cabeza);
         cabeza.setAnt(cabeza);

@@ -29,7 +29,7 @@ export default function Queue() {
         />,
         colp: <>
             <Section url="/markdown/queue/description-priority.md" first={true} startLeft={true} />
-            <FrameCode url="/code-runner/colas/ColaP.java" />
+            {/* <FrameCode url="/code-runner/colas/ColaP.java" /> */}
         </>,
         implementacionColaPrioridad: <Section url="/markdown/queue/implementation-priority.md" first={true} />,
         costoComplejidadColaPrioridad: <Analisis
