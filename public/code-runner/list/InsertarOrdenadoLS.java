@@ -1,18 +1,16 @@
 import java.util.Iterator;  
-public class Eliminar<T> implements Iterable<T>{
+public class InsertarOrdenadoLS<T> implements Iterable<T> {     
     public static void main(String[] args) {
-        Eliminar<Integer> listaS = new Eliminar<Integer>();
-        listaS.insertarAlInicio(8);
-        listaS.eliminar(0);
-        listaS.insertarAlInicio(3);
-        listaS.vaciar();
+        InsertarOrdenadoLS<Integer> listaS = new InsertarOrdenadoLS<Integer>();
+        listaS.insertarAlInicio(1);
+        listaS.insertarOrdenado(2);
         System.out.println(listaS);
     }
-    private Nodo<T> cabeza;
-    private int tamanio;
-    public Eliminar(){
+    private Nodo<T> cabeza;   
+    private int tamanio;      
+    public InsertarOrdenadoLS(){        
         this.cabeza=null;
-        this.tamanio=0;
+        this.tamanio=0;    
     }
     @Override
     public Iterator<T> iterator() {        
@@ -22,43 +20,30 @@ public class Eliminar<T> implements Iterable<T>{
         this.cabeza=new Nodo<T>(x, this.cabeza);
         this.tamanio++;
     }
-    public T eliminar(int i) {
-        if(this.esVacia())
-            return null;
-        Nodo<T> t=this.cabeza;
-        if(i==0)
-            this.cabeza=this.cabeza.getSig();
-        else{
-            try {
-                Nodo<T> y=this.getPos(i-1);
-                t=y.getSig();
-                y.setSig(t.getSig());
-            }catch(ExceptionUFPS e){
-                    System.err.println(e.getMensaje());
-                    return (null);
-            }
-        }
-        t.setSig(null);
-        this.tamanio--;
-        return(t.getInfo());
-    }
-    public void vaciar(){        
-        this.cabeza=null; 
-        this.tamanio=0;           
-    }
     public boolean esVacia(){
         return(this.cabeza==null);
     }
-    private Nodo<T> getPos(int i)throws ExceptionUFPS{
-        if(this.esVacia() || i>this.tamanio  || i<0){
-            throw new ExceptionUFPS("El índice solicitado no existe en la Lista Simple");
-        }
-        Nodo<T> t=this.cabeza;
-        while(i>0){
-            t=t.getSig();
-            i--;
-        }
-        return(t);
+    public void insertarOrdenado(T info){
+        if (this.esVacia())
+            this.insertarAlInicio(info);
+        else{
+            Nodo<T> x=this.cabeza;
+            Nodo<T> y=x;
+                while(x!=null){
+                    Comparable comparador=(Comparable)info;
+                    int rta=comparador.compareTo(x.getInfo());
+                    if(rta<0)
+                        break;
+                    y=x;
+                    x=x.getSig();
+                }
+            if(x==y)
+                this.insertarAlInicio(info);
+            else{
+                y.setSig(new Nodo<T>(info, x));
+                this.tamanio++;
+                }
+            }
     }
 }
 class Nodo<T>{
@@ -76,14 +61,6 @@ class Nodo<T>{
     protected Nodo<T> getSig(){return this.sig;}
     protected void setInfo(T nuevo){this.info=nuevo;}
     protected void setSig(Nodo<T> nuevo){this.sig=nuevo;}
-}
-class ExceptionUFPS extends Exception {
-    public ExceptionUFPS(String mensaje) {
-        super(mensaje);
-    }
-    public String getMensaje(){
-        return (super.getMessage());
-    }
 }
 class IteratorLS<T> implements Iterator<T>{
     private Nodo<T> posicion;

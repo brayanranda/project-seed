@@ -1,15 +1,17 @@
-public class InsertarFinal<T> {
+import java.util.Iterator;
+public class InsertarFinal<T> implements Iterable<T> {
     public static void main(String[] args) {
         InsertarFinal<Integer> listaD = new InsertarFinal<Integer>();
-
         listaD.insertarAlInicio(1);
         listaD.insertarAlFinal(5);
-
         System.out.println(listaD);
     }
     private NodoD<T> cabeza;
     private int tamanio;
-
+    @Override
+    public Iterator<T> iterator(){
+        return(new IteratorLD<T>(this.cabeza));
+    }
     public InsertarFinal(){
         this.cabeza=null;
         this.tamanio=0;
@@ -39,9 +41,7 @@ public class InsertarFinal<T> {
             }
         }
     }
-    public boolean esVacia(){			
-        return(this.cabeza==null);            
-    }
+    public boolean esVacia(){return(this.cabeza==null);}
     private NodoD<T> getPos(int i)throws ExceptionUFPS{
         if(this.esVacia() || i>this.tamanio  || i<0){
             throw new ExceptionUFPS("El índice solicitado no existe en la Lista Doble");
@@ -69,32 +69,34 @@ class NodoD<T> implements java.io.Serializable
         this.sig=sig;
         this.ant=ant;
     }
-    protected T getInfo(){
-        return(this.info);
-    }
-    protected NodoD<T> getAnt(){
-        return (this.ant);
-    }
-    protected NodoD<T> getSig(){
-        return (this.sig);
-    }
-    protected void setInfo(T info){
-        this.info = info;
-    }
-    protected void setAnt(NodoD<T> ant){
-        this.ant=ant;
-    }
-    protected void setSig(NodoD<T> sig){
-        this.sig=sig;
-    }
+    protected T getInfo(){return(this.info);}
+    protected NodoD<T> getAnt(){return (this.ant);}
+    protected NodoD<T> getSig(){return (this.sig);}
+    protected void setInfo(T info){this.info = info;}
+    protected void setAnt(NodoD<T> ant){this.ant=ant;}
+    protected void setSig(NodoD<T> sig){this.sig=sig;}
 }
-class ExceptionUFPS extends Exception
-{
-    public ExceptionUFPS(String mensaje)
-    {
-        super(mensaje);
+class ExceptionUFPS extends Exception{
+    public ExceptionUFPS(String mensaje){super(mensaje);}
+    public String getMensaje(){return (super.getMessage());}
+}
+class IteratorLD<T> implements Iterator<T>{
+    private NodoD<T> posicion;  
+    IteratorLD(NodoD<T> posicion){            
+        this.posicion=posicion;	            
     }
-    public String getMensaje(){
-        return (super.getMessage());
+    @Override
+    public boolean hasNext(){return (posicion!=null);}
+    @Override
+    public T next(){            
+        if(!this.hasNext()){                
+            System.err.println("Error no hay mas elementos");
+        return null;                
+        }            
+        NodoD<T> actual=posicion;
+        posicion=posicion.getSig();            
+        return(actual.getInfo());
     }
+    @Override
+    public void remove(){}
 }
