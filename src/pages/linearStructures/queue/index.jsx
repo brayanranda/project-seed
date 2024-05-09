@@ -6,7 +6,7 @@ import { constColas } from "@/utilities/aside/estructuras_lineales/colas";
 import Aside from "@/components/ui/Aside";
 import Background from "@/components/ui/Background";
 import { useEffect, useState } from "react";
-import FrameCode from "../stacks/ApilarFrame";
+import FrameCode from "../../../components/ui/FrameCode";
 
 export default function Queue () {
     const [asideQueue, setAsideQueue] = useState(constColas);

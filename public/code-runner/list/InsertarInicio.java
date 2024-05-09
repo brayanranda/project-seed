@@ -1,5 +1,4 @@
-public class ListaS<T>
-{     
+public class ListaS<T> {     
     public static void main(String[] args) {
         ListaS<Integer> listaS = new ListaS<Integer>();
 
@@ -33,24 +32,19 @@ class Nodo<T>{
         this.info=null;
         this.sig=null;        
     }
-    
     public Nodo(T info, Nodo<T> sig){
         this.info=info;
         this.sig=sig;
     }
-
     protected T getInfo(){
         return this.info;
     }
-    
     protected Nodo<T> getSig(){        
         return this.sig;        
     }
-    
     protected void setInfo(T nuevo){        
         this.info=nuevo;
     }
-
     protected void setSig(Nodo<T> nuevo){
         this.sig=nuevo;
     }
