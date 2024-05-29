@@ -8,13 +8,20 @@ import { constLista } from "@/utilities/aside/estructuras_lineales/listas";
 import OperationsGetEditDelete from "./OperationsGetEditDelete";
 import FrameCode from "../../../components/ui/FrameCode";
 import Template from "@/components/Layout/Template";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 export default function List() {
     const [asideList, setAsideList] = useState(constLista);
+    const [modal, setModal] = useState(false);
     
     useEffect(() => {
         setAsideList(constLista)
     }, [constLista]);
+
+    const showModal = () => {
+        setModal(!modal)
+    }
 
     const [viewTypeComponent, setViewTypeComponent] = useState("list");
     const viewComponents = {
@@ -35,8 +42,18 @@ export default function List() {
             sub_title="Costo Operacional y Complejidad de" 
         />,
         lde: <>
-            <Section url="/markdown/list/lista_doble.md" first={true} />
-            <FrameCode url="/code-runner/listDoble/InsertarInicio.java" />
+            <Section url="/markdown/list/lista_doble.md" first={true} showModal={showModal} showBtnModal={true} />
+            {
+                modal &&
+                    <div className="bg-black bg-opacity-75 min-h-screen w-full flex items-center justify-center absolute left-0 top-0 z-20">
+                        <div className="mx-auto w-10/12 flex flex-col items-end">
+                            <button onClick={showModal} className="bg-red-500 py-1 px-3 font-black">
+                                <FontAwesomeIcon icon={faX} />
+                            </button>
+                            <FrameCode url="/code-runner/listDoble/InsertarInicio.java" />
+                        </div>
+                    </div>
+            }
             <Section url="/markdown/list/lista_doble_eliminar.md" notPb={true} />
             <FrameCode url="/code-runner/listDoble/EliminarLD.java" last={true} />
         </>,

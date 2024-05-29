@@ -7,12 +7,8 @@ function FrameCode ({url, last = false}) {
     const method = async () => {
         try {
             const req = await fetch(url);
-            console.log('req', req);
             const text = await req.text();
             setCode(text)
-            
-            console.log(url);
-            console.log(text);
         } catch (error) {
             console.log(error);
         }
@@ -24,7 +20,7 @@ function FrameCode ({url, last = false}) {
 
     return (
         <section className={`w-full relative z-20 ${last ? "pb-20" : ""}`}>
-            <article className="mx-auto w-11/12 md:w-10/12">
+            <article>
                 <div className="relative h-[750px]">
                     <iframe
                         width="800" height="1000"
