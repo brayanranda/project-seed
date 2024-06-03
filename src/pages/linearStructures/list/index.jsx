@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import ListOperations from "./Operations";
 import { constLista } from "@/utilities/aside/estructuras_lineales/listas";
 import OperationsGetEditDelete from "./OperationsGetEditDelete";
-import FrameCode from "../../../components/ui/FrameCode";
 import Template from "@/components/Layout/Template";
 import ModalPythonTutor from "@/components/ui/ModalPythonTutor";
 
