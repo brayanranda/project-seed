@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function FrameCode ({url, last = false}) {
+function FrameCode ({url}) {
     const [code, setCode] = useState([]);
     const [showIframe, setShowIframe] = useState(false);
 
@@ -19,7 +19,7 @@ function FrameCode ({url, last = false}) {
     }, [url]);
 
     return (
-        <section className={`w-full relative z-20 ${last ? "pb-20" : ""}`}>
+        <section className="w-full relative z-20">
             <article>
                 <div className="relative h-[750px]">
                     <iframe

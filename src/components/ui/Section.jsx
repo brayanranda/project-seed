@@ -4,7 +4,7 @@ import { renderer } from '@/utilities/mdRenderer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function Section({ url, first = false, notPb = false, showBtnModal = false,  showModal = () => {} }) {
+export default function Section({ url, first = false, notPb = false, showBtnModal = false,  showModal = () => {}, typeModal, setStringModal, titleBtn = "" }) {
     const [data, setData] = useState("");
 
     useEffect(() => {
@@ -25,14 +25,14 @@ export default function Section({ url, first = false, notPb = false, showBtnModa
                 {
                     showBtnModal &&
                         <button
-                            onClick={showModal}
-                            className='bg-cyan-500 py-2 px-4 rounded-md font-black'
+                            onClick={() => { showModal(); setStringModal(typeModal) }}
+                            className='bg-cyan-500 py-2 px-4 rounded-md font-black duration-300 hover:scale-105 transform hover:bg-yellow-400 hover:text-yellow-950'
                         >
                             <FontAwesomeIcon icon={faPlayCircle} className='me-2' />
-                            Run code
+                            Run code | {titleBtn}
                         </button>
                 }
-                </article>
+            </article>
         </section>
     );
 }
