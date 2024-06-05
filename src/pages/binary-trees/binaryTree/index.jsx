@@ -62,7 +62,7 @@ export default function BinaryTree () {
                 showModal={showModal}
                 titleBtn="Por Niveles - Árbol binario"
                 setStringModal={setStringModal}
-                typeModal="preorden"
+                typeModal="por_niveles"
 
                 url="/markdown/binary-tree/recorrido_por_niveles.md"
                 last={true}
