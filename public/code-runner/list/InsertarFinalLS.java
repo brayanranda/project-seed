@@ -6,33 +6,33 @@ public class InsertarFinalLS<T> implements Iterable<T> {
         listaS.insertarAlFinal(3);
         System.out.println(listaS);
     }
-    private Nodo<T> cabeza;   
-    private int tamanio;      
-    public InsertarFinalLS(){        
+    private Nodo<T> cabeza;
+    private int tamanio;
+    public InsertarFinalLS(){
         this.cabeza=null;
         this.tamanio=0;    
     }
     @Override
-    public Iterator<T> iterator() {        
-        return new IteratorLS<T>(this.cabeza) {};        
+    public Iterator<T> iterator() {
+        return new IteratorLS<T>(this.cabeza) {};
     }
-    public void insertarAlInicio(T x){        
+    public void insertarAlInicio(T x){
         this.cabeza=new Nodo<T>(x, this.cabeza);
-        this.tamanio++;        
+        this.tamanio++;
     }
-    public boolean esVacia(){        
-        return(this.cabeza==null);        
+    public boolean esVacia(){
+        return(this.cabeza==null);
     }
-    private Nodo<T> getPos(int i)throws ExceptionUFPS{        
+    private Nodo<T> getPos(int i)throws ExceptionUFPS{
         if(this.esVacia() || i>this.tamanio  || i<0){
             throw new ExceptionUFPS("El índice solicitado no existe en la Lista Simple");
-        }            
-        Nodo<T> t=this.cabeza;        
-        while(i>0){            
+        }
+        Nodo<T> t=this.cabeza;
+        while(i>0){
             t=t.getSig();
-            i--;            
+            i--;
         }        
-        return(t);        
+        return(t);
     }
     public void insertarAlFinal(T x){        
         if(this.cabeza==null)

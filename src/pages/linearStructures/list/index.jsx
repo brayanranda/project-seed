@@ -6,15 +6,30 @@ import { useEffect, useState } from "react";
 import ListOperations from "./Operations";
 import { constLista } from "@/utilities/aside/estructuras_lineales/listas";
 import OperationsGetEditDelete from "./OperationsGetEditDelete";
-import FrameCode from "../../../components/ui/FrameCode";
 import Template from "@/components/Layout/Template";
+import ModalPythonTutor from "@/components/ui/ModalPythonTutor";
 
 export default function List() {
     const [asideList, setAsideList] = useState(constLista);
+    const [modal, setModal] = useState(false);
+    const [stringModal, setStringModal] = useState("");
     
     useEffect(() => {
         setAsideList(constLista)
     }, [constLista]);
+
+    const showModal = () => {
+        setModal(!modal)
+    }
+
+    const typeModal = {
+        lista_doble: <ModalPythonTutor modal={modal} showModal={showModal} url="/code-runner/listDoble/InsertarInicio.java" />,
+        lista_doble_eliminar: <ModalPythonTutor modal={modal} showModal={showModal} url="/code-runner/listDoble/EliminarLD.java" />,
+        list_circular: <ModalPythonTutor modal={modal} showModal={showModal} url="/code-runner/listaCircular/InsertarLC.java" />,
+        list_circular_eliminar: <ModalPythonTutor modal={modal} showModal={showModal} url="/code-runner/listaCircular/EliminarLC.java" />,
+        lista_circular_doble: <ModalPythonTutor modal={modal} showModal={showModal} url="/code-runner/listaCircularDoble/InsertarLCD.java" />,
+        lista_circular_doble_eliminar: <ModalPythonTutor modal={modal} showModal={showModal} url="/code-runner/listaCircularDoble/EliminarLCD.java" />,
+    }
 
     const [viewTypeComponent, setViewTypeComponent] = useState("list");
     const viewComponents = {
@@ -35,10 +50,24 @@ export default function List() {
             sub_title="Costo Operacional y Complejidad de" 
         />,
         lde: <>
-            <Section url="/markdown/list/lista_doble.md" first={true} />
-            <FrameCode url="/code-runner/listDoble/InsertarInicio.java" />
-            <Section url="/markdown/list/lista_doble_eliminar.md" notPb={true} />
-            <FrameCode url="/code-runner/listDoble/EliminarLD.java" last={true} />
+            <Section
+                first={true}
+                showBtnModal={true}
+                showModal={showModal}
+                typeModal="lista_doble"
+                titleBtn="Inserar - Lista doble"
+                setStringModal={setStringModal}
+                url="/markdown/list/lista_doble.md"
+            />
+            <Section
+                showBtnModal={true}
+                showModal={showModal}
+                titleBtn="Eliminar - Lista doble"
+                setStringModal={setStringModal}
+                typeModal="lista_doble_eliminar"
+                url="/markdown/list/lista_doble_eliminar.md"
+            />
+            
         </>,
         implemeListDoble: <Section url="/markdown/list/implementacion_list_doble.md" first={true} />,
         costoComplejidadListDoble: <Analisis 
@@ -48,10 +77,25 @@ export default function List() {
             sub_title="Costo Operacional y Complejidad de" 
         />,
         lc: <>
-            <Section url="/markdown/list/lista_circular.md" first={true} />
-            <FrameCode url="/code-runner/listaCircular/InsertarLC.java" />
-            <Section url="/markdown/list/list_circular_eliminar.md" notPb={true} />
-            <FrameCode url="/code-runner/listaCircular/EliminarLC.java" last={true} />
+            <Section
+                showBtnModal={true}
+                showModal={showModal}
+                titleBtn="Insertar - Lista Circular"
+                setStringModal={setStringModal}
+                typeModal="list_circular"
+
+                first={true}
+                url="/markdown/list/lista_circular.md" 
+            />
+            <Section
+                showBtnModal={true}
+                showModal={showModal}
+                titleBtn="Eliminar - Lista Circular"
+                setStringModal={setStringModal}
+                typeModal="list_circular_eliminar"
+                
+                url="/markdown/list/list_circular_eliminar.md" 
+            />
         </>,
         implemeListCircular: <Section url="/markdown/list/implementacion_list_circular_simple.md" first={true} />,
         costoComplejidadListCircular: <Analisis 
@@ -61,10 +105,25 @@ export default function List() {
             sub_title="Costo Operacional y Complejidad de" 
         />,
         lcse: <>
-            <Section url="/markdown/list/lista_circular_doble.md" first={true} />
-            <FrameCode url="/code-runner/listaCircularDoble/InsertarLCD.java" />
-            <Section url="/markdown/list/lista_circular_doble_eliminar.md" notPb={true} />
-            <FrameCode url="/code-runner/listaCircularDoble/EliminarLCD.java" last={true} />
+            <Section
+                showBtnModal={true}
+                showModal={showModal}
+                titleBtn="Insertar - Lista Circular Doble"
+                setStringModal={setStringModal}
+                typeModal="lista_circular_doble"
+
+                first={true}
+                url="/markdown/list/lista_circular_doble.md"
+            />
+            <Section
+                showBtnModal={true}
+                showModal={showModal}
+                titleBtn="Eliminar - Lista Circular Doble"
+                setStringModal={setStringModal}
+                typeModal="lista_circular_doble_eliminar"
+
+                url="/markdown/list/lista_circular_doble_eliminar.md"
+            />
         </>,
         implemeListCircularDoble: <Section url="/markdown/list/implementacion_list_circular_doble.md" first={true} />,
         costoComplejidadListCircularDoble: <Analisis 
@@ -79,7 +138,9 @@ export default function List() {
     return (
         <Template
             data={asideList}
+            typeModal={typeModal}
             setData={setAsideList}
+            stringModal={stringModal}
             viewComponents={viewComponents}
             viewTypeComponent={viewTypeComponent}
             setViewTypeComponent={setViewTypeComponent}

@@ -3,7 +3,7 @@ import Aside from "@/components/ui/Aside";
 import Background from "@/components/ui/Background";
 import AsideMobile from "@/components/ui/AsideMobile";
 
-const Template = ({children, data, setData, viewComponents, viewTypeComponent, setViewTypeComponent}) => {
+const Template = ({ children, data, setData, viewComponents, viewTypeComponent, setViewTypeComponent, typeModal, stringModal }) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -21,9 +21,9 @@ const Template = ({children, data, setData, viewComponents, viewTypeComponent, s
           window.removeEventListener('resize', checkIfMobile);
         };
     }, [isMobile]);
+    
   return (
     <main className="bg-seed text-white">
-        {/* <Background first={true} last={true} startLeft={false}/> */}
         <div className="flex flex-col md:flex-row gap-2 relative">
             {isMobile 
                 ?   <AsideMobile
@@ -37,8 +37,9 @@ const Template = ({children, data, setData, viewComponents, viewTypeComponent, s
                         setViewTypeComponent={setViewTypeComponent}
                     />
             }
-            <div className="w-full md:w-9/12">
+            <div className="w-full md:w-9/12 ">
                 <Background first={true} last={true} startLeft={false}/>
+                {stringModal && typeModal && typeModal[stringModal]}
                 {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
                 {children}
             </div>
