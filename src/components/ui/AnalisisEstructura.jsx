@@ -3,7 +3,6 @@ import markdownit from 'markdown-it'
 import { formatearMd } from "@/lib/formatter";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 
-
 export default function CosteComplejidad({ id, analisis }) {
     const md = markdownit();
     const [open, setOpen] = useState(0);
@@ -20,7 +19,7 @@ export default function CosteComplejidad({ id, analisis }) {
             divAnalisis.innerHTML = htmlContent;
             formatearMd(id_contenedor);
         }
-    }, []);
+    }, [analisis]);
 
     function Icon({ id, open }) {
         return (
