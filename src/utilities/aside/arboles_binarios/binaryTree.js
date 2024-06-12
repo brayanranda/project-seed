@@ -24,4 +24,9 @@ export const constBinaryTree = [
         title: "Implementación",
         state: false,
     },
+    {
+        key: "cosCom",
+        title: "Costo & Complejidad",
+        state: false,
+    },
 ]

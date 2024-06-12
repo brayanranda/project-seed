@@ -2,11 +2,21 @@
 
 [CODIGO FUENTE (HASH)](https://gitlab.com/estructuras-de-datos/proyecto-seed/-/blob/master/src/ufps/util/colecciones_seed/TablaHash.java)
 
-Los análisis que se harán a continuación son para el peor de los casos Big(O).
+Los análisis que se harán a continuación son para el peor de los casos Big(O) con la siguiente nomenclatura.
+
+KTE -> Constante
+
+n -> Tamaño de la estructura
+
+Número -> Número de operaciones elementales
+
+Cada instrucción se revisa línea a línea
+
+Métodos de la misma clase que son llamados en otros métodos, tienen su hipervínculo.
 
 ***
 
-## __Constructor tabla hash con 23 slots__
+## __1. Constructor 23 Slots (TablaHash)__
 
 ```java
 /**
@@ -21,9 +31,8 @@ public TablaHash() {
                              1    1
      this.informacionEntrada = new ListaCD[this.numeroSlots];
      // inicializar los Slots de la tabla 
-     // T(inicializarListas()) = 5n + 3
                5n + 3
-     this.inicializarListas();
+     `16¬this.inicializarListas()`;
 }
 ```
 
@@ -39,7 +48,7 @@ public TablaHash() {
 
 ***
 
-## __Constructor tabla hash con slots especificos__
+## __2. Constructor Slots Especificos (TablaHash)__
 
 ```java
 /**
@@ -55,9 +64,8 @@ public TablaHash(int numeroSlots) {
                              1    1
      this.informacionEntrada = new ListaCD[numeroSlots];
      // inicializar los Slots de la tabla 
-     // T(inicializarListas()) = 5n + 3
                5n + 3
-     this.inicializarListas();
+     `16¬this.inicializarListas()`;
 }
 ```
 
@@ -73,7 +81,7 @@ public TablaHash(int numeroSlots) {
 
 ***
 
-## __Insertar o Modificar en la tabla__
+## __3. Insertar o Modificar (insertar)__
 
 ```java
 /**
@@ -93,12 +101,10 @@ public T insertar(Clave clave, T objeto) {
          //Mejor de los casos
          throw new RuntimeException("La Clave de Objeto no puede ser vacia!!!");
      } else {
-          //T(index()) = KTE
                  1      KTE
-          indice = index(clave);
-          //T(registrarEntrada()) = 14
+          indice = `8¬index(clave)`;
                          1              14
-          objetoAnterior = this.registrarEntrada(indice, clave);
+          objetoAnterior = `7¬this.registrarEntrada(indice, clave)`;
                              1
           if (objetoAnterior == null) { // Si la clave del objeto no se encuentra en la tabla lo insertamos
                          1                                   1   1         1
@@ -107,7 +113,6 @@ public T insertar(Clave clave, T objeto) {
                this.informacionEntrada[indice].insertarAlFinal(nuevoObjeto);
                                 2
                this.numeroDatos += 1;
-               //T(getObjeto())=KTE
                   1                 KTE 
                return nuevoObjeto.getObjeto();
           } else // si la clave esta se encuentra en la tabla modificamos el objeto
@@ -131,7 +136,7 @@ public T insertar(Clave clave, T objeto) {
 
 ***
 
-## __Eliminar Objeto Especifico__
+## __4. Eliminar Objeto Especifico (eliminar)__
 
 ```java
 /**
@@ -150,9 +155,8 @@ public T eliminar(Clave clave) {
           //Mejor de los casos
           throw new RuntimeException("La Clave de Objeto no puede ser vacia!!!");
      } else {
-          //T(index())= KTE
            1         1     KTE
-          int indice = index(clave);
+          int indice = `8¬index(clave)`;
              1               1                                     1
           ListaCD < InformacionDeEntrada < Clave, T >> listaObjeto = this.informacionEntrada[indice];
                  1   1           1
@@ -187,7 +191,7 @@ public T eliminar(Clave clave) {
 
 ***
 
-## __Existencia del Objeto__
+## __5. Existencia de un Objeto por Clave (esta)__
 
 ```java
 /**
@@ -197,9 +201,8 @@ public T eliminar(Clave clave) {
  * @return true de encontrar un objeto asociado con la clave dada. <br>
  */
 public boolean esta(Clave clave) {
-     //T(getObjeto())=KTE
         1        KTE                1
-     return (this.getObjeto(clave) != null);
+     return (`6¬this.getObjeto(clave)` != null);
 }
 ```
 
@@ -215,7 +218,7 @@ public boolean esta(Clave clave) {
 
 ***
 
-## __Obtener Objeto__
+## __6. Obtener Objeto (getObjeto)__
 
 ```java
 /**
@@ -232,9 +235,8 @@ public Object getObjeto(Clave clave) {
           //Mejor de los casos
           throw new IllegalArgumentException("Clave null no permitida");
      else {
-          //T(index())=KTE
              1       1    KTE
-          int indice = index(clave);
+          int indice = `8¬index(clave)`;
              1               1                                     1
           ListaCD < InformacionDeEntrada < Clave, T >> listaObjeto = this.informacionEntrada[indice];
                  1  1             1
@@ -267,7 +269,7 @@ public Object getObjeto(Clave clave) {
 
 ***
 
-## __Registrar Entrada por Clave__
+## __7. Registrar Entrada por Clave (registrarEntrada)__
 
 ```java
 /**
@@ -309,7 +311,7 @@ private InformacionDeEntrada registrarEntrada(int indice, Clave clave) {
 
 ***
 
-## __Obtener Indice__
+## __8. Obtener Indice (index)__
 
 ```java
 /**
@@ -343,7 +345,7 @@ public int index(Clave clave) {
 
 ***
 
-## __Eliminar Entradas__
+## __9. Eliminar Entradas (eliminarTodo)__
 
 ```java
 /**
@@ -372,7 +374,7 @@ public void eliminarTodo() {
 
 ***
 
-## __Obtener Numero de Objetos Almacenados__
+## __10. Obtener Numero de Objetos Almacenados (getNumeroDatos)__
 
 ```java
 /**
@@ -396,7 +398,7 @@ public int getNumeroDatos() {
 
 ***
 
-## __Obtener Numero de Slots__
+## __11. Obtener Numero de Slots (getNumeroSlots)__
 
 ```java
 /**
@@ -420,7 +422,7 @@ public int getNumeroSlots() {
 
 ***
 
-## __Listado de los Objetos de Entrada__
+## __12. Listado de los Objetos de Entrada (getInformacionEntrada)__
 
 ```java
 /**
@@ -444,7 +446,7 @@ public ListaCD < InformacionDeEntrada < Clave, T >> [] getInformacionEntrada() {
 
 ***
 
-## __Obtener Numero de Slots__
+## __13. Obtener Numero de Slots Ocupados (numSlotOcupados)__
 
 ```java
 /**
@@ -458,8 +460,7 @@ public int numSlotOcupados() {
      int cant = 0;
               1
      while (i < this.numeroSlots) {
-          //T(esVacia())=2 y la validacion 1
-              1                3
+              1                2                  1
           if (!this.informacionEntrada[i].esVacia())
                   2
                cant++;
@@ -485,7 +486,7 @@ public int numSlotOcupados() {
 
 ***
 
-## __Modificar Slots Lista__
+## __14. Modificar Slots Lista (setNumeroSlots)__
 
 ```java
 /**
@@ -509,7 +510,7 @@ public void setNumeroSlots(int numeroSlots) {
 
 ***
 
-## __Modificar Lista__
+## __15. Modificar Listado Entrada (setInformacionEntrada)__
 
 ```java
 /**
@@ -533,7 +534,7 @@ public void setInformacionEntrada(ListaCD < InformacionDeEntrada < Clave, T >> [
 
 ***
 
-## __Iniciar Listas__
+## __16. Inicializar Listas (inicializarListas)__
 
 ```java
 /**
@@ -564,7 +565,7 @@ private void inicializarListas() {
 
 ***
 
-## __Obtener Primo__
+## __17. Obtener Primo (obtenerPrimo)__
 
 ```java
 /**
@@ -576,9 +577,8 @@ private void inicializarListas() {
 private int obtenerPrimo(int numero) {
        1       1        1
      int primo = numero - 1;
-     //T(esPrimo()) = 8n + KTE y la validacion 1
             1   8n + KTE
-     while (!esPrimo(primo)) {
+     while (!`18¬esPrimo(primo)`) {
                 2
           primo += 2;
      }
@@ -601,7 +601,7 @@ private int obtenerPrimo(int numero) {
 
 ***
 
-## __Consultar Si es Primo__
+## __18. Consultar Si es Primo (esPrimo)__
 
 ```java
 /**
@@ -643,7 +643,7 @@ public boolean esPrimo(int numero) {
 
 ***
 
-## __Imprimir Datos__
+## __19. Imprimir Datos (imprimir)__
 
 ```java
 /**
@@ -679,7 +679,7 @@ public String imprimir() {
 
 ***
 
-## __Consultar Existencia__
+## __20. Consultar Existencias (esVacia)__
 
 ```java
 /**

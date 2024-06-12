@@ -11,7 +11,7 @@ const SEED = {
         HASH: "/analisis/ESTRUCTURAS_LINEALES/hash.md"
     },
     ARBOLES_BINARIOS: {
-        ARBOL_BINARIO: "",
+        ARBOL_BINARIO: "/analisis/ARBOLES_BINARIOS/arboles_binarios.md",
         ARBOL_BINARIO_BUSQUEDA: "",
         ARBOL_AVL: "",
         ARBOL_ROJO_NEGRO: "",

@@ -4,6 +4,9 @@ import BinaryTreeDownloads from "./BinaryTreeDownloads";
 import { useEffect, useState } from "react";
 import Template from "@/components/Layout/Template";
 import ModalPythonTutor from "@/components/ui/ModalPythonTutor";
+import Analisis from "@/components/ui/Analisis";
+import { getAnalisis_AB } from "@/store/services/servicios";
+
 
 export default function BinaryTree () {
     const [asideBinartTree, setAsideBinartTree] = useState(constBinaryTree);
@@ -71,6 +74,13 @@ export default function BinaryTree () {
         lonIE: <Section url="/markdown/binary-tree/longitud-de-camino-interno-y-externo.md" first={true} />,
         repABM: <Section url="/markdown/binary-tree/representacion.md" first={true} />,
         imp: <Section url="/markdown/binary-tree/implementation.md" first={true} />,
+        cosCom: <Analisis
+            id={0}
+            servicio_markdown={getAnalisis_AB}
+            title="Árbol Binario en SEED"
+            sub_title="Costo Operacional y Complejidad de"
+            last={true}
+        />,
     }
 
     return(

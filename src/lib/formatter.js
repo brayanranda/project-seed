@@ -79,7 +79,6 @@ function reemplazarPalabras(match, palabra) {
 
     let array = palabra.split("¬");
     let id_element = id_element_sel.split("_")[0] + "_" + (parseInt(array[0])-1) + "_div_padre";
-    id_element_sel = "";
 
     return (
         "<button class='element_a_scroll' id_div='"+id_element+"' click_action='false' >"+array[1]+"</button>"
