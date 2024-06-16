@@ -1,0 +1,5 @@
+# Listas {"subTitle":"Estructuras Lineales"}
+
+Una lista es un contenedor secuencial en el que se pueden insertar y borrar elementos independientemente del tamaño del contenedor. Para insertar un elemento cualquiera debemos ir recorriendo la lista, lo que pudiera hacer creer que las listas son menos prácticas que los vectores, pero estas tienen sus ventajas: una inserción en medio de la lista no requiere mover todos los elementos que se encuentran después del punto de inserción mientras que en un vector es necesario recorrer todos los elementos para abrir espacio al nuevo elemento.  
+  
+Las operaciones básicas de los diferentes tipos de listas son las misma sólo que se realizan de formas diferentes dependiendo de la naturaleza de cada una de ellas. Estas operaciones básicas son: Insertar, Eliminar, editar y consultar un dato en la estructura.  

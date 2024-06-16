@@ -1,0 +1,2 @@
+# Editar {"subTitle":"Operación","color":"text-black"}
+En esta operación solo basta con indicar el dato que se desea almacenar en la estructura e indicar la posición que se desea editar de la estructura, esta recorre la cantidad de datos almacenados hasta encontrar la posición de la estructura que se desea modificar y cambia el valor de la posición por el nuevo dato, teniendo en cuenta que la posicion exista y posea un dato almacenado en Secuencia.  

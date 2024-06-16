@@ -1,0 +1,119 @@
+/* Assuming your accordion container has a class name of "accordion-container" */
+.accordion-container {
+    background-color: #f0f0f0; /* Change this color to your desired background color */
+    color: black;
+    border: 1rem solid #f0f0f0;
+    border-radius: 1rem;
+}
+
+/* Assuming each accordion item has a class name of "accordion-item" */
+.accordion-item {
+    background-color: #ffffff; /* Change this color to your desired background color */
+    padding: 10PX;
+    border: 1rem solid #ffffff;
+    border-radius: 1rem;
+}
+
+.analisis p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.analisis h2 strong {
+    font-weight: bold !important;
+}
+
+.analisis hr {
+    margin: 15px auto;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.75), rgba(255, 255, 255, 0));
+}
+
+.analisis a {
+    color: blue;
+    line-height: normal;
+}
+
+.analisis div .code-container div pre {
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    width: max-content;
+}
+
+.code-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.code-container div {
+    overflow-x: auto;
+}
+
+.code-container div button {
+    background-color: white; 
+    color: blue; 
+    border: 2px solid #008CBA;
+    font-weight: bold;
+    font-style: italic;
+    line-height: normal;
+}
+
+.code-container div button:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.mathexpresion {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.keyword {
+    color: #f8b739;
+}
+
+.keycosto {
+    color: red;
+}
+
+.keycomentario {
+    color: greenyellow;
+}
+
+.btn_action {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.button_color {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button_color:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.katex { font-size: 1.1em; }
