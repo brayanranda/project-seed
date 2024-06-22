@@ -19,13 +19,13 @@ export default function RedBlackTree () {
         <>
             <Section url="/markdown/red-black-tree/operations.md" first={true}/>
             <Section
-                showBtnModal={true}
+                // showBtnModal={true}
                 titleBtn="Insertar - Árbol Rojo y Negro"
                 typeModal="/code-runner/arbolRojoNegro/Insertar.java"
                 url="/markdown/red-black-tree/insertar.md"
             />
             <Section
-                showBtnModal={true}
+                // showBtnModal={true}
                 titleBtn="Eliminar - Árbol Rojo y Negro"
                 typeModal="/code-runner/arbolRojoNegro/Eliminar.java"
                 url="/markdown/red-black-tree/eliminar.md"

@@ -9,7 +9,7 @@ export const Footer = () => {
 
     return (
         pathname !== "/"
-            ? <footer className="w-full bg-black py-20 relative z-50 overflow-hidden">
+            ? <footer className="w-full md:w-9/12 bg-black py-20 relative z-50 overflow-hidden ms-auto">
                 <div className="w-11/12 md:w-9/12 mx-auto space-y-28 relative z-10">
                     <div className="flex items-center justify-between">
                         <Link to="/">

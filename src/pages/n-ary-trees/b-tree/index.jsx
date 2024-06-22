@@ -14,7 +14,15 @@ export default function BTree () {
     const [viewTypeComponent, setViewTypeComponent] = useState("arb");
     const viewComponents = {
         arb: <Section url="/markdown/b-tree/description.md" first={true}/>,
-        ope: <Section url="/markdown/b-tree/operaciones.md" first={true}/>,
+        ope: 
+            <Section
+                // showBtnModal={true}
+                titleBtn="InOrden"
+                typeModal="/code-runner/arbolB/Insertar.java"
+            
+                url="/markdown/b-tree/operaciones.md"
+                first={true}
+            />,
         impl: <Section url="/markdown/b-tree/implementation.md" first={true} last={true}/>,
     }
 

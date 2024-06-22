@@ -45,7 +45,7 @@ function Aside({ data, setData, setViewTypeComponent }) {
 
     return (
         <div className="w-full md:w-3/12 pt-40 relative z-10">
-            <ul className={`px-6 space-y-2 text-white flex flex-col font-bold fixed w-3/12 ${data && data.length > 8 ? "overflow-y-scroll h-[600px]" : ""}`}>
+            <ul className={`px-6 space-y-2 text-white flex flex-col font-bold fixed w-3/12 `}>
                 {
                     data && data.length > 0 &&
                     data.map((item, index) => {

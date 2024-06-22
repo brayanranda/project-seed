@@ -16,7 +16,7 @@ export default function AVLTree () {
         arb: <Section url="/markdown/avl-tree/description.md" first={true}/>,
         balA: 
             <Section
-                showBtnModal={true}
+                // showBtnModal={true}
                 titleBtn="Balancear - Árbol AVL"
                 typeModal="/code-runner/arbolAVL/Balancear.java"
                 url="/markdown/avl-tree/balancer.md"
@@ -24,7 +24,7 @@ export default function AVLTree () {
             />,
         eliD: 
             <Section
-                showBtnModal={true}
+                // showBtnModal={true}
                 titleBtn="Eliminar - Árbol AVL"
                 typeModal="/code-runner/arbolAVL/Eliminar.java"
                 url="/markdown/avl-tree/eliminar.md"

@@ -31,7 +31,7 @@ function SequenceOperations() {
     ]
 
     return (
-        <section className="w-full text-white pb-20">
+        <section className="w-full text-white pb-20 z-10 relative">
             <article className="mx-auto md:mt-40 w-11/12 md:w-10/12">
                 <TitleMd color="text-white" title="Operaciones" type={2} />
                 <TabsComponentMd data={tabs} />

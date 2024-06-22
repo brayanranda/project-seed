@@ -88,15 +88,9 @@ class ExceptionUFPS extends Exception {
 }
 class IteratorLS<T> implements Iterator<T>{
     private Nodo<T> posicion;
-    IteratorLS(Nodo<T> pos){            
-        this.posicion=pos;            
-    }
-    @Override
-    public boolean hasNext(){            
-        return (posicion!=null);            
-    }
-    @Override
-    public T next(){            
+    IteratorLS(Nodo<T> pos){this.posicion=pos;}
+    @Override public boolean hasNext(){return (posicion!=null);}
+    @Override public T next(){            
         if(!this.hasNext()){                
         System.err.println("Error no hay mas elementos");
         return null;                
@@ -105,6 +99,4 @@ class IteratorLS<T> implements Iterator<T>{
         posicion=posicion.getSig();            
         return(actual.getInfo());
     }
-    @Override
-    public void remove(){}
 }

@@ -14,7 +14,14 @@ export default function BPlusTree () {
     const [viewTypeComponent, setViewTypeComponent] = useState("arb");
     const viewComponents = {
         arb: <Section url="/markdown/b-plus-tree/description.md" first={true}/>,
-        ope: <Section url="/markdown/b-plus-tree/operaciones.md" first={true}/>,
+        ope: 
+            <Section
+                // showBtnModal={true}
+                titleBtn="InOrden"
+                typeModal="/code-runner/arbolBPlus/Insertar.java"
+                url="/markdown/b-plus-tree/operaciones.md"
+                first={true}
+            />,
         impl: <Section url="/markdown/b-plus-tree/implementation.md" first={true} last={true}/>,
     }
 

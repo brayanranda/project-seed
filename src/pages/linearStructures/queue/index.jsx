@@ -35,7 +35,7 @@ export default function Queue() {
         />,
         colp: <>
             <Section
-                showBtnModal={true}
+                // showBtnModal={true}
                 titleBtn="Cola P"
                 typeModal="/code-runner/colas/ColaP.java"
 

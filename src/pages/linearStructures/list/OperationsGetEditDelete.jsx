@@ -25,11 +25,9 @@ function OperationsGetEditDelete() {
     ]
 
     return (
-        <section className="w-full pb-20 relative z-20">
-            <article className="mx-auto w-11/12 md:w-10/12">
-                <TitleMd title="Operaciones Editar, Consultar y Eliminar" type={2} />
-                <TabsComponentMd data={tabs} />
-            </article>
+        <section className="mx-auto w-10/12 pt-20 pb-20 relative z-20 border-cyan-400 border-t-[2px] my-10">
+            <TitleMd title="Operaciones Editar, Consultar y Eliminar" type={2} />
+            <TabsComponentMd data={tabs} />
         </section>
     );
 }

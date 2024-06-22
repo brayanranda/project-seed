@@ -18,20 +18,20 @@ export default function SplayTree () {
         ope: 
         <>
             <Section
-                showBtnModal={true}
+                // showBtnModal={true}
                 titleBtn="Insertar - Árbol Splay"
                 typeModal="/code-runner/arbolSplay/Insertar.java"
                 url="/markdown/splay-tree/insertar.md" 
                 first={true}
             />
             <Section 
-                showBtnModal={true}
+                // showBtnModal={true}
                 titleBtn="Búsqueda - Árbol Splay"
                 typeModal="/code-runner/arbolSplay/Busqueda.java"
                 url="/markdown/splay-tree/busqueda.md"
             />
             <Section 
-                showBtnModal={true}
+                // showBtnModal={true}
                 titleBtn="Eliminar - Árbol Splay"
                 typeModal="/code-runner/arbolSplay/Eliminar.java"
                 url="/markdown/splay-tree/eliminar.md"

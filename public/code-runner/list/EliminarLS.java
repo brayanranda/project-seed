@@ -64,38 +64,22 @@ public class EliminarLS<T> implements Iterable<T>{
 class Nodo<T>{
     private T info;
     private Nodo<T> sig;
-    public Nodo(){
-        this.info=null;
-        this.sig=null;        
-    }
-    public Nodo(T info, Nodo<T> sig){
-        this.info=info;
-        this.sig=sig;
-    }
+    public Nodo(){this.info=null;this.sig=null;}
+    public Nodo(T info, Nodo<T> sig){this.info=info;this.sig=sig;}
     protected T getInfo(){return this.info;}
     protected Nodo<T> getSig(){return this.sig;}
     protected void setInfo(T nuevo){this.info=nuevo;}
     protected void setSig(Nodo<T> nuevo){this.sig=nuevo;}
 }
 class ExceptionUFPS extends Exception {
-    public ExceptionUFPS(String mensaje) {
-        super(mensaje);
-    }
-    public String getMensaje(){
-        return (super.getMessage());
-    }
+    public ExceptionUFPS(String mensaje) {super(mensaje);}
+    public String getMensaje(){return (super.getMessage());}
 }
 class IteratorLS<T> implements Iterator<T>{
     private Nodo<T> posicion;
-    IteratorLS(Nodo<T> pos){            
-        this.posicion=pos;            
-    }
-    @Override
-    public boolean hasNext(){            
-        return (posicion!=null);            
-    }
-    @Override
-    public T next(){            
+    IteratorLS(Nodo<T> pos){this.posicion=pos;}
+    @Override public boolean hasNext(){return (posicion!=null);}
+    @Override public T next(){            
         if(!this.hasNext()){                
         System.err.println("Error no hay mas elementos");
         return null;                
@@ -104,6 +88,4 @@ class IteratorLS<T> implements Iterator<T>{
         posicion=posicion.getSig();            
         return(actual.getInfo());
     }
-    @Override
-    public void remove(){}
 }

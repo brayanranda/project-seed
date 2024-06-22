@@ -62,14 +62,8 @@ public class EliminarLC<T> implements Iterable<T> {
 class Nodo<T>{
     private T info;
     private Nodo<T> sig;
-    public Nodo(){
-        this.info=null;
-        this.sig=null;
-    }
-    public Nodo(T info, Nodo<T> sig){
-        this.info=info;
-        this.sig=sig;
-    }
+    public Nodo(){this.info=null;this.sig=null;}
+    public Nodo(T info, Nodo<T> sig){this.info=info;this.sig=sig;}
     protected T getInfo(){return this.info;}
     protected Nodo<T> getSig(){return this.sig;}
     protected void setInfo(T nuevo){this.info=nuevo;}
@@ -80,24 +74,14 @@ class ExceptionUFPS extends Exception {
     public String getMensaje(){return (super.getMessage());}
 }
 class IteratorLC<T> implements Iterator<T>{
-    private Nodo<T> cabeza;
-    private Nodo<T> posicion;
-    IteratorLC(Nodo<T> cab){            
-        this.cabeza=cab;
-        this.posicion=this.cabeza.getSig();            
-    }
-    @Override
-    public boolean hasNext(){            
-        return (this.posicion!=this.cabeza);                
-    }
-    @Override
-    public T next(){            
+    private Nodo<T> cabeza;private Nodo<T> posicion;
+    IteratorLC(Nodo<T> cab){this.cabeza=cab;this.posicion=this.cabeza.getSig();}
+    @Override public boolean hasNext(){return (this.posicion!=this.cabeza);}
+    @Override public T next(){            
         if(!this.hasNext())
             return (null);
         Nodo<T> aux = posicion;
         this.posicion=this.posicion.getSig();
         return(aux.getInfo());
     }
-    @Override
-    public void remove(){}
 }
