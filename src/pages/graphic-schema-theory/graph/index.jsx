@@ -28,7 +28,6 @@ export default function Graph () {
         alg: <Section url="/markdown/graph/algoritmos.md" first={true} />,
         impl: <Section url="/markdown/graph/implementation.md" first={true} last={true} />,
     }
-    {/* <Background first={true} startLeft={false}/> */}
 
     return(
         <Template

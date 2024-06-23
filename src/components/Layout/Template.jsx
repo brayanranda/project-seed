@@ -23,7 +23,7 @@ const Template = ({ children, data, setData, viewComponents, viewTypeComponent, 
     }, [isMobile]);
     
   return (
-    <main className="bg-seed text-white">
+    <main className="bg-seed text-white relative">
         <div className="flex flex-col md:flex-row gap-2 relative">
             {isMobile 
                 ?   <AsideMobile
@@ -37,7 +37,7 @@ const Template = ({ children, data, setData, viewComponents, viewTypeComponent, 
                         setViewTypeComponent={setViewTypeComponent}
                     />
             }
-            <div className="w-full md:w-9/12 ">
+            <div className="w-full md:w-9/12 relative ms-auto top-0 right-0">
                 <Background first={true} last={true} startLeft={false}/>
                 {viewTypeComponent in viewComponents && viewComponents[viewTypeComponent]}
                 {children}
