@@ -3,13 +3,25 @@ import { SocialMedia } from "./SocialMedia"
 import { classCircle } from "@/utilities/const"
 import DevelopmentTeam from "@/components/ui/DevelopmentTeam"
 import ImgSlider4 from '../../../assets/images/logo_4.png'
+import { useEffect, useState } from "react"
 
 export const Footer = () => {
     const { pathname } = useLocation();
+    const location = useLocation(); 
+    const [isAboutPage, setIsAboutPage] = useState(false);
+
+    useEffect(() => {
+        console.log(location.pathname);
+        setIsAboutPage(location.pathname.includes('/about'));
+    }, [location.pathname]);
+
+    useEffect(() => {
+        console.log(isAboutPage);
+    }, [isAboutPage]);
 
     return (
         pathname !== "/"
-            ? <footer className="w-full md:w-9/12 bg-black py-20 relative z-50 overflow-hidden ms-auto">
+            ? <footer className={`${isAboutPage  ? "w-full" : "w-full md:w-9/12"} bg-black py-20 relative z-50 overflow-hidden ms-auto`}>
                 <div className="w-11/12 md:w-9/12 mx-auto space-y-28 relative z-10">
                     <div className="flex items-center justify-between">
                         <Link to="/">
