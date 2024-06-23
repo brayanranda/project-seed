@@ -7,13 +7,15 @@ export default function RunCodeBtn({name="", runner = "" }) {
     const [modal, setModal] = useState(false);
 
     const showModal = () => {
-        console.log("holaa", runner)
         setModal(!modal)
     }
 
     return (
         <>
-            <ModalPythonTutor modal={modal} showModal={showModal} url={runner} />
+            {
+                modal && 
+                    <ModalPythonTutor modal={modal} showModal={showModal} url={runner} />
+            }
             <button
                 onClick={() => { showModal() }}
                 className='bg-cyan-500 py-2 px-4 rounded-md font-black duration-300 hover:scale-105 transform hover:bg-yellow-400 hover:text-yellow-950'

@@ -9,7 +9,7 @@ export default function Section({ url, first = false, notPb = false, showBtnModa
                 <MarkdownURL url={url}/>
                 {
                     showBtnModal &&
-                    <RunCodeBtn name={titleBtn} runner={typeModal} />
+                        <RunCodeBtn name={titleBtn} runner={typeModal} />
                 }
             </article>
         </section>
